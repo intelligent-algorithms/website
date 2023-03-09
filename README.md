@@ -1,1 +1,1 @@
-website
+Intelligent Algorithms Website
