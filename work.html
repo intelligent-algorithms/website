@@ -16,17 +16,18 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a2540'/%3E%3Ctext y='.92em' x='8' font-size='80' font-family='Georgia,serif' fill='%23c08b3a'%3EIA%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<header class="site-head">
-  <a href="/" class="brand">Intelligent Algorithms <em>Ltd</em></a>
-  <nav class="site-nav" aria-label="Primary">
-    <a href="index.html">Home</a>
-    <a href="work.html" class="active">Work</a>
-    <a href="writing.html">Writing</a>
-    <a href="publications.html">Publications</a>
-    <a href="mentoring.html">Mentoring</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="/" class="brand">Intelligent Algorithms <em>Ltd</em></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="writing.html">Writing</a>
+      <a href="publications.html">Publications</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+</div>
 
 <main class="page">
   <p class="eyebrow">Selected work</p>
@@ -110,26 +111,18 @@
   <h2>Explainable NLP</h2>
 
   <article class="entry">
-    <h3>FinBERT &times; UMAP for financial sentiment</h3>
-    <p class="meta">Research direction &mdash; dissertation supervision, Durham MMath, 2024</p>
-    <div class="callouts">
-      <div class="callout">
-        <span class="figure">92.5%</span>
-        <span class="label">Macro-F1 achieved</span>
-      </div>
-      <div class="callout">
-        <span class="figure">First class</span>
-        <span class="label">MMath dissertation</span>
-      </div>
-    </div>
+    <h3>Transformers for financial sentiment</h3>
+    <p class="meta">Ongoing research direction</p>
     <p>
-      Supervised a First-Class MMath dissertation,
-      <em>Balancing Accuracy, Interpretability and Efficiency in
-      Financial Sentiment Analysis</em>, on the Financial PhraseBank
-      corpus. Benchmarked PCA, Sparse PCA, and UMAP as feature selectors
-      for TF&ndash;IDF models and as projection layers for FinBERT embeddings.
+      Applied research into financial sentiment classification using
+      transformer-based language models. Focus is on the trade-off
+      between accuracy, interpretability, and efficiency for
+      time-sensitive, compliance-driven applications: where pure
+      black-box approaches fail to satisfy regulatory and operational
+      requirements, but pure lexicon-based methods leave meaningful
+      accuracy on the table.
     </p>
-    <p class="field"><strong>Result.</strong> The FinBERT + Sparse PCA + XGBoost configuration achieved Macro-F1 of 92.5%, outperforming all TF&ndash;IDF baselines and clarifying the accuracy&ndash;interpretability&ndash;efficiency trade-off relevant to time-sensitive, compliance-driven financial applications.</p>
+    <p class="field"><strong>Direction.</strong> Hybrid pipelines combining contextual embeddings with dimensionality reduction (PCA, sparse PCA, UMAP) and interpretable downstream classifiers (Random Forest, XGBoost), evaluated against TF&ndash;IDF baselines on standard financial sentiment corpora.</p>
   </article>
 
   <h2>Environmental forecasting</h2>
