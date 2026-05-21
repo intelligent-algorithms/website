@@ -1,0 +1,256 @@
+/* Intelligent Algorithms Ltd
+   Stylesheet — quietly academic
+   ---------------------------------------- */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --rule: #d8d4cf;
+  --paper: #faf8f4;
+  --accent: #6b4423;
+  --max: 720px;
+  --max-wide: 1040px;
+  --serif: "Iowan Old Style", "Charter", "Georgia", "Cambria", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  margin: 0;
+  padding: 0;
+  font-feature-settings: "kern", "liga", "onum";
+}
+
+/* Layout */
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+.page-wide {
+  max-width: var(--max-wide);
+}
+
+/* Header / nav */
+.site-head {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.site-head .brand {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-head .brand em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+.site-nav a:hover, .site-nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 2.5rem 0 1rem;
+}
+h1 {
+  font-size: 2.25rem;
+  letter-spacing: -0.01em;
+  margin-top: 1rem;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.4rem;
+}
+p { margin: 0 0 1.1rem; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 68, 35, 0.3);
+  transition: border-color 0.15s;
+}
+a:hover { border-bottom-color: var(--accent); }
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+/* Lede */
+.lede {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 1.25rem 0 2rem;
+}
+
+/* Eyebrow / kicker */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
+
+/* Quiet meta line (dates, journal, etc.) */
+.meta {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* Case study card */
+.entry {
+  margin: 2.25rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.entry:last-of-type { border-bottom: none; }
+.entry h3 { margin-top: 0; }
+.entry .field {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0.75rem 0 0.25rem;
+}
+.entry .field strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Publications */
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+.pub-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.98rem;
+}
+.pub-list li:last-child { border-bottom: none; }
+.pub-list .year {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.pub-list .title { font-style: italic; }
+
+/* Plain prose lists */
+.page ul {
+  margin: 0 0 1.2rem;
+  padding-left: 1.4rem;
+}
+.page ul li { margin-bottom: 0.4rem; }
+
+/* Two-column on home */
+.anchors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+.anchor h4 { margin-top: 0; }
+.anchor p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.anchor a {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  border-bottom-color: var(--accent);
+}
+
+/* Footer */
+.site-foot {
+  max-width: var(--max-wide);
+  margin: 4rem auto 0;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.site-foot a { color: var(--ink-soft); border-bottom-color: transparent; }
+.site-foot a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* Small screens */
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .page { padding: 2rem 1.25rem 4rem; }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.3rem; }
+  .lede { font-size: 1.08rem; }
+  .site-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .site-nav { flex-wrap: wrap; gap: 1rem; }
+}
+
+/* Print */
+@media print {
+  body { background: #fff; color: #000; }
+  .site-nav, .site-foot { display: none; }
+  a { color: #000; border-bottom: none; }
+  h2 { page-break-before: auto; }
+}
