@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Selected case studies: client analytics, anomaly detection, forecasting, and optimisation.">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='Georgia,serif'%3EIA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/" class="brand">Intelligent Algorithms <em>Ltd</em></a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="publications.html">Publications</a>
+    <a href="mentoring.html">Mentoring</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main class="page">
+  <p class="eyebrow">Selected work</p>
+  <h1>Case studies.</h1>
+  <p class="lede">
+    Engagements span applied machine learning in capital markets,
+    ESA-funded anomaly detection research, sea-ice forecasting,
+    and combinatorial optimisation. Client names appear only where the
+    engagement is a matter of public record.
+  </p>
+
+  <h2>Financial market analytics</h2>
+
+  <article class="entry">
+    <h3>Anomaly detection for FICC markets</h3>
+    <p class="meta">European Space Agency &amp; UK Space Agency &mdash; 2020 to 2021</p>
+    <p>
+      Technical lead on the Mosaic Smart Data research collaboration with
+      ESA and UKSA on explainable anomaly detection for fixed income,
+      currency, and commodity markets. The work extended ESA&rsquo;s
+      Dr MUST novelty detection methodology, originally developed for
+      satellite telemetry, into financial market and transaction data.
+    </p>
+    <p class="field"><strong>Approach.</strong> Correlation and dynamic time warping fitted to market data, with explanatory features (economic releases, benchmark rates, volatility, market returns) layered to characterise rather than merely flag each anomaly. Refactored existing detection models, designed the back-testing framework, delivered a real-time alerting prototype embedded in the production platform.</p>
+    <p class="field"><strong>Outcome.</strong> &pound;90,000 in research funding across three competitive six-month rounds. Programme aligned to UN Sustainable Development Goals 8 and 9, with engagement in developing-market banking where higher volatility and lighter regulation make market-integrity analytics particularly valuable.</p>
+  </article>
+
+  <article class="entry">
+    <h3>Client defection / customer lifetime value</h3>
+    <p class="meta">Mosaic Smart Data platform &mdash; deployed for J.P. Morgan sales (2018 onward)</p>
+    <p>
+      Designed and built end-to-end: algorithm, UX, and final layout
+      (in collaboration with a UI designer), before Mosaic&rsquo;s
+      engineering team productionised it for support. Originated in
+      pre-incorporation prototype work (2014) adapted from the
+      Bayesian BTYD methodology, written in Python before the lifetimes
+      package and equivalent open-source toolkits became available.
+    </p>
+    <p class="field"><strong>Approach.</strong> Probabilistic CLV modelling with a novel certainty metric and visualisation that translated attrition risk into a form sales teams could act on directly.</p>
+    <p class="field"><strong>Outcome.</strong> Real-time defection alerting integrated into Mosaic&rsquo;s front-office platform; adopted by the J.P. Morgan sales team following Mosaic&rsquo;s first major client engagement.</p>
+  </article>
+
+  <article class="entry">
+    <h3>Seasonality and engagement forecasting</h3>
+    <p class="meta">Mosaic Smart Data platform &mdash; deployed for J.P. Morgan sales (2021)</p>
+    <p>
+      Designed and built end-to-end: STL decomposition forecasting
+      model predicting daily and monthly institutional client activity.
+      Coded from scratch, layout and dashboard design developed in
+      collaboration with a UI designer, before handover to Mosaic&rsquo;s
+      engineering team for production support.
+    </p>
+    <p class="field"><strong>Approach.</strong> Seasonal-trend decomposition surfaced the next expected client engagement window, enabling proactive rather than reactive sales outreach.</p>
+    <p class="field"><strong>Outcome.</strong> Demonstrated accuracy improvement over the incumbent forecasting tool on internal benchmarks; integrated into the Mosaic platform in 2021 for live use by the J.P. Morgan sales desk.</p>
+  </article>
+
+  <article class="entry">
+    <h3>Revenue intelligence and behavioural analytics</h3>
+    <p class="meta">Mosaic Smart Data platform &mdash; 2018 to 2021</p>
+    <p>
+      Hit-rate and behavioural-driver models across asset managers,
+      hedge funds, and corporates, supporting deal targeting and
+      client strategy within the Mosaic analytics platform.
+    </p>
+  </article>
+
+  <h2>Explainable NLP</h2>
+
+  <article class="entry">
+    <h3>FinBERT &times; UMAP for financial sentiment</h3>
+    <p class="meta">Research direction &mdash; dissertation supervision, Durham MMath, 2024</p>
+    <p>
+      Supervised a First-Class MMath dissertation,
+      <em>Balancing Accuracy, Interpretability and Efficiency in
+      Financial Sentiment Analysis</em>, on the Financial PhraseBank
+      corpus. Benchmarked PCA, Sparse PCA, and UMAP as feature selectors
+      for TF&ndash;IDF models and as projection layers for FinBERT embeddings.
+    </p>
+    <p class="field"><strong>Result.</strong> The FinBERT + Sparse PCA + XGBoost configuration achieved Macro-F1 of 92.5%, outperforming all TF&ndash;IDF baselines and clarifying the accuracy&ndash;interpretability&ndash;efficiency trade-off relevant to time-sensitive, compliance-driven financial applications.</p>
+  </article>
+
+  <h2>Environmental forecasting</h2>
+
+  <article class="entry">
+    <h3>Sea-ice condition forecasting</h3>
+    <p class="meta">Ongoing research &mdash; 2022 onward</p>
+    <p>
+      Full-stack pipelines for satellite data ingestion and sea-ice
+      condition forecasting using chlorophyll, salinity,
+      sea-surface temperature, and AMSR2 brightness temperature.
+      Built on AWS with CNNs and Bayesian neural networks. Personal
+      research strand extending the SDG framing of earlier ESA work
+      into climate-relevant remote-sensing.
+    </p>
+  </article>
+
+  <h2>Combinatorial optimisation</h2>
+
+  <article class="entry">
+    <h3>Tabu thresholding for the Frequency Assignment Problem</h3>
+    <p class="meta">PhD research, University of Wales College of Cardiff &mdash; commissioned for Combat Net Radio test scenarios</p>
+    <p>
+      Co-developed surrogate constraint tabu thresholding for radio
+      frequency assignment under realistic interference constraints.
+      Introduced adaptive memory structures, dynamic constraint
+      relaxation, and threshold-based exploration control.
+    </p>
+    <p class="field"><strong>Publications.</strong> Annals of Operations Research (1996, 1999); Meta-Heuristics: Theory and Applications (Springer, 2001). Full list on the <a href="publications.html">publications page</a>.</p>
+  </article>
+
+  <h2>Earlier engineering</h2>
+
+  <article class="entry">
+    <h3>Equities order management &amp; straight-through processing</h3>
+    <p class="meta">Deutsche Bank Equities IT &mdash; late 1990s</p>
+    <p>
+      Delivered the first straight-through processing pipeline from
+      Indication-of-Interest entry to exchange order routing within
+      the Equities front-to-back stack. Order management gateway
+      integrating Fidessa OMAR with internal IOI and FIX infrastructure;
+      cross-language flow with the C++ client front end exchanging
+      orders bidirectionally with the Java FIX gateway. Stack:
+      Java 1.2 Enterprise (sockets, JDBC), C++, CORBA.
+    </p>
+  </article>
+
+  <article class="entry">
+    <h3>Real-time and messaging systems</h3>
+    <p class="meta">DJC IT Consultancy Ltd &mdash; early 2000s</p>
+    <p>
+      Independent consultancy delivering real-time and messaging-systems
+      engineering to investment banks in London, Frankfurt, Paris, and
+      New York. Engagements included Deutsche Bank Commodities IT
+      (real-time commodity trading platforms, J2EE) and Lehman Brothers
+      Equities IT (IOI publishing and messaging, J2EE, CORBA, FIX).
+    </p>
+  </article>
+
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+</body>
+</html>
