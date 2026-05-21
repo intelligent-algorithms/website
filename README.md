@@ -1,26 +1,41 @@
-# Intelligent Algorithms Ltd
+# intelligent-algorithms.co.uk
 
-Applied optimisation, machine learning, and quantitative research consultancy. Founded by Dr Diane Castelino.
+Source for the Intelligent Algorithms Ltd website, served by GitHub Pages from `main` with a custom domain (see `CNAME`).
 
-[intelligent-algorithms.co.uk](https://intelligent-algorithms.co.uk)
+## Structure
 
-## What lives here
+Plain static HTML and CSS. No build step, no JavaScript framework.
 
-This GitHub organisation hosts working repositories for the consultancy. Public projects sit alongside experimental notebooks, reference implementations, and the source for the company website.
+```
+index.html              Home
+work.html               Case studies
+writing.html            Essays index
+publications.html       Peer-reviewed papers, talks, industry writing
+mentoring.html          Supervision and outcomes
+about.html              Practice and founder
+writing/                Individual essays
+  diversity-in-ai.html  Diversity in AI (2020)
+assets/style.css        Single stylesheet
+CNAME                   Custom domain
+```
 
-### Active areas
+Typography is Crimson Pro and IBM Plex Sans, loaded from Google Fonts.
 
-- **Optimisation** &mdash; combinatorial optimisation, metaheuristics (tabu search, tabu thresholding, surrogate constraints), constraint handling.
-- **Applied ML** &mdash; explainable financial sentiment (FinBERT, dimensionality reduction), anomaly detection, time-series forecasting.
-- **Environmental forecasting** &mdash; sea-ice condition modelling with Bayesian neural networks; satellite remote sensing.
-- **Causality** &mdash; identifying cause and effect in observational data, with an emphasis on interpretability.
+## Editing
 
-## Background
+Edit the HTML files directly. Commit and push to `main`; GitHub Pages will redeploy within a minute or two.
 
-The practice combines peer-reviewed research in adaptive metaheuristics (Annals of Operations Research; Springer) with production machine learning experience in capital markets, including ESA / UK Space Agency funded research on explainable anomaly detection for FICC markets.
+## Adding a new essay
 
-Academic partnerships include Oxford (Professor Rama Cont), UCL (Professor Philip Treleaven), and Cambridge.
+1. Copy `writing/diversity-in-ai.html` to `writing/your-new-essay.html`.
+2. Edit the title, byline, dateline, and body.
+3. Add a new `<li class="item">` block to `writing.html` linking to it.
+4. Commit and push.
 
-## Contact
+## Local preview
 
-For consulting enquiries, supervision availability, or research collaboration: [hello@intelligent-algorithms.co.uk](mailto:hello@intelligent-algorithms.co.uk).
+```
+python -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.

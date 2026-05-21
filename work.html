@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work &mdash; Intelligent Algorithms Ltd</title>
   <meta name="description" content="Selected case studies: client analytics, anomaly detection, forecasting, and optimisation.">
+  <meta property="og:title" content="Work &mdash; Intelligent Algorithms Ltd">
+  <meta property="og:description" content="Selected case studies: client analytics, anomaly detection, forecasting, and optimisation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='Georgia,serif'%3EIA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a2540'/%3E%3Ctext y='.92em' x='8' font-size='80' font-family='Georgia,serif' fill='%23c08b3a'%3EIA%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-
 <header class="site-head">
   <a href="/" class="brand">Intelligent Algorithms <em>Ltd</em></a>
   <nav class="site-nav" aria-label="Primary">
-    <a href="/">Home</a>
+    <a href="index.html">Home</a>
     <a href="work.html" class="active">Work</a>
+    <a href="writing.html">Writing</a>
     <a href="publications.html">Publications</a>
     <a href="mentoring.html">Mentoring</a>
     <a href="about.html">About</a>
@@ -26,8 +33,8 @@
   <h1>Case studies.</h1>
   <p class="lede">
     Engagements span applied machine learning in capital markets,
-    ESA-funded anomaly detection research, sea-ice forecasting,
-    and combinatorial optimisation. Client names appear only where the
+    ESA-funded anomaly detection research, sea-ice forecasting, and
+    combinatorial optimisation. Client names appear only where the
     engagement is a matter of public record.
   </p>
 
@@ -36,6 +43,20 @@
   <article class="entry">
     <h3>Anomaly detection for FICC markets</h3>
     <p class="meta">European Space Agency &amp; UK Space Agency &mdash; 2020 to 2021</p>
+    <div class="callouts">
+      <div class="callout">
+        <span class="figure">&pound;90k</span>
+        <span class="label">ESA research funding</span>
+      </div>
+      <div class="callout">
+        <span class="figure">3 rounds</span>
+        <span class="label">Competitive awards</span>
+      </div>
+      <div class="callout">
+        <span class="figure">SDG 8 &amp; 9</span>
+        <span class="label">UN goal alignment</span>
+      </div>
+    </div>
     <p>
       Technical lead on the Mosaic Smart Data research collaboration with
       ESA and UKSA on explainable anomaly detection for fixed income,
@@ -44,7 +65,7 @@
       satellite telemetry, into financial market and transaction data.
     </p>
     <p class="field"><strong>Approach.</strong> Correlation and dynamic time warping fitted to market data, with explanatory features (economic releases, benchmark rates, volatility, market returns) layered to characterise rather than merely flag each anomaly. Refactored existing detection models, designed the back-testing framework, delivered a real-time alerting prototype embedded in the production platform.</p>
-    <p class="field"><strong>Outcome.</strong> &pound;90,000 in research funding across three competitive six-month rounds. Programme aligned to UN Sustainable Development Goals 8 and 9, with engagement in developing-market banking where higher volatility and lighter regulation make market-integrity analytics particularly valuable.</p>
+    <p class="field"><strong>Outcome.</strong> Three consecutive competitive funding rounds at &pound;30,000 each. Programme aligned to UN Sustainable Development Goals 8 and 9, with engagement in developing-market banking where higher volatility and lighter regulation make market-integrity analytics particularly valuable.</p>
   </article>
 
   <article class="entry">
@@ -54,9 +75,9 @@
       Designed and built end-to-end: algorithm, UX, and final layout
       (in collaboration with a UI designer), before Mosaic&rsquo;s
       engineering team productionised it for support. Originated in
-      pre-incorporation prototype work (2014) adapted from the
-      Bayesian BTYD methodology, written in Python before the lifetimes
-      package and equivalent open-source toolkits became available.
+      pre-incorporation prototype work (2014) adapted from the Bayesian
+      BTYD methodology, written in Python before the lifetimes package
+      and equivalent open-source toolkits became available.
     </p>
     <p class="field"><strong>Approach.</strong> Probabilistic CLV modelling with a novel certainty metric and visualisation that translated attrition risk into a form sales teams could act on directly.</p>
     <p class="field"><strong>Outcome.</strong> Real-time defection alerting integrated into Mosaic&rsquo;s front-office platform; adopted by the J.P. Morgan sales team following Mosaic&rsquo;s first major client engagement.</p>
@@ -66,13 +87,13 @@
     <h3>Seasonality and engagement forecasting</h3>
     <p class="meta">Mosaic Smart Data platform &mdash; deployed for J.P. Morgan sales (2021)</p>
     <p>
-      Designed and built end-to-end: STL decomposition forecasting
-      model predicting daily and monthly institutional client activity.
-      Coded from scratch, layout and dashboard design developed in
-      collaboration with a UI designer, before handover to Mosaic&rsquo;s
+      Designed and built end-to-end: STL-decomposition forecasting model
+      predicting daily, weekly, monthly, and quarterly institutional client
+      activity. Coded from scratch, layout and dashboard design developed
+      in collaboration with a UI designer, before handover to Mosaic&rsquo;s
       engineering team for production support.
     </p>
-    <p class="field"><strong>Approach.</strong> Seasonal-trend decomposition surfaced the next expected client engagement window, enabling proactive rather than reactive sales outreach.</p>
+    <p class="field"><strong>Approach.</strong> Seasonal-trend decomposition with probabilistic confidence bands replacing the previous hard-coded rules-based approach, surfacing the next expected client engagement window with calibrated uncertainty.</p>
     <p class="field"><strong>Outcome.</strong> Demonstrated accuracy improvement over the incumbent forecasting tool on internal benchmarks; integrated into the Mosaic platform in 2021 for live use by the J.P. Morgan sales desk.</p>
   </article>
 
@@ -81,8 +102,8 @@
     <p class="meta">Mosaic Smart Data platform &mdash; 2018 to 2021</p>
     <p>
       Hit-rate and behavioural-driver models across asset managers,
-      hedge funds, and corporates, supporting deal targeting and
-      client strategy within the Mosaic analytics platform.
+      hedge funds, and corporates, supporting deal targeting and client
+      strategy within the Mosaic analytics platform.
     </p>
   </article>
 
@@ -91,6 +112,16 @@
   <article class="entry">
     <h3>FinBERT &times; UMAP for financial sentiment</h3>
     <p class="meta">Research direction &mdash; dissertation supervision, Durham MMath, 2024</p>
+    <div class="callouts">
+      <div class="callout">
+        <span class="figure">92.5%</span>
+        <span class="label">Macro-F1 achieved</span>
+      </div>
+      <div class="callout">
+        <span class="figure">First class</span>
+        <span class="label">MMath dissertation</span>
+      </div>
+    </div>
     <p>
       Supervised a First-Class MMath dissertation,
       <em>Balancing Accuracy, Interpretability and Efficiency in
@@ -108,11 +139,11 @@
     <p class="meta">Ongoing research &mdash; 2022 onward</p>
     <p>
       Full-stack pipelines for satellite data ingestion and sea-ice
-      condition forecasting using chlorophyll, salinity,
-      sea-surface temperature, and AMSR2 brightness temperature.
-      Built on AWS with CNNs and Bayesian neural networks. Personal
-      research strand extending the SDG framing of earlier ESA work
-      into climate-relevant remote-sensing.
+      condition forecasting using chlorophyll, salinity, sea-surface
+      temperature, and AMSR2 brightness temperature. Built on AWS
+      with CNNs and Bayesian neural networks. Personal research strand
+      extending the SDG framing of earlier ESA work into climate-relevant
+      remote sensing.
     </p>
   </article>
 
@@ -141,8 +172,8 @@
       the Equities front-to-back stack. Order management gateway
       integrating Fidessa OMAR with internal IOI and FIX infrastructure;
       cross-language flow with the C++ client front end exchanging
-      orders bidirectionally with the Java FIX gateway. Stack:
-      Java 1.2 Enterprise (sockets, JDBC), C++, CORBA.
+      orders bidirectionally with the Java FIX gateway. Stack: Java 1.2
+      Enterprise (sockets, JDBC), C++, CORBA.
     </p>
   </article>
 
@@ -150,14 +181,13 @@
     <h3>Real-time and messaging systems</h3>
     <p class="meta">DJC IT Consultancy Ltd &mdash; early 2000s</p>
     <p>
-      Independent consultancy delivering real-time and messaging-systems
+      Technology consultancy delivering real-time and messaging-systems
       engineering to investment banks in London, Frankfurt, Paris, and
       New York. Engagements included Deutsche Bank Commodities IT
       (real-time commodity trading platforms, J2EE) and Lehman Brothers
       Equities IT (IOI publishing and messaging, J2EE, CORBA, FIX).
     </p>
   </article>
-
 </main>
 
 <footer class="site-foot">
