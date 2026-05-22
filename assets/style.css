@@ -305,6 +305,49 @@ em { font-style: italic; }
   font-weight: 600;
 }
 
+/* ---------- Case-study glance grid ---------- */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2.25rem 0 1rem;
+  align-items: start;
+}
+.case-grid .entry {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--c, var(--blue-600));
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(16, 52, 96, 0.05), 0 16px 34px -20px var(--c-sh, rgba(16, 52, 96, 0.4));
+}
+.case-grid .entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(16, 52, 96, 0.08), 0 26px 52px -22px var(--c-sh, rgba(16, 52, 96, 0.45));
+}
+.case-grid .entry h3 { color: var(--c, var(--navy)); }
+.case-grid .entry .field strong { color: var(--c, var(--blue-700)); }
+
+.case-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--c, var(--blue-600));
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+/* Category accents — a professional blue / teal / indigo family */
+.cat-fin { --c: #1d4ed8; --c-sh: rgba(29, 78, 216, 0.45); }
+.cat-nlp { --c: #0e9bb8; --c-sh: rgba(14, 155, 184, 0.45); }
+.cat-env { --c: #4f46e5; --c-sh: rgba(79, 70, 229, 0.45); }
+.cat-opt { --c: #0f766e; --c-sh: rgba(15, 118, 110, 0.45); }
+.cat-eng { --c: #1e3a8a; --c-sh: rgba(30, 58, 138, 0.45); }
+
 /* ---------- Callout boxes ---------- */
 .callouts {
   display: grid;
