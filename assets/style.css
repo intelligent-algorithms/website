@@ -276,6 +276,38 @@ em { font-style: italic; }
 .hero.hero-page .hero-inner { padding: 3.5rem 1.5rem 3rem; }
 .hero.hero-page h1 { font-size: 2.6rem; max-width: 24ch; }
 
+/* ---------- Animated tagline (gradient shimmer) ---------- */
+.tagline {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.65rem;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  max-width: 24ch;
+  margin: 0 0 1.15rem;
+  background: linear-gradient(100deg, #ffffff 0%, #9ec9f7 22%, #4cc4e0 50%, #9ec9f7 78%, #ffffff 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: tagline-in 0.8s ease-out both, tagline-shimmer 7s linear infinite;
+}
+@keyframes tagline-shimmer {
+  from { background-position: 220% center; }
+  to   { background-position: -220% center; }
+}
+@keyframes tagline-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .tagline { -webkit-text-fill-color: #eaf3ff; color: #eaf3ff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tagline { animation: tagline-in 0.4s ease-out both; }
+}
+
 /* ---------- Entry / case study cards ---------- */
 .entry {
   background: var(--paper-2);
@@ -678,6 +710,7 @@ em { font-style: italic; }
   .lede { font-size: 1.14rem; }
   .hero-inner { padding: 3.25rem 1.25rem 3rem; }
   .hero h1 { font-size: 2.1rem; }
+  .tagline { font-size: 1.22rem; }
   .article-head h1 { font-size: 1.9rem; }
   .article-body p { font-size: 1.08rem; }
   .article-body > p:first-of-type::first-letter {
