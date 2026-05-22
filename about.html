@@ -70,27 +70,64 @@
     <article class="cred-card cat-fin">
       <p class="cred-cert">AWS Certified</p>
       <h3>Solutions Architect &ndash; Associate</h3>
-      <p class="cred-skill" data-skills='["Cloud architecture","Distributed systems","Infrastructure design","Compute &amp; storage","Networking","Security","Resilient design","High performance","Cost optimisation"]'>Cloud architecture</p>
+      <ul class="cred-skills">
+        <li class="cred-chip">Cloud architecture</li>
+        <li class="cred-chip">Distributed systems</li>
+        <li class="cred-chip">Infrastructure design</li>
+        <li class="cred-chip">Networking</li>
+        <li class="cred-chip">Security</li>
+        <li class="cred-chip">Resilience</li>
+        <li class="cred-chip">High performance</li>
+        <li class="cred-chip">Cost optimisation</li>
+      </ul>
     </article>
     <article class="cred-card cat-nlp">
       <p class="cred-cert">AWS Certified</p>
       <h3>Cloud Practitioner</h3>
-      <p class="cred-skill" data-skills='["Cloud fundamentals","Service portfolio","Pricing models","Support models","Core concepts","Billing &amp; cost"]'>Cloud fundamentals</p>
+      <ul class="cred-skills">
+        <li class="cred-chip">Cloud fundamentals</li>
+        <li class="cred-chip">Service portfolio</li>
+        <li class="cred-chip">Pricing models</li>
+        <li class="cred-chip">Support models</li>
+        <li class="cred-chip">Billing &amp; cost</li>
+      </ul>
     </article>
     <article class="cred-card cat-env">
       <p class="cred-cert">AWS Certified</p>
       <h3>AI Practitioner</h3>
-      <p class="cred-skill" data-skills='["AI &amp; ML fundamentals","Generative AI","Foundation models","Responsible AI","Security &amp; compliance","Model applications"]'>AI &amp; ML fundamentals</p>
+      <ul class="cred-skills">
+        <li class="cred-chip">AI &amp; ML fundamentals</li>
+        <li class="cred-chip">Generative AI</li>
+        <li class="cred-chip">Foundation models</li>
+        <li class="cred-chip">Responsible AI</li>
+        <li class="cred-chip">Security &amp; compliance</li>
+        <li class="cred-chip">Model applications</li>
+      </ul>
     </article>
     <article class="cred-card cat-opt">
       <p class="cred-cert">AWS Certified</p>
       <h3>Machine Learning &ndash; Specialty</h3>
-      <p class="cred-skill" data-skills='["SageMaker","Data engineering","Feature engineering","Model training","Hyperparameter tuning","Model deployment","Monitoring","MLOps","Model evaluation"]'>SageMaker</p>
+      <ul class="cred-skills">
+        <li class="cred-chip">SageMaker</li>
+        <li class="cred-chip">Data engineering</li>
+        <li class="cred-chip">Feature engineering</li>
+        <li class="cred-chip">Model training</li>
+        <li class="cred-chip">Hyperparameter tuning</li>
+        <li class="cred-chip">Deployment</li>
+        <li class="cred-chip">MLOps</li>
+        <li class="cred-chip">Model evaluation</li>
+      </ul>
     </article>
     <article class="cred-card cat-eng">
       <p class="cred-cert">AWS Certified &middot; in progress 2026</p>
       <h3>Machine Learning Engineer</h3>
-      <p class="cred-skill" data-skills='["Production ML","ML pipelines","Model operations","Automation","Scalable systems"]'>Production ML</p>
+      <ul class="cred-skills">
+        <li class="cred-chip">Production ML</li>
+        <li class="cred-chip">ML pipelines</li>
+        <li class="cred-chip">Model operations</li>
+        <li class="cred-chip">Automation</li>
+        <li class="cred-chip">Scalable systems</li>
+      </ul>
     </article>
   </div>
 
@@ -127,31 +164,6 @@
   <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
   <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
 </footer>
-
-<script>
-(function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-  var els = Array.prototype.slice.call(document.querySelectorAll('.cred-skill'));
-  els.forEach(function (el, i) {
-    var skills;
-    try { skills = JSON.parse(el.getAttribute('data-skills') || '[]'); }
-    catch (e) { skills = []; }
-    if (skills.length < 2) return;
-    var idx = 0;
-    setInterval(function () {
-      idx = (idx + 1) % skills.length;
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(6px)';
-      setTimeout(function () {
-        el.textContent = skills[idx];
-        el.style.opacity = '';
-        el.style.transform = '';
-      }, 400);
-    }, 2600 + i * 350);
-  });
-})();
-</script>
 
 </body>
 </html>

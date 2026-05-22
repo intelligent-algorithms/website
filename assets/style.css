@@ -338,28 +338,40 @@ em { font-style: italic; }
   margin: 0 0 0.5rem;
 }
 .cred-card h3 {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.95rem;
   font-size: 1.1rem;
   color: var(--navy);
 }
-.cred-skill {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 1.02rem;
-  color: var(--c, var(--blue-700));
+.cred-skills {
+  list-style: none;
   margin: 0;
-  min-height: 1.5em;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem 0.45rem;
 }
-.cred-skill::before {
-  content: "";
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+.cred-chip {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--c, var(--blue-700));
+  background: var(--sky-50);
+  border: 1px solid var(--sky-200);
+  border-radius: 999px;
+  padding: 0.3rem 0.62rem;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+@supports (background: color-mix(in srgb, red, blue)) {
+  .cred-chip {
+    background: color-mix(in srgb, var(--c, #1d4ed8) 8%, #fff);
+    border-color: color-mix(in srgb, var(--c, #1d4ed8) 24%, #fff);
+  }
+}
+.cred-chip:hover {
   background: var(--c, var(--blue-600));
-  margin-right: 0.5rem;
-  vertical-align: middle;
+  border-color: var(--c, var(--blue-600));
+  color: #fff;
 }
 
 /* ---------- Entry / case study cards ---------- */
