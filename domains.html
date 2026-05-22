@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domains &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="The sectors we work across and the capabilities we bring — from optimisation and machine learning to satellite analysis.">
+  <meta property="og:title" content="Domains &mdash; Intelligent Algorithms Ltd">
+  <meta property="og:description" content="The sectors we work across and the capabilities we bring — from optimisation and machine learning to satellite analysis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=6">
+  <link rel="icon" href="assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="/" class="brand"><img class="brand-mark" src="assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="domains.html" class="active">Domains</a>
+      <a href="research.html">Research</a>
+      <a href="writing.html">Writing</a>
+      <a href="publications.html">Publications</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main>
+  <section class="hero hero-page">
+    <div class="hero-inner">
+      <p class="tagline">Turning rigorous research into intelligent systems.</p>
+      <p class="eyebrow on-dark">What we do</p>
+      <h1>Domains &amp; capabilities.</h1>
+      <p class="lede on-dark">
+        We work across regulated, data-rich, and mission-critical sectors,
+        bringing a deep technical toolkit to each.
+      </p>
+    </div>
+  </section>
+
+  <div class="page">
+  <h2>Sectors</h2>
+  <p>
+    We bring research-grade methods to industries where accuracy,
+    explainability, and reliability matter most.
+  </p>
+  <ul class="skill-cloud">
+    <li class="skill sk-lg">Capital markets</li>
+    <li class="skill sk-md">Telecommunications</li>
+    <li class="skill sk-md">Defence &amp; aerospace</li>
+    <li class="skill sk-md">Environmental &amp; climate</li>
+    <li class="skill sk-sm">Public-sector research</li>
+  </ul>
+
+  <h2>Capabilities</h2>
+  <p>
+    A snapshot of the methods we work across &mdash; the list rotates through
+    the full toolkit.
+  </p>
+  <ul class="skill-cloud" id="skillCloud" aria-label="Areas of expertise">
+    <li class="skill sk-lg">Data science</li>
+    <li class="skill sk-lg">Machine learning</li>
+    <li class="skill sk-md">Deep learning</li>
+    <li class="skill sk-md">Statistics</li>
+    <li class="skill sk-sm">Probability</li>
+    <li class="skill sk-lg">Optimisation</li>
+    <li class="skill sk-md">Transformers</li>
+    <li class="skill sk-sm">LLMs</li>
+    <li class="skill sk-md">NLP</li>
+    <li class="skill sk-md">Time series analysis</li>
+    <li class="skill sk-sm">Supervised learning</li>
+    <li class="skill sk-sm">Unsupervised learning</li>
+    <li class="skill sk-md">Image analysis</li>
+    <li class="skill sk-md">Satellite analysis</li>
+    <li class="skill sk-sm">Algorithms</li>
+    <li class="skill sk-md">Anomaly detection</li>
+    <li class="skill sk-sm">Explainability</li>
+    <li class="skill sk-md">Customer behaviour metrics</li>
+  </ul>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script>
+(function () {
+  var cloud = document.getElementById('skillCloud');
+  if (!cloud) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  var pool = [
+    'Data science', 'Machine learning', 'Deep learning', 'Statistics', 'Probability',
+    'Bayesian inference', 'Probabilistic modelling', 'Uncertainty quantification',
+    'Optimisation', 'Metaheuristics', 'Combinatorial optimisation', 'Algorithms',
+    'Data structures', 'Time series analysis', 'Forecasting', 'NLP', 'Transformers',
+    'LLMs', 'Attention mechanisms', 'Embeddings', 'Fine-tuning', 'Transfer learning',
+    'Generative AI', 'Neural networks', 'CNNs', 'Computer vision', 'Image analysis',
+    'Satellite analysis', 'Remote sensing', 'Supervised learning', 'Unsupervised learning',
+    'Reinforcement learning', 'Self-supervised learning', 'Classification', 'Regression',
+    'Clustering', 'Dimensionality reduction', 'Feature engineering', 'Anomaly detection',
+    'Sentiment analysis', 'Customer behaviour metrics', 'Model evaluation', 'Benchmarking',
+    'Cross-validation', 'Hyperparameter tuning', 'Explainability', 'Interpretability',
+    'Robustness', 'Reliability', 'Efficiency', 'Scalability', 'MLOps', 'Model deployment',
+    'Data engineering', 'Pipelines', 'Cloud & AWS', 'Compute', 'Storage', 'Design',
+    'Metrics', 'Evaluation', 'Analysis'
+  ];
+
+  var chips = Array.prototype.slice.call(cloud.querySelectorAll('.skill'));
+  chips.forEach(function (c) { c.style.transition = 'opacity .45s ease, transform .45s ease'; });
+
+  function shown() {
+    return chips.map(function (c) { return c.textContent.trim(); });
+  }
+
+  function rotateOne() {
+    var current = shown();
+    var available = pool.filter(function (w) { return current.indexOf(w) === -1; });
+    if (!available.length) return;
+    var chip = chips[Math.floor(Math.random() * chips.length)];
+    var word = available[Math.floor(Math.random() * available.length)];
+    chip.style.opacity = '0';
+    chip.style.transform = 'translateY(7px)';
+    setTimeout(function () {
+      chip.textContent = word;
+      chip.style.opacity = '';
+      chip.style.transform = '';
+    }, 450);
+  }
+
+  setInterval(rotateOne, 2100);
+})();
+</script>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

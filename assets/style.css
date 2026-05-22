@@ -290,6 +290,12 @@ em { font-style: italic; }
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
+/* Longer statement headings (e.g. the About mission) read better wider/smaller */
+.hero.hero-page h1.mission {
+  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+  max-width: 26ch;
+  line-height: 1.14;
+}
 
 /* ---------- Animated tagline (gradient shimmer) ---------- */
 .tagline {
