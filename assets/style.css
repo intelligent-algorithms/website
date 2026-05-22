@@ -545,6 +545,7 @@ em { font-style: italic; }
 .cat-env { --c: #4f46e5; --c-sh: rgba(79, 70, 229, 0.45); }
 .cat-opt { --c: #0f766e; --c-sh: rgba(15, 118, 110, 0.45); }
 .cat-eng { --c: #1e3a8a; --c-sh: rgba(30, 58, 138, 0.45); }
+.cat-edu { --c: #7c3aed; --c-sh: rgba(124, 58, 237, 0.45); }
 
 /* ---------- Capabilities / skill cloud ---------- */
 .capabilities { margin: 2rem 0 1rem; }
