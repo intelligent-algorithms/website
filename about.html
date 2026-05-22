@@ -34,7 +34,7 @@
   <section class="hero hero-page">
     <div class="hero-inner">
       <p class="tagline">Turning rigorous research into intelligent systems.</p>
-      <p class="eyebrow on-dark">About</p>
+      <p class="eyebrow on-dark">The practice</p>
       <h1>About us.</h1>
       <p class="lede on-dark">
         Intelligent Algorithms Ltd is a research and engineering consultancy. The practice is small by design:
@@ -66,41 +66,33 @@
     to stay current with production tooling as it has evolved. All AWS
     certifications valid to August 2028 unless noted.
   </p>
-  <ul>
-    <li>
-      <strong>AWS Certified Solutions Architect &ndash; Associate.</strong>
-      Cloud architecture, distributed systems, infrastructure design across
-      compute, storage, networking, and security services. Content domains:
-      secure architectures, resilient architectures, high-performing
-      architectures, cost-optimised architectures.
-    </li>
-    <li>
-      <strong>AWS Certified Cloud Practitioner.</strong>
-      Foundational cloud concepts, AWS service portfolio, pricing and
-      support models.
-    </li>
-    <li>
-      <strong>AWS Certified AI Practitioner.</strong>
-      AWS AI/ML services, foundation models, responsible AI practice.
-      Content domains: fundamentals of AI and ML, fundamentals of
-      generative AI, applications of foundation models, guidelines for
-      responsible AI, security and compliance for AI solutions.
-    </li>
-    <li>
-      <strong>AWS Certified Machine Learning &ndash; Specialty.</strong>
-      SageMaker, data engineering for ML, model training and tuning,
-      deployment and monitoring, MLOps. Content domains: data engineering
-      (repositories, ingestion, transformation), exploratory data analysis
-      (data preparation, feature engineering, visualisation), modeling
-      (problem framing, model selection, training, hyperparameter
-      optimisation, evaluation), and ML implementation and operations
-      (performance, scalability, security, deployment).
-    </li>
-    <li>
-      <strong>AWS Certified Machine Learning Engineer.</strong>
-      In progress, 2026.
-    </li>
-  </ul>
+  <div class="cred-grid">
+    <article class="cred-card cat-fin">
+      <p class="cred-cert">AWS Certified</p>
+      <h3>Solutions Architect &ndash; Associate</h3>
+      <p class="cred-skill" data-skills='["Cloud architecture","Distributed systems","Infrastructure design","Compute &amp; storage","Networking","Security","Resilient design","High performance","Cost optimisation"]'>Cloud architecture</p>
+    </article>
+    <article class="cred-card cat-nlp">
+      <p class="cred-cert">AWS Certified</p>
+      <h3>Cloud Practitioner</h3>
+      <p class="cred-skill" data-skills='["Cloud fundamentals","Service portfolio","Pricing models","Support models","Core concepts","Billing &amp; cost"]'>Cloud fundamentals</p>
+    </article>
+    <article class="cred-card cat-env">
+      <p class="cred-cert">AWS Certified</p>
+      <h3>AI Practitioner</h3>
+      <p class="cred-skill" data-skills='["AI &amp; ML fundamentals","Generative AI","Foundation models","Responsible AI","Security &amp; compliance","Model applications"]'>AI &amp; ML fundamentals</p>
+    </article>
+    <article class="cred-card cat-opt">
+      <p class="cred-cert">AWS Certified</p>
+      <h3>Machine Learning &ndash; Specialty</h3>
+      <p class="cred-skill" data-skills='["SageMaker","Data engineering","Feature engineering","Model training","Hyperparameter tuning","Model deployment","Monitoring","MLOps","Model evaluation"]'>SageMaker</p>
+    </article>
+    <article class="cred-card cat-eng">
+      <p class="cred-cert">AWS Certified &middot; in progress 2026</p>
+      <h3>Machine Learning Engineer</h3>
+      <p class="cred-skill" data-skills='["Production ML","ML pipelines","Model operations","Automation","Scalable systems"]'>Production ML</p>
+    </article>
+  </div>
 
   <h2>Approach</h2>
   <p>
@@ -135,6 +127,31 @@
   <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
   <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
 </footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll('.cred-skill'));
+  els.forEach(function (el, i) {
+    var skills;
+    try { skills = JSON.parse(el.getAttribute('data-skills') || '[]'); }
+    catch (e) { skills = []; }
+    if (skills.length < 2) return;
+    var idx = 0;
+    setInterval(function () {
+      idx = (idx + 1) % skills.length;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(6px)';
+      setTimeout(function () {
+        el.textContent = skills[idx];
+        el.style.opacity = '';
+        el.style.transform = '';
+      }, 400);
+    }, 2600 + i * 350);
+  });
+})();
+</script>
 
 </body>
 </html>
