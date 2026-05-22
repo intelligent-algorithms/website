@@ -523,6 +523,23 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   color: #fff;
 }
 
+/* ---------- Sector tile icons ---------- */
+.sector-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  margin-bottom: 0.85rem;
+  color: var(--c, var(--blue-600));
+  background: var(--sky-50);
+}
+@supports (background: color-mix(in srgb, red, blue)) {
+  .sector-icon-wrap { background: color-mix(in srgb, var(--c, #1d4ed8) 12%, #fff); }
+}
+.sector-icon { width: 23px; height: 23px; display: block; }
+
 /* ---------- Entry / case study cards ---------- */
 .entry {
   background: var(--paper-2);
