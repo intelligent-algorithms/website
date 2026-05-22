@@ -60,6 +60,32 @@
     academic partnerships with Oxford, UCL, and Cambridge.
   </p>
 
+  <h2>Capabilities</h2>
+  <p>
+    A snapshot of the methods and domains the practice works across &mdash;
+    the list rotates through the full toolkit.
+  </p>
+  <ul class="skill-cloud" id="skillCloud" aria-label="Areas of expertise">
+    <li class="skill sk-lg">Data science</li>
+    <li class="skill sk-lg">Machine learning</li>
+    <li class="skill sk-md">Deep learning</li>
+    <li class="skill sk-md">Statistics</li>
+    <li class="skill sk-sm">Probability</li>
+    <li class="skill sk-lg">Optimisation</li>
+    <li class="skill sk-md">Transformers</li>
+    <li class="skill sk-sm">LLMs</li>
+    <li class="skill sk-md">NLP</li>
+    <li class="skill sk-md">Time series analysis</li>
+    <li class="skill sk-sm">Supervised learning</li>
+    <li class="skill sk-sm">Unsupervised learning</li>
+    <li class="skill sk-md">Image analysis</li>
+    <li class="skill sk-md">Satellite analysis</li>
+    <li class="skill sk-sm">Algorithms</li>
+    <li class="skill sk-md">Anomaly detection</li>
+    <li class="skill sk-sm">Explainability</li>
+    <li class="skill sk-md">Customer behaviour metrics</li>
+  </ul>
+
   <h2>Current technical credentials</h2>
   <p>
     Cloud and ML engineering certifications maintained from 2022 onward
@@ -164,6 +190,56 @@
   <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
   <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
 </footer>
+
+<script>
+(function () {
+  var cloud = document.getElementById('skillCloud');
+  if (!cloud) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  var pool = [
+    'Data science', 'Machine learning', 'Deep learning', 'Statistics', 'Probability',
+    'Bayesian inference', 'Probabilistic modelling', 'Uncertainty quantification',
+    'Optimisation', 'Metaheuristics', 'Combinatorial optimisation', 'Algorithms',
+    'Data structures', 'Time series analysis', 'Forecasting', 'NLP', 'Transformers',
+    'LLMs', 'Attention mechanisms', 'Embeddings', 'Fine-tuning', 'Transfer learning',
+    'Generative AI', 'Neural networks', 'CNNs', 'Computer vision', 'Image analysis',
+    'Satellite analysis', 'Remote sensing', 'Supervised learning', 'Unsupervised learning',
+    'Reinforcement learning', 'Self-supervised learning', 'Classification', 'Regression',
+    'Clustering', 'Dimensionality reduction', 'Feature engineering', 'Anomaly detection',
+    'Sentiment analysis', 'Customer behaviour metrics', 'Model evaluation', 'Benchmarking',
+    'Cross-validation', 'Hyperparameter tuning', 'Explainability', 'Interpretability',
+    'Robustness', 'Reliability', 'Efficiency', 'Scalability', 'MLOps', 'Model deployment',
+    'Data engineering', 'Pipelines', 'Cloud & AWS', 'Compute', 'Storage', 'Design',
+    'Metrics', 'Evaluation', 'Analysis'
+  ];
+
+  var chips = Array.prototype.slice.call(cloud.querySelectorAll('.skill'));
+  chips.forEach(function (c) { c.style.transition = 'opacity .45s ease, transform .45s ease'; });
+
+  function shown() {
+    return chips.map(function (c) { return c.textContent.trim(); });
+  }
+
+  function rotateOne() {
+    var current = shown();
+    var available = pool.filter(function (w) { return current.indexOf(w) === -1; });
+    if (!available.length) return;
+    var chip = chips[Math.floor(Math.random() * chips.length)];
+    var word = available[Math.floor(Math.random() * available.length)];
+    chip.style.opacity = '0';
+    chip.style.transform = 'translateY(7px)';
+    setTimeout(function () {
+      chip.textContent = word;
+      chip.style.opacity = '';
+      chip.style.transform = '';
+    }, 450);
+  }
+
+  setInterval(rotateOne, 2100);
+})();
+</script>
 
 </body>
 </html>

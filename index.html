@@ -31,72 +31,40 @@
 </div>
 
 <main>
-  <section class="hero">
+  <section class="hero hero-home">
     <div class="hero-inner">
-      <p class="tagline">Turning rigorous research into intelligent systems.</p>
-      <p class="eyebrow on-dark">Applied optimisation &amp; machine learning</p>
-      <h1>Quantitative research and engineering for financial markets and beyond.</h1>
+      <p class="eyebrow on-dark">Intelligent Algorithms Ltd</p>
+      <h1 class="hero-slogan">Turning rigorous research into intelligent systems.</h1>
       <p class="lede on-dark">
-        Intelligent Algorithms Ltd is a research and engineering consultancy.
-        The practice combines peer-reviewed optimisation research with
-        production machine learning experience in fintech, environmental
-        monitoring, and applied analytics.
-      </p>
-      <p class="hero-sub">
-        Engagements have spanned financial client analytics for tier-one
-        investment-banking platforms, telecommunications, and environmental
-        &amp; defence research.
+        A research and engineering consultancy uniting peer-reviewed
+        optimisation research with production machine learning.
       </p>
     </div>
   </section>
 
   <div class="page page-wide">
-    <div class="home-grid">
-      <section class="anchors">
-        <div class="anchor cat-fin">
-          <h4>Work</h4>
-          <p>Selected case studies in client analytics, anomaly detection, forecasting, and optimisation.</p>
-          <a href="work.html">Read &rarr;</a>
-        </div>
-        <div class="anchor cat-nlp">
-          <h4>Research</h4>
-          <p>Peer-reviewed work in adaptive metaheuristics, tabu search, and applied combinatorial optimisation.</p>
-          <a href="research.html">Read &rarr;</a>
-        </div>
-        <div class="anchor cat-env">
-          <h4>Writing</h4>
-          <p>Thought-leading articles on machine learning, optimisation, and the value of data.</p>
-          <a href="writing.html">Read &rarr;</a>
-        </div>
-        <div class="anchor cat-opt">
-          <h4>About</h4>
-          <p>The practice, current technical credentials, and contact.</p>
-          <a href="about.html">Read &rarr;</a>
-        </div>
-      </section>
-
-      <aside class="capabilities">
-        <h2>Capabilities</h2>
-        <p class="cap-intro">
-          A snapshot of the methods and domains the practice works across
-          &mdash; the list rotates through the full toolkit.
-        </p>
-        <ul class="skill-cloud skill-column" id="skillCloud" aria-label="Areas of expertise">
-          <li class="skill">Data science</li>
-          <li class="skill">Machine learning</li>
-          <li class="skill">Deep learning</li>
-          <li class="skill">Statistics</li>
-          <li class="skill">Optimisation</li>
-          <li class="skill">Transformers</li>
-          <li class="skill">NLP</li>
-          <li class="skill">Time series analysis</li>
-          <li class="skill">Image analysis</li>
-          <li class="skill">Satellite analysis</li>
-          <li class="skill">Anomaly detection</li>
-          <li class="skill">Customer behaviour metrics</li>
-        </ul>
-      </aside>
-    </div>
+    <section class="anchors">
+      <div class="anchor cat-fin">
+        <h4>Work</h4>
+        <p>Selected case studies in client analytics, anomaly detection, forecasting, and optimisation.</p>
+        <a href="work.html">Read &rarr;</a>
+      </div>
+      <div class="anchor cat-nlp">
+        <h4>Research</h4>
+        <p>Peer-reviewed work in adaptive metaheuristics, tabu search, and applied combinatorial optimisation.</p>
+        <a href="research.html">Read &rarr;</a>
+      </div>
+      <div class="anchor cat-env">
+        <h4>Writing</h4>
+        <p>Thought-leading articles on machine learning, optimisation, and the value of data.</p>
+        <a href="writing.html">Read &rarr;</a>
+      </div>
+      <div class="anchor cat-opt">
+        <h4>About</h4>
+        <p>The practice, current technical credentials, and contact.</p>
+        <a href="about.html">Read &rarr;</a>
+      </div>
+    </section>
   </div>
 </main>
 
@@ -104,56 +72,6 @@
   <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
   <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
 </footer>
-
-<script>
-(function () {
-  var cloud = document.getElementById('skillCloud');
-  if (!cloud) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-
-  var pool = [
-    'Data science', 'Machine learning', 'Deep learning', 'Statistics', 'Probability',
-    'Bayesian inference', 'Probabilistic modelling', 'Uncertainty quantification',
-    'Optimisation', 'Metaheuristics', 'Combinatorial optimisation', 'Algorithms',
-    'Data structures', 'Time series analysis', 'Forecasting', 'NLP', 'Transformers',
-    'LLMs', 'Attention mechanisms', 'Embeddings', 'Fine-tuning', 'Transfer learning',
-    'Generative AI', 'Neural networks', 'CNNs', 'Computer vision', 'Image analysis',
-    'Satellite analysis', 'Remote sensing', 'Supervised learning', 'Unsupervised learning',
-    'Reinforcement learning', 'Self-supervised learning', 'Classification', 'Regression',
-    'Clustering', 'Dimensionality reduction', 'Feature engineering', 'Anomaly detection',
-    'Sentiment analysis', 'Customer behaviour metrics', 'Model evaluation', 'Benchmarking',
-    'Cross-validation', 'Hyperparameter tuning', 'Explainability', 'Interpretability',
-    'Robustness', 'Reliability', 'Efficiency', 'Scalability', 'MLOps', 'Model deployment',
-    'Data engineering', 'Pipelines', 'Cloud & AWS', 'Compute', 'Storage', 'Design',
-    'Metrics', 'Evaluation', 'Analysis'
-  ];
-
-  var chips = Array.prototype.slice.call(cloud.querySelectorAll('.skill'));
-  chips.forEach(function (c) { c.style.transition = 'opacity .45s ease, transform .45s ease'; });
-
-  function shown() {
-    return chips.map(function (c) { return c.textContent.trim(); });
-  }
-
-  function rotateOne() {
-    var current = shown();
-    var available = pool.filter(function (w) { return current.indexOf(w) === -1; });
-    if (!available.length) return;
-    var chip = chips[Math.floor(Math.random() * chips.length)];
-    var word = available[Math.floor(Math.random() * available.length)];
-    chip.style.opacity = '0';
-    chip.style.transform = 'translateY(7px)';
-    setTimeout(function () {
-      chip.textContent = word;
-      chip.style.opacity = '';
-      chip.style.transform = '';
-    }, 450);
-  }
-
-  setInterval(rotateOne, 2100);
-})();
-</script>
 
 </body>
 </html>

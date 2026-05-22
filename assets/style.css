@@ -302,11 +302,32 @@ em { font-style: italic; }
   to   { opacity: 1; transform: translateY(0); }
 }
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-  .tagline { -webkit-text-fill-color: #eaf3ff; color: #eaf3ff; }
+  .tagline, .hero-slogan { -webkit-text-fill-color: #eaf3ff; color: #eaf3ff; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tagline { animation: tagline-in 0.4s ease-out both; }
+  .tagline, .hero-slogan { animation: tagline-in 0.4s ease-out both; }
 }
+
+/* ---------- Home hero slogan (large, DeepMind-style) ---------- */
+.hero-home .hero-inner { padding: 5rem 1.5rem 4.5rem; }
+.hero-home .eyebrow { margin-bottom: 0.9rem; }
+.hero-slogan {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin: 0.2rem 0 1.4rem;
+  background: linear-gradient(100deg, #ffffff 0%, #9ec9f7 22%, #4cc4e0 50%, #9ec9f7 78%, #ffffff 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: tagline-in 0.8s ease-out both, tagline-shimmer 8s linear infinite;
+}
+.hero-home .lede.on-dark { font-size: 1.2rem; max-width: 48ch; }
 
 /* ---------- Credentials cards (rotating skills) ---------- */
 .cred-grid {
@@ -605,36 +626,6 @@ em { font-style: italic; }
   font-weight: 600;
   border-bottom: none;
   color: var(--c, var(--blue-600));
-}
-
-/* ---------- Home two-column layout ---------- */
-.home-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 2.75rem;
-  align-items: start;
-  margin: 2.5rem 0 1rem;
-}
-.home-grid .anchors {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0;
-}
-.home-grid .capabilities { margin: 0; }
-.home-grid .capabilities h2 { margin-top: 0; }
-.skill-cloud.skill-column {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.55rem;
-}
-.skill-cloud.skill-column .skill {
-  font-size: 0.92rem;
-  padding: 0.4rem 0.9rem;
-}
-@media (max-width: 760px) {
-  .home-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-@media (max-width: 520px) {
-  .home-grid .anchors { grid-template-columns: 1fr; }
 }
 
 /* ---------- Writing index ---------- */
