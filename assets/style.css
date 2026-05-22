@@ -302,10 +302,13 @@ em { font-style: italic; }
   to   { opacity: 1; transform: translateY(0); }
 }
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-  .tagline, .hero-slogan { -webkit-text-fill-color: #eaf3ff; color: #eaf3ff; }
+  .tagline, .hero-slogan .w { -webkit-text-fill-color: #eaf3ff; color: #eaf3ff; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tagline, .hero-slogan { animation: tagline-in 0.4s ease-out both; }
+  .tagline { animation: tagline-in 0.4s ease-out both; }
+  .hero-slogan .w { animation: none; opacity: 1; transform: none; }
+  .hero-aurora .blob { animation: none; }
+  .marquee-track { animation: none; }
 }
 
 /* ---------- Home hero slogan (large, DeepMind-style) ---------- */
@@ -315,19 +318,80 @@ em { font-style: italic; }
   font-family: var(--serif);
   font-weight: 600;
   font-size: clamp(2.4rem, 6vw, 4rem);
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   max-width: 18ch;
   margin: 0.2rem 0 1.4rem;
+}
+.hero-slogan .w {
+  display: inline-block;
   background: linear-gradient(100deg, #ffffff 0%, #9ec9f7 22%, #4cc4e0 50%, #9ec9f7 78%, #ffffff 100%);
   background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: tagline-in 0.8s ease-out both, tagline-shimmer 8s linear infinite;
+  opacity: 0;
+  transform: translateY(0.45em);
+  animation: word-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards, tagline-shimmer 8s linear infinite;
+}
+.hero-slogan .w:nth-child(1) { animation-delay: 0.05s, 0s; }
+.hero-slogan .w:nth-child(2) { animation-delay: 0.16s, 0s; }
+.hero-slogan .w:nth-child(3) { animation-delay: 0.27s, 0s; }
+.hero-slogan .w:nth-child(4) { animation-delay: 0.38s, 0s; }
+.hero-slogan .w:nth-child(5) { animation-delay: 0.49s, 0s; }
+.hero-slogan .w:nth-child(6) { animation-delay: 0.60s, 0s; }
+@keyframes word-in {
+  to { opacity: 1; transform: translateY(0); }
 }
 .hero-home .lede.on-dark { font-size: 1.2rem; max-width: 48ch; }
+
+/* ---------- Hero aurora (animated background) ---------- */
+.hero-aurora { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-aurora .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+.hero-aurora .blob1 { width: 46vw; height: 46vw; max-width: 560px; max-height: 560px; background: #2f7fe0; top: -14%; left: -6%; animation: drift1 19s ease-in-out infinite alternate; }
+.hero-aurora .blob2 { width: 42vw; height: 42vw; max-width: 520px; max-height: 520px; background: #38bdd8; bottom: -20%; right: -8%; animation: drift2 23s ease-in-out infinite alternate; }
+.hero-aurora .blob3 { width: 36vw; height: 36vw; max-width: 460px; max-height: 460px; background: #4f46e5; top: 16%; right: 24%; animation: drift3 27s ease-in-out infinite alternate; }
+@keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(14%, 10%) scale(1.18); } }
+@keyframes drift2 { from { transform: translate(0, 0) scale(1.05); } to { transform: translate(-12%, -8%) scale(1.22); } }
+@keyframes drift3 { from { transform: translate(0, 0) scale(1); } to { transform: translate(10%, -12%) scale(1.16); } }
+
+/* ---------- Capability marquee ---------- */
+.marquee {
+  overflow: hidden;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  color: var(--navy);
+  opacity: 0.55;
+}
+.marquee-track span::after {
+  content: "\2022";
+  color: var(--cyan);
+  margin: 0 1.6rem;
+  opacity: 0.7;
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Credentials cards (rotating skills) ---------- */
 .cred-grid {
