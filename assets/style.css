@@ -339,13 +339,39 @@ em { font-style: italic; }
 }
 
 /* ---------- Home hero slogan (large, DeepMind-style) ---------- */
+main:has(.hero-home) { display: flex; flex-direction: column; }
 .hero.hero-home {
-  min-height: 78vh;
+  flex: 1;
+  min-height: 86vh;
   display: flex;
   align-items: center;
 }
-.hero-home .hero-inner { width: 100%; padding: 4rem 1.5rem; }
+.hero-home .hero-inner { width: 100%; padding: 4rem 1.5rem 6.5rem; }
 .hero-home .eyebrow { margin-bottom: 0.9rem; }
+
+/* Capabilities ticker integrated at the foot of the hero */
+.hero-marquee {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: none;
+  padding: 1rem 0;
+}
+.hero-marquee .marquee-track span {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+  color: var(--sky-100);
+  opacity: 0.82;
+}
+.hero-marquee .marquee-track span::after {
+  color: var(--cyan-soft);
+  margin: 0 1.5rem;
+  opacity: 0.9;
+}
 .hero-slogan {
   font-family: var(--serif);
   font-weight: 600;
@@ -424,31 +450,6 @@ em { font-style: italic; }
   opacity: 0.7;
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
-
-/* ---------- Home capability band (patterned, larger marquee) ---------- */
-.cap-band {
-  position: relative;
-  padding: 3rem 0 3.25rem;
-  border-top: 1px solid var(--rule);
-  background-color: var(--paper);
-  background-image: radial-gradient(rgba(29, 78, 216, 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-.cap-band-head {
-  max-width: var(--max-wide);
-  margin: 0 auto 1.75rem;
-  padding: 0 1.5rem;
-}
-.cap-band-head .eyebrow { margin-bottom: 0.4rem; }
-.cap-band-head h2 { margin: 0; }
-.marquee-lg {
-  padding: 0.5rem 0;
-  border-bottom: none;
-}
-.marquee-lg .marquee-track span {
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-}
-.marquee-lg .marquee-track span::after { margin: 0 1.8rem; }
 
 /* ---------- Credentials cards (rotating skills) ---------- */
 .cred-grid {
