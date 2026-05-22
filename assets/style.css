@@ -389,7 +389,7 @@ em { font-style: italic; }
 }
 .hero-aurora .blob1 { width: 46vw; height: 46vw; max-width: 560px; max-height: 560px; background: #2f7fe0; top: -14%; left: -6%; animation: drift1 19s ease-in-out infinite alternate; }
 .hero-aurora .blob2 { width: 42vw; height: 42vw; max-width: 520px; max-height: 520px; background: #38bdd8; bottom: -20%; right: -8%; animation: drift2 23s ease-in-out infinite alternate; }
-.hero-aurora .blob3 { width: 36vw; height: 36vw; max-width: 460px; max-height: 460px; background: #4f46e5; top: 16%; right: 24%; animation: drift3 27s ease-in-out infinite alternate; }
+.hero-aurora .blob3 { width: 36vw; height: 36vw; max-width: 460px; max-height: 460px; background: #0d9488; top: 16%; right: 24%; animation: drift3 27s ease-in-out infinite alternate; }
 @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(14%, 10%) scale(1.18); } }
 @keyframes drift2 { from { transform: translate(0, 0) scale(1.05); } to { transform: translate(-12%, -8%) scale(1.22); } }
 @keyframes drift3 { from { transform: translate(0, 0) scale(1); } to { transform: translate(10%, -12%) scale(1.16); } }
@@ -582,12 +582,13 @@ em { font-style: italic; }
 }
 
 /* Category accents — a professional blue / teal / indigo family */
-.cat-fin { --c: #1d4ed8; --c-sh: rgba(29, 78, 216, 0.45); }
-.cat-nlp { --c: #0e9bb8; --c-sh: rgba(14, 155, 184, 0.45); }
-.cat-env { --c: #4f46e5; --c-sh: rgba(79, 70, 229, 0.45); }
-.cat-opt { --c: #0f766e; --c-sh: rgba(15, 118, 110, 0.45); }
-.cat-eng { --c: #1e3a8a; --c-sh: rgba(30, 58, 138, 0.45); }
-.cat-edu { --c: #7c3aed; --c-sh: rgba(124, 58, 237, 0.45); }
+/* Cohesive blue / cyan / teal family only */
+.cat-fin { --c: #1d4ed8; --c-sh: rgba(29, 78, 216, 0.45); }   /* royal blue */
+.cat-eng { --c: #14467f; --c-sh: rgba(20, 70, 127, 0.45); }   /* deep blue */
+.cat-opt { --c: #0284c7; --c-sh: rgba(2, 132, 199, 0.45); }   /* azure */
+.cat-nlp { --c: #0891b2; --c-sh: rgba(8, 145, 178, 0.45); }   /* cyan */
+.cat-env { --c: #0d9488; --c-sh: rgba(13, 148, 136, 0.45); }  /* teal */
+.cat-edu { --c: #0f766e; --c-sh: rgba(15, 118, 110, 0.45); }  /* deep teal */
 
 /* ---------- Capabilities / skill cloud ---------- */
 .capabilities { margin: 2rem 0 1rem; }
@@ -631,8 +632,8 @@ em { font-style: italic; }
 /* tri-colour rotation (blue / teal / indigo) to match the case-study palette */
 .skill:nth-child(3n+2) { color: #0e7d93; background: #e6f6fa; border-color: #bfe6ef; }
 .skill:nth-child(3n+2):hover { background: #0e9bb8; border-color: #0e9bb8; color: #fff; box-shadow: 0 8px 18px -8px rgba(14, 155, 184, 0.55); }
-.skill:nth-child(3n) { color: #4338ca; background: #ecebfd; border-color: #d5d1fa; }
-.skill:nth-child(3n):hover { background: #4f46e5; border-color: #4f46e5; color: #fff; box-shadow: 0 8px 18px -8px rgba(79, 70, 229, 0.55); }
+.skill:nth-child(3n) { color: #0f766e; background: #e6f5f1; border-color: #c2e8df; }
+.skill:nth-child(3n):hover { background: #0d9488; border-color: #0d9488; color: #fff; box-shadow: 0 8px 18px -8px rgba(13, 148, 136, 0.55); }
 
 /* ---------- Callout boxes ---------- */
 .callouts {
