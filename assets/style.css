@@ -779,6 +779,16 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   color: var(--ink-soft);
   margin-bottom: 0;
 }
+.writing-list .excerpt {
+  margin: 0.8rem 0;
+  padding: 0.3rem 0 0.3rem 1.1rem;
+  border-left: 3px solid var(--blue-500);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--navy);
+}
 
 /* ---------- Article (essay) styling ---------- */
 .article-head {
