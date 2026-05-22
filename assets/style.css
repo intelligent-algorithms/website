@@ -348,6 +348,51 @@ em { font-style: italic; }
 .cat-opt { --c: #0f766e; --c-sh: rgba(15, 118, 110, 0.45); }
 .cat-eng { --c: #1e3a8a; --c-sh: rgba(30, 58, 138, 0.45); }
 
+/* ---------- Capabilities / skill cloud ---------- */
+.capabilities { margin: 2rem 0 1rem; }
+.cap-intro {
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+  max-width: 60ch;
+}
+.skill-cloud {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.7rem;
+  align-items: center;
+}
+.skill {
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--blue-700);
+  background: var(--sky-50);
+  border: 1px solid var(--sky-200);
+  border-radius: 999px;
+  padding: 0.42rem 0.95rem;
+  line-height: 1.2;
+  cursor: default;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.skill:hover {
+  transform: translateY(-2px);
+  background: var(--blue-600);
+  color: #fff;
+  border-color: var(--blue-600);
+  box-shadow: 0 8px 18px -8px rgba(29, 78, 216, 0.55);
+}
+/* size variation gives the at-a-glance "cloud" feel */
+.skill.sk-lg { font-size: 1.18rem; padding: 0.5rem 1.2rem; }
+.skill.sk-md { font-size: 1rem; }
+.skill.sk-sm { font-size: 0.86rem; }
+/* tri-colour rotation (blue / teal / indigo) to match the case-study palette */
+.skill:nth-child(3n+2) { color: #0e7d93; background: #e6f6fa; border-color: #bfe6ef; }
+.skill:nth-child(3n+2):hover { background: #0e9bb8; border-color: #0e9bb8; color: #fff; box-shadow: 0 8px 18px -8px rgba(14, 155, 184, 0.55); }
+.skill:nth-child(3n) { color: #4338ca; background: #ecebfd; border-color: #d5d1fa; }
+.skill:nth-child(3n):hover { background: #4f46e5; border-color: #4f46e5; color: #fff; box-shadow: 0 8px 18px -8px rgba(79, 70, 229, 0.55); }
+
 /* ---------- Callout boxes ---------- */
 .callouts {
   display: grid;
