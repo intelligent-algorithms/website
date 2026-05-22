@@ -264,6 +264,17 @@ em { font-style: italic; }
   max-width: 60ch;
   margin: 0;
 }
+.hero a {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+.hero a:hover {
+  color: var(--cyan-soft);
+  border-bottom-color: var(--cyan-soft);
+}
+/* Inner-page hero sits a touch shorter than the home hero */
+.hero.hero-page .hero-inner { padding: 3.5rem 1.5rem 3rem; }
+.hero.hero-page h1 { font-size: 2.6rem; max-width: 24ch; }
 
 /* ---------- Entry / case study cards ---------- */
 .entry {
