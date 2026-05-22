@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=11">
+  <link rel="stylesheet" href="assets/style.css?v=12">
   <link rel="icon" href="assets/logo.svg">
 </head>
 <body>
@@ -42,21 +42,76 @@
         bringing a deep technical toolkit to each.
       </p>
     </div>
+    <div class="marquee hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Fixed income (FICC)</span><span>Commodities</span><span>Equities</span><span>Telecommunications</span><span>Defence &amp; aerospace</span><span>Environmental</span><span>Optimisation</span><span>NLP &amp; sentiment</span><span>Satellite analysis</span><span>Customer analytics</span><span>Fixed income (FICC)</span><span>Commodities</span><span>Equities</span><span>Telecommunications</span><span>Defence &amp; aerospace</span><span>Environmental</span><span>Optimisation</span><span>NLP &amp; sentiment</span><span>Satellite analysis</span><span>Customer analytics</span>
+      </div>
+    </div>
   </section>
 
   <div class="page">
   <h2>Sectors</h2>
   <p>
     We bring research-grade methods to industries where accuracy,
-    explainability, and reliability matter most.
+    explainability, and reliability matter most &mdash; and the same
+    behavioural and predictive analytics translate to any data-rich sector.
   </p>
-  <ul class="skill-cloud">
-    <li class="skill sk-lg">Capital markets</li>
-    <li class="skill sk-md">Telecommunications</li>
-    <li class="skill sk-md">Defence &amp; aerospace</li>
-    <li class="skill sk-md">Environmental &amp; climate</li>
-    <li class="skill sk-sm">Public-sector research</li>
-  </ul>
+  <div class="cred-grid">
+    <article class="cred-card cat-fin">
+      <p class="cred-cert">Sector</p>
+      <h3>Capital markets</h3>
+      <ul class="cred-skills">
+        <li class="cred-chip">Fixed income (FICC)</li>
+        <li class="cred-chip">Commodities</li>
+        <li class="cred-chip">Equities</li>
+      </ul>
+    </article>
+    <article class="cred-card cat-opt">
+      <p class="cred-cert">Sector</p>
+      <h3>Telecommunications</h3>
+      <ul class="cred-skills">
+        <li class="cred-chip">Networks</li>
+        <li class="cred-chip">Optimal frequency assignment</li>
+      </ul>
+    </article>
+    <article class="cred-card cat-eng">
+      <p class="cred-cert">Sector</p>
+      <h3>Defence &amp; aerospace</h3>
+      <ul class="cred-skills">
+        <li class="cred-chip">Movement optimisation</li>
+        <li class="cred-chip">Avionics &amp; head-up displays</li>
+        <li class="cred-chip">Mission-critical systems</li>
+      </ul>
+    </article>
+    <article class="cred-card cat-env">
+      <p class="cred-cert">Sector</p>
+      <h3>Environmental &amp; climate</h3>
+      <ul class="cred-skills">
+        <li class="cred-chip">Satellite analysis</li>
+        <li class="cred-chip">Earth observation</li>
+        <li class="cred-chip">Remote sensing</li>
+      </ul>
+    </article>
+    <article class="cred-card cat-nlp">
+      <p class="cred-cert">Cross-sector</p>
+      <h3>Customer &amp; behavioural analytics</h3>
+      <ul class="cred-skills">
+        <li class="cred-chip">Customer lifetime value</li>
+        <li class="cred-chip">Behavioural metrics</li>
+        <li class="cred-chip">Healthcare &amp; beyond</li>
+        <li class="cred-chip">Predictive analytics</li>
+      </ul>
+    </article>
+    <article class="cred-card cat-edu">
+      <p class="cred-cert">Sector</p>
+      <h3>Research &amp; education</h3>
+      <ul class="cred-skills">
+        <li class="cred-chip">Industry&ndash;academia partnerships</li>
+        <li class="cred-chip">Mentoring</li>
+        <li class="cred-chip">Thought leadership</li>
+      </ul>
+    </article>
+  </div>
 
   <h2>Capabilities</h2>
   <p>
@@ -112,7 +167,8 @@
     'Cross-validation', 'Hyperparameter tuning', 'Explainability', 'Interpretability',
     'Robustness', 'Reliability', 'Efficiency', 'Scalability', 'MLOps', 'Model deployment',
     'Data engineering', 'Pipelines', 'Cloud & AWS', 'Compute', 'Storage', 'Design',
-    'Metrics', 'Evaluation', 'Analysis'
+    'Metrics', 'Evaluation', 'Analysis', 'Frequency assignment', 'Predictive analytics',
+    'Customer lifetime value', 'Earth observation'
   ];
 
   var chips = Array.prototype.slice.call(cloud.querySelectorAll('.skill'));
