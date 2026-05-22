@@ -37,11 +37,10 @@
       <p class="eyebrow on-dark">Research</p>
       <h1>Doctoral and post-doctoral research.</h1>
       <p class="lede on-dark">
-        Three peer-reviewed papers in adaptive metaheuristics and applied
-        combinatorial optimisation, joint with N. M. Stephens and S. Hurley. The papers
-        apply tabu search and tabu thresholding to the radio link
-        frequency assignment problem, an NP-hard combinatorial problem
-        arising in military and civil communications.
+        Three peer-reviewed papers applying tabu search and tabu thresholding
+        to the radio frequency assignment problem &mdash; an NP-hard problem in
+        military and civil communications. Joint with N. M. Stephens and
+        S. Hurley.
       </p>
     </div>
   </section>
@@ -49,20 +48,11 @@
   <div class="page">
 
   <p>
-    Glover originated tabu search, the adaptive memory concepts of
-    recency and frequency, threshold control, and strategic
-    oscillation. The contribution of these papers is in applying
-    those concepts to the frequency assignment problem, developing
-    parameter regimes that work on realistic instances, and (in the
-    second paper) extending tabu thresholding with surrogate
-    constraint handling. The work was carried out 1994 and
-    published in <em>Annals of Operations Research</em> and in the
-    Springer <em>Meta-Heuristics</em> volume.
-  </p>
-
-  <p>
-    The papers are now behind journal paywalls. The summaries below
-    describe what each paper did. Full citations are on the
+    Building on Glover&rsquo;s tabu search framework, the work developed
+    parameter regimes that perform on realistic instances and extended tabu
+    thresholding with surrogate constraint handling. Carried out from 1994;
+    published in <em>Annals of Operations Research</em> and Springer&rsquo;s
+    <em>Meta-Heuristics</em> volume. Full citations are on the
     <a href="publications.html">publications page</a>.
   </p>
 
@@ -70,54 +60,38 @@
     <h3>A tabu search algorithm for frequency assignment</h3>
     <p class="meta">Castelino, Hurley &amp; Stephens. <em>Annals of Operations Research</em>, 63(2):301&ndash;319, 1996.</p>
     <p>
-      Application of tabu search to the radio link frequency assignment
-      problem, using Glover&rsquo;s framework of adaptive recency- and
-      frequency-based memory. Test problems were six computer-generated
-      realistic instances of up to 726 links and 75,306 constraints,
-      derived from Combat Net Radio assignment scenarios provided by a
-      national defence research agency and a military communications
-      agency.
+      Applied tabu search with Glover&rsquo;s recency- and frequency-based
+      memory to six realistic instances (up to 726 links and 75,306
+      constraints) derived from Combat Net Radio scenarios.
     </p>
-    <p class="field"><strong>Approach.</strong> Tabu moves were determined by recency and frequency thresholds (r and s parameters), with aspiration criteria permitting tabu moves that improved on the best solution found. The objective function counted constraint violations; two-dimensional indexing tables reduced full evaluation from O(CNF) to O(CF).</p>
-    <p class="field"><strong>Results.</strong> Comparison against a parallel genetic algorithm and a local steepest descent heuristic, each given the same wall-clock budget per test problem. Tabu search produced lower best interference and lower standard deviations across all six test sizes, with the largest margins on the larger problems. Robust to small variation in the recency and frequency parameters.</p>
+    <p class="field"><strong>Result.</strong> Lower interference and variance than a parallel genetic algorithm and a steepest-descent heuristic across all six problem sizes, with the largest gains on the largest instances.</p>
   </article>
 
   <article class="entry">
     <h3>A surrogate constraint tabu thresholding implementation for the Frequency Assignment Problem</h3>
     <p class="meta">Castelino &amp; Stephens. <em>Annals of Operations Research</em>, 86:259&ndash;270, 1999.</p>
     <p>
-      Extended the earlier tabu search work by replacing recency- and
-      frequency-based memory with tabu thresholding (Glover, 1995),
-      which uses thresholds on the objective function to control the
-      acceptance of moves rather than explicit memory structures, and
-      integrated surrogate constraint handling for problems with hard
-      and soft constraints. Tested on the same set of computer-generated
-      frequency assignment instances.
+      Replaced explicit recency/frequency memory with tabu thresholding and
+      added surrogate constraint handling for problems with hard and soft
+      constraints.
     </p>
-    <p class="field"><strong>Contribution.</strong> Surrogate constraints aggregated multiple hard constraints into composite constraints that the search could trade off against the soft objective. The threshold control mechanism replaced the recency and frequency parameter tuning required in the earlier work, making the method easier to apply across different problem instances without re-tuning.</p>
-    <p class="field"><strong>Results.</strong> Tabu thresholding with surrogate constraints matched or improved on the tabu search results from the 1996 paper while removing the parameter-tuning burden, on the same six test problems.</p>
+    <p class="field"><strong>Result.</strong> Matched or improved on the 1996 results while removing the parameter-tuning burden.</p>
   </article>
 
   <article class="entry">
     <h3>Tabu thresholding for the Frequency Assignment Problem</h3>
     <p class="meta">Castelino &amp; Stephens. In I. H. Osman &amp; J. P. Kelly (Eds.), <em>Meta-Heuristics: Theory and Applications.</em> Boston, MA: Springer, 2001.</p>
     <p>
-      Book-chapter consolidation of the tabu thresholding work, placing
-      the method in the broader context of metaheuristics for
-      combinatorial optimisation. Discusses the relationship between
-      tabu thresholding and other adaptive memory techniques, including
-      Glover&rsquo;s strategic oscillation framework, and describes the
-      practical engineering of the implementation.
+      Book-chapter consolidation placing tabu thresholding in the wider
+      metaheuristics context, and arguing that threshold-based memory has
+      practical advantages where parameter tuning is itself costly.
     </p>
-    <p class="field"><strong>Position.</strong> The chapter argues that for problems where parameter tuning is itself expensive (large instances, limited evaluation budgets), threshold-based memory has practical advantages over recency- and frequency-based memory, while preserving the search behaviour that makes tabu methods effective.</p>
   </article>
 
   <p style="margin-top: 2.5rem; color: var(--ink-soft); font-style: italic;">
-    Acknowledgement: this body of work would not have been possible
-    without the framework developed by Fred Glover. Where the papers
-    introduce new ideas, those ideas are extensions and applications of
-    his concepts to a specific problem domain, in dialogue with him
-    during the research.
+    With acknowledgement to Fred Glover, whose tabu search framework underpins
+    this work; the papers extend and apply his concepts, developed in dialogue
+    with him.
   </p>
   </div>
 </main>
