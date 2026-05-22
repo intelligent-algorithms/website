@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a2540'/%3E%3Ctext y='.92em' x='8' font-size='80' font-family='Georgia,serif' fill='%23c08b3a'%3EIA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231d4ed8'/%3E%3Ctext y='.93em' x='11' font-size='70' font-family='Helvetica,Arial,sans-serif' font-weight='700' fill='%23ffffff'%3EIA%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <div class="site-head-wrap">
@@ -67,9 +67,9 @@
       problem, using Glover&rsquo;s framework of adaptive recency- and
       frequency-based memory. Test problems were six computer-generated
       realistic instances of up to 726 links and 75,306 constraints,
-      derived from Combat Net Radio assignment scenarios provided by the
-      Defence Research Agency at Malvern and the Army EMC Agency at
-      Blandford.
+      derived from Combat Net Radio assignment scenarios provided by a
+      national defence research agency and a military communications
+      agency.
     </p>
     <p class="field"><strong>Approach.</strong> Tabu moves were determined by recency and frequency thresholds (r and s parameters), with aspiration criteria permitting tabu moves that improved on the best solution found. The objective function counted constraint violations; two-dimensional indexing tables reduced full evaluation from O(CNF) to O(CF).</p>
     <p class="field"><strong>Results.</strong> Comparison against a parallel genetic algorithm and a local steepest descent heuristic, each given the same wall-clock budget per test problem. Tabu search produced lower best interference and lower standard deviations across all six test sizes, with the largest margins on the larger problems. Robust to small variation in the recency and frequency parameters.</p>
