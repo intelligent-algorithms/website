@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=13">
+  <link rel="stylesheet" href="assets/style.css?v=14">
   <link rel="icon" href="assets/logo.svg">
 </head>
 <body>
@@ -44,6 +44,11 @@
         S. Hurley.
       </p>
     </div>
+    <div class="marquee hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Adaptive memory</span><span>Tabu search</span><span>Tabu thresholding</span><span>Surrogate constraints</span><span>Constraint handling</span><span>NP-hard</span><span>Frequency assignment</span><span>Metaheuristics</span><span>Strategic oscillation</span><span>State-of-the-art optimisation</span><span>Adaptive memory</span><span>Tabu search</span><span>Tabu thresholding</span><span>Surrogate constraints</span><span>Constraint handling</span><span>NP-hard</span><span>Frequency assignment</span><span>Metaheuristics</span><span>Strategic oscillation</span><span>State-of-the-art optimisation</span>
+      </div>
+    </div>
   </section>
 
   <div class="page">
@@ -57,43 +62,47 @@
     <a href="publications.html">publications page</a>.
   </p>
 
-  <article class="entry">
+  <section class="case-grid">
+
+  <article class="entry cat-fin">
+    <span class="case-tag">1996</span>
     <h3>A tabu search algorithm for frequency assignment</h3>
-    <p class="meta">Castelino, Hurley &amp; Stephens. <em>Annals of Operations Research</em>, 63(2):301&ndash;319, 1996.</p>
-    <p>
-      Applied tabu search with Glover&rsquo;s recency- and frequency-based
-      memory to six realistic instances (up to 726 links and 75,306
-      constraints) derived from Combat Net Radio scenarios.
-    </p>
-    <p class="field"><strong>Result.</strong> Lower interference and variance than a parallel genetic algorithm and a steepest-descent heuristic across all six problem sizes, with the largest gains on the largest instances.</p>
+    <p class="meta">Castelino, Hurley &amp; Stephens. <em>Annals of Operations Research</em>, 63(2):301&ndash;319.</p>
+    <p>Tabu search with adaptive recency- and frequency-based memory, applied to six realistic instances (up to 726 links, 75,306 constraints).</p>
+    <ul class="cred-skills">
+      <li class="cred-chip">Tabu search</li>
+      <li class="cred-chip">Adaptive memory</li>
+      <li class="cred-chip">NP-hard</li>
+      <li class="cred-chip">Beat GA &amp; local search</li>
+    </ul>
   </article>
 
-  <article class="entry">
+  <article class="entry cat-opt">
+    <span class="case-tag">1999</span>
     <h3>A surrogate constraint tabu thresholding implementation for the Frequency Assignment Problem</h3>
-    <p class="meta">Castelino &amp; Stephens. <em>Annals of Operations Research</em>, 86:259&ndash;270, 1999.</p>
-    <p>
-      Replaced explicit recency/frequency memory with tabu thresholding and
-      added surrogate constraint handling for problems with hard and soft
-      constraints.
-    </p>
-    <p class="field"><strong>Result.</strong> Matched or improved on the 1996 results while removing the parameter-tuning burden.</p>
+    <p class="meta">Castelino &amp; Stephens. <em>Annals of Operations Research</em>, 86:259&ndash;270.</p>
+    <p>Replaced explicit memory with tabu thresholding and added surrogate constraint handling for problems with hard and soft constraints.</p>
+    <ul class="cred-skills">
+      <li class="cred-chip">Tabu thresholding</li>
+      <li class="cred-chip">Surrogate constraints</li>
+      <li class="cred-chip">Constraint handling</li>
+      <li class="cred-chip">No re-tuning</li>
+    </ul>
   </article>
 
-  <article class="entry">
+  <article class="entry cat-env">
+    <span class="case-tag">2001</span>
     <h3>Tabu thresholding for the Frequency Assignment Problem</h3>
-    <p class="meta">Castelino &amp; Stephens. In I. H. Osman &amp; J. P. Kelly (Eds.), <em>Meta-Heuristics: Theory and Applications.</em> Boston, MA: Springer, 2001.</p>
-    <p>
-      Book-chapter consolidation placing tabu thresholding in the wider
-      metaheuristics context, and arguing that threshold-based memory has
-      practical advantages where parameter tuning is itself costly.
-    </p>
+    <p class="meta">Castelino &amp; Stephens. In Osman &amp; Kelly (Eds.), <em>Meta-Heuristics: Theory and Applications.</em> Springer.</p>
+    <p>Book-chapter consolidation positioning tabu thresholding within metaheuristics &mdash; threshold-based memory wins where parameter tuning is itself costly.</p>
+    <ul class="cred-skills">
+      <li class="cred-chip">Metaheuristics</li>
+      <li class="cred-chip">Threshold memory</li>
+      <li class="cred-chip">Strategic oscillation</li>
+    </ul>
   </article>
 
-  <p style="margin-top: 2.5rem; color: var(--ink-soft); font-style: italic;">
-    With acknowledgement to Fred Glover, whose tabu search framework underpins
-    this work; the papers extend and apply his concepts, developed in dialogue
-    with him.
-  </p>
+  </section>
   </div>
 </main>
 
