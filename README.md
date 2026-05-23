@@ -11,6 +11,10 @@ optimisation research with production machine learning.</p>
 
 <p><a href="https://intelligent-algorithms.co.uk/"><strong>intelligent-algorithms.co.uk&nbsp;&rarr;</strong></a></p>
 
+<br>
+
+<a href="https://intelligent-algorithms.co.uk/"><img src="assets/preview.png" alt="Intelligent Algorithms Ltd website homepage" width="760"></a>
+
 </div>
 
 ---
