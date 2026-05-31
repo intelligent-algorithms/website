@@ -342,11 +342,11 @@ em { font-style: italic; }
 main:has(.hero-home) { display: flex; flex-direction: column; }
 .hero.hero-home {
   flex: 1;
-  min-height: 86vh;
+  min-height: 80vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
-.hero-home .hero-inner { width: 100%; padding: 4rem 1.5rem 6.5rem; }
+.hero-home .hero-inner { width: 100%; padding: 2.5rem 1.5rem 4rem; }
 .hero-home .eyebrow { margin-bottom: 0.9rem; }
 
 /* Capabilities ticker integrated at the foot of the hero */
@@ -1225,6 +1225,17 @@ button:focus-visible,
   margin: 0 0 0.75rem;
   pointer-events: none;
 }
+/* Particle spray (JS). Sits over the fallback beams; the logo stays on top. */
+.hero-fountain .fountain-canvas {
+  position: absolute;
+  inset: -40px 0 0 0;        /* a little headroom so the spray peak isn't clipped */
+  width: 100%;
+  height: calc(100% + 40px);
+  z-index: 1;
+  pointer-events: none;
+}
+/* When the JS spray is active, hide the static fallback beams. */
+.hero-fountain.js-spray .fbeam { display: none; }
 /* origin point — the centre of the logo — that all beams spring from */
 .hero-fountain .fbeam {
   position: absolute;
