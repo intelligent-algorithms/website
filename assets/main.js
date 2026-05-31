@@ -81,7 +81,8 @@
   var colours = ['#5aa2f5', '#4cd4ec', '#2fe0c4'];
   var particles = [];
   var W = 0, H = 0, ox = 53, oy = 0;
-  var GRAV = 0.07;
+  var GRAV = 0.02;   // gentle gravity → long, wide arcs
+  var MAX = 200;     // cap concurrent beams
 
   function resize() {
     var r = canvas.getBoundingClientRect();
@@ -95,15 +96,15 @@
   window.addEventListener('resize', resize);
 
   function emit() {
-    var ang = (-90 + (Math.random() * 64 - 32)) * Math.PI / 180; // upward, spread +/-32deg
-    var sp = 3.4 + Math.random() * 2.8;
+    var ang = (-86 + (Math.random() * 120 - 60)) * Math.PI / 180; // upward, wide spread +/-60deg
+    var sp = 1.5 + Math.random() * 1.5;                            // slow
     particles.push({
       x: ox, y: oy,
       vx: Math.cos(ang) * sp,
       vy: Math.sin(ang) * sp,
-      life: 0, max: 95 + Math.random() * 55,
+      life: 0,
       c: colours[(Math.random() * 3) | 0],
-      len: 5 + Math.random() * 7
+      len: 34 + sp * 12 + Math.random() * 26                       // long thin beams
     });
   }
 
@@ -112,14 +113,16 @@
     if (!running) return;
     ctx.clearRect(0, 0, W, H);
     var i;
-    for (i = 0; i < 2; i++) emit();
+    for (i = 0; i < 2; i++) { if (particles.length < MAX) emit(); }
     for (i = particles.length - 1; i >= 0; i--) {
       var p = particles[i];
       p.vy += GRAV;
       p.x += p.vx; p.y += p.vy;
       p.life++;
-      if (p.life >= p.max || p.y > H + 16) { particles.splice(i, 1); continue; }
-      var a = (1 - p.life / p.max) * 0.85;
+      if (p.y > H + 24 || p.x < -48 || p.x > W + 48) { particles.splice(i, 1); continue; }
+      var a = 0.82;
+      if (p.life < 12) a *= p.life / 12;                                   // fade in
+      if (p.y > oy) a *= Math.max(0, 1 - (p.y - oy) / (H - oy + 24));       // fade as it spills below the logo
       var spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy) || 1;
       ctx.globalAlpha = a;
       ctx.strokeStyle = p.c;
