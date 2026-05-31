@@ -1215,29 +1215,20 @@ button:focus-visible,
 }
 
 /* ---------- Hero logo fountain (home) ---------- */
-/* A prominent brand mark with thin three-colour beams springing upward. */
-.hero-home .hero-inner { text-align: center; }
-.hero-home .hero-slogan.rotator {
-  justify-items: center;
-  max-width: 22ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-.hero-home .lede.on-dark { margin-left: auto; margin-right: auto; }
-.hero-home .cta-row { display: flex; justify-content: center; }
-
+/* A prominent, left-aligned brand mark with thin three-colour beams
+   sprouting upward and shooting out like a fountain. */
 .hero-fountain {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 220px;
-  margin: 0 auto 0.5rem;
+  height: 300px;
+  margin: 0 0 0.75rem;
   pointer-events: none;
 }
 /* origin point — the centre of the logo — that all beams spring from */
 .hero-fountain .fbeam {
   position: absolute;
-  left: 50%;
+  left: 53px;
   bottom: 52px;
   width: 3px;
   margin-left: -1.5px;
@@ -1246,36 +1237,35 @@ button:focus-visible,
   transform: rotate(var(--a, 0deg));
   background: linear-gradient(to top,
     rgba(255, 255, 255, 0.95) 0%,
-    var(--bc, #4cd4ec) 16%,
-    var(--bc, #4cd4ec) 34%,
+    var(--bc, #4cd4ec) 14%,
+    var(--bc, #4cd4ec) 38%,
     transparent 100%);
   filter: drop-shadow(0 0 5px var(--bc, #4cd4ec));
   mix-blend-mode: screen;
   opacity: 0.85;
-  animation: fbeam-shoot 3.4s ease-in-out infinite;
+  animation: fbeam-shoot 1.7s ease-in-out infinite;
 }
 /* angle + colour + length per beam — tapered for a fountain silhouette.
    Three colours rotate: blue, cyan, teal. */
-.hero-fountain .fbeam:nth-child(1) { --a: -62deg; --bc: #5aa2f5; height: 118px; animation-delay: -0.2s; }
-.hero-fountain .fbeam:nth-child(2) { --a: -46deg; --bc: #4cd4ec; height: 142px; animation-delay: -0.9s; }
-.hero-fountain .fbeam:nth-child(3) { --a: -31deg; --bc: #2fe0c4; height: 162px; animation-delay: -1.5s; }
-.hero-fountain .fbeam:nth-child(4) { --a: -16deg; --bc: #5aa2f5; height: 180px; animation-delay: -0.5s; }
-.hero-fountain .fbeam:nth-child(5) { --a:   0deg; --bc: #4cd4ec; height: 192px; animation-delay: -1.2s; }
-.hero-fountain .fbeam:nth-child(6) { --a:  16deg; --bc: #2fe0c4; height: 180px; animation-delay: -1.8s; }
-.hero-fountain .fbeam:nth-child(7) { --a:  31deg; --bc: #5aa2f5; height: 162px; animation-delay: -0.3s; }
-.hero-fountain .fbeam:nth-child(8) { --a:  46deg; --bc: #4cd4ec; height: 142px; animation-delay: -1.0s; }
-.hero-fountain .fbeam:nth-child(9) { --a:  62deg; --bc: #2fe0c4; height: 118px; animation-delay: -1.6s; }
+.hero-fountain .fbeam:nth-child(1) { --a: -62deg; --bc: #5aa2f5; height: 185px; animation-delay: -0.10s; }
+.hero-fountain .fbeam:nth-child(2) { --a: -46deg; --bc: #4cd4ec; height: 222px; animation-delay: -0.55s; }
+.hero-fountain .fbeam:nth-child(3) { --a: -31deg; --bc: #2fe0c4; height: 255px; animation-delay: -0.95s; }
+.hero-fountain .fbeam:nth-child(4) { --a: -16deg; --bc: #5aa2f5; height: 280px; animation-delay: -0.30s; }
+.hero-fountain .fbeam:nth-child(5) { --a:   0deg; --bc: #4cd4ec; height: 298px; animation-delay: -0.75s; }
+.hero-fountain .fbeam:nth-child(6) { --a:  16deg; --bc: #2fe0c4; height: 280px; animation-delay: -1.15s; }
+.hero-fountain .fbeam:nth-child(7) { --a:  31deg; --bc: #5aa2f5; height: 255px; animation-delay: -0.20s; }
+.hero-fountain .fbeam:nth-child(8) { --a:  46deg; --bc: #4cd4ec; height: 222px; animation-delay: -0.65s; }
+.hero-fountain .fbeam:nth-child(9) { --a:  62deg; --bc: #2fe0c4; height: 185px; animation-delay: -1.05s; }
 @keyframes fbeam-shoot {
-  0%, 100% { transform: rotate(var(--a, 0deg)) scaleY(0.6); opacity: 0.4; }
-  50%      { transform: rotate(var(--a, 0deg)) scaleY(1);   opacity: 0.95; }
+  0%, 100% { transform: rotate(var(--a, 0deg)) scaleY(0.4);  opacity: 0.28; }
+  45%      { transform: rotate(var(--a, 0deg)) scaleY(1.05); opacity: 0.98; }
 }
 .hero-fountain .fountain-logo {
   position: absolute;
-  left: 50%;
+  left: 0;
   bottom: 0;
   width: 106px;
   height: 106px;
-  margin-left: -53px;
   z-index: 2;
   filter: drop-shadow(0 0 24px rgba(76, 212, 236, 0.6)) drop-shadow(0 3px 8px rgba(4, 18, 40, 0.45));
   animation: logo-float 6s ease-in-out infinite;
@@ -1285,20 +1275,20 @@ button:focus-visible,
   50%      { transform: translateY(-6px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-fountain .fbeam { animation: none; transform: rotate(var(--a, 0deg)) scaleY(0.9); opacity: 0.8; }
+  .hero-fountain .fbeam { animation: none; transform: rotate(var(--a, 0deg)) scaleY(0.92); opacity: 0.8; }
   .hero-fountain .fountain-logo { animation: none; }
 }
 @media (max-width: 600px) {
-  .hero-fountain { height: 180px; }
-  .hero-fountain .fbeam { bottom: 44px; }
-  .hero-fountain .fbeam:nth-child(1) { height: 88px; }
-  .hero-fountain .fbeam:nth-child(2) { height: 106px; }
-  .hero-fountain .fbeam:nth-child(3) { height: 122px; }
-  .hero-fountain .fbeam:nth-child(4) { height: 134px; }
-  .hero-fountain .fbeam:nth-child(5) { height: 144px; }
-  .hero-fountain .fbeam:nth-child(6) { height: 134px; }
-  .hero-fountain .fbeam:nth-child(7) { height: 122px; }
-  .hero-fountain .fbeam:nth-child(8) { height: 106px; }
-  .hero-fountain .fbeam:nth-child(9) { height: 88px; }
-  .hero-fountain .fountain-logo { width: 86px; height: 86px; margin-left: -43px; }
+  .hero-fountain { height: 220px; }
+  .hero-fountain .fbeam { left: 43px; bottom: 44px; }
+  .hero-fountain .fbeam:nth-child(1) { height: 130px; }
+  .hero-fountain .fbeam:nth-child(2) { height: 156px; }
+  .hero-fountain .fbeam:nth-child(3) { height: 178px; }
+  .hero-fountain .fbeam:nth-child(4) { height: 196px; }
+  .hero-fountain .fbeam:nth-child(5) { height: 208px; }
+  .hero-fountain .fbeam:nth-child(6) { height: 196px; }
+  .hero-fountain .fbeam:nth-child(7) { height: 178px; }
+  .hero-fountain .fbeam:nth-child(8) { height: 156px; }
+  .hero-fountain .fbeam:nth-child(9) { height: 130px; }
+  .hero-fountain .fountain-logo { width: 86px; height: 86px; }
 }
