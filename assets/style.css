@@ -346,8 +346,31 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   display: flex;
   align-items: flex-start;
 }
-.hero-home .hero-inner { width: 100%; padding: 2.5rem 1.5rem 4rem; }
+.hero-home .hero-inner { width: 100%; padding: 2.5rem 1.5rem 4rem; position: relative; z-index: 1; }
 .hero-home .eyebrow { margin-bottom: 0.9rem; }
+
+/* Static curved-light network spread across the hero (drawn by main.js) */
+.hero-home .hero-net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Prominent, static brand logo at the top-left of the hero */
+.hero-home .hero-logo {
+  display: block;
+  width: 92px;
+  height: 92px;
+  margin: 0 0 1.15rem;
+  filter: drop-shadow(0 0 20px rgba(76, 212, 236, 0.55)) drop-shadow(0 3px 8px rgba(4, 18, 40, 0.45));
+}
+/* Keep the home hero still: freeze the aurora drift */
+.hero-home .hero-aurora .blob { animation: none; }
+@media (max-width: 600px) {
+  .hero-home .hero-logo { width: 76px; height: 76px; }
+}
 
 /* Capabilities ticker integrated at the foot of the hero */
 .hero-marquee {
@@ -381,10 +404,10 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
 .hero-slogan {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(2.9rem, 7.5vw, 5.2rem);
-  line-height: 1.06;
+  font-size: clamp(3.4rem, 8.4vw, 6.4rem);
+  line-height: 1.04;
   letter-spacing: -0.025em;
-  max-width: 17ch;
+  max-width: 18ch;
   margin: 0.2rem 0 1.5rem;
 }
 .hero-slogan .w {

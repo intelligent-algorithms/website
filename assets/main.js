@@ -65,86 +65,85 @@
   });
 })();
 
-// Hero fountain: a fine three-colour spray that fires up from the logo,
-// arcs, and spills back down under gravity. Replaces the static beams when
-// JavaScript and motion are available; otherwise the CSS beams remain.
+// Hero network: a static spread of curved, glowing light filaments that fan
+// out from the logo across the hero. Drawn once (and on resize) — no motion.
 (function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var canvas = document.getElementById('fountainCanvas');
-  if (!canvas || reduce) return;
+  var canvas = document.getElementById('heroNet');
+  if (!canvas) return;
   var ctx = canvas.getContext && canvas.getContext('2d');
   if (!ctx) return;
-  var fountain = canvas.closest('.hero-fountain');
-  if (fountain) fountain.classList.add('js-spray');
-
+  var logo = document.querySelector('.hero-logo');
+  var cols = [[90, 162, 245], [76, 212, 236], [47, 224, 196]]; // blue, cyan, teal
+  function rgba(c, a) { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')'; }
+  function rnd(a, b) { return a + Math.random() * (b - a); }
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
-  var colours = ['#5aa2f5', '#4cd4ec', '#2fe0c4'];
-  var particles = [];
-  var W = 0, H = 0, ox = 53, oy = 0;
-  var GRAV = 0.010; // very low gravity → very long, wide arcs that ripple out
-  var MAX = 130;    // safety cap (emission is throttled in frame())
 
-  function resize() {
+  function draw() {
     var r = canvas.getBoundingClientRect();
-    W = Math.max(1, r.width); H = Math.max(1, r.height);
+    var W = Math.max(1, r.width), H = Math.max(1, r.height);
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    ctx.globalCompositeOperation = 'lighter';
-    ox = 53; oy = H - 53; // centre of the logo
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function emit() {
-    var ang = (-82 + (Math.random() * 148 - 74)) * Math.PI / 180; // upward, very wide spread +/-74deg
-    var sp = 0.9 + Math.random() * 0.9;                            // very slow
-    particles.push({
-      x: ox, y: oy,
-      vx: Math.cos(ang) * sp,
-      vy: Math.sin(ang) * sp,
-      life: 0, max: 320 + Math.random() * 120,                     // long-lived → ripples far out
-      c: colours[(Math.random() * 3) | 0],
-      len: 64 + sp * 18 + Math.random() * 46                       // very long thin beams
-    });
-  }
-
-  var running = true, tick = 0;
-  function frame() {
-    if (!running) return;
     ctx.clearRect(0, 0, W, H);
-    var i;
-    tick++;
-    if (tick % 5 === 0 && particles.length < MAX) emit();          // throttled → fewer beams
-    for (i = particles.length - 1; i >= 0; i--) {
-      var p = particles[i];
-      p.vy += GRAV;
-      p.x += p.vx; p.y += p.vy;
-      p.life++;
-      if (p.life > p.max || p.y > H + 30 || p.x < -70 || p.x > W + 70) { particles.splice(i, 1); continue; }
-      var t = p.life / p.max;
-      var a = 0.8;
-      if (p.life < 16) a *= p.life / 16;                                       // fade in
-      if (t > 0.72) a *= Math.max(0, 1 - (t - 0.72) / 0.28);                   // fade out near end
-      if (p.y > oy) a *= Math.max(0.15, 1 - (p.y - oy) / (H - oy + 30));       // dim as it spills below the logo
-      var spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy) || 1;
-      ctx.globalAlpha = a;
-      ctx.strokeStyle = p.c;
-      ctx.lineWidth = 1.5;
-      ctx.lineCap = 'round';
-      ctx.beginPath();
-      ctx.moveTo(p.x, p.y);
-      ctx.lineTo(p.x - (p.vx / spd) * p.len, p.y - (p.vy / spd) * p.len);
-      ctx.stroke();
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.lineCap = 'round';
 
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) { running = false; }
-    else if (!running) { running = true; requestAnimationFrame(frame); }
-  });
+    // origin = centre of the logo (fall back to the upper-left)
+    var ox = W * 0.14, oy = H * 0.4;
+    if (logo) {
+      var lr = logo.getBoundingClientRect();
+      ox = lr.left - r.left + lr.width / 2;
+      oy = lr.top - r.top + lr.height / 2;
+    }
+
+    var N = 52;
+    var ends = [];
+    for (var i = 0; i < N; i++) {
+      var ang = (-104 + (i / (N - 1)) * 220 + rnd(-7, 7)) * Math.PI / 180; // wide fan, up -> down-right
+      var len = rnd(170, Math.max(300, W * 0.82));
+      var dx = Math.cos(ang), dy = Math.sin(ang);
+      var ex = ox + dx * len, ey = oy + dy * len;
+      var perp = ang + Math.PI / 2;
+      var b1 = rnd(-0.28, 0.28) * len, b2 = rnd(-0.5, 0.5) * len; // bend / curl
+      var c1x = ox + dx * len * 0.34 + Math.cos(perp) * b1;
+      var c1y = oy + dy * len * 0.34 + Math.sin(perp) * b1;
+      var c2x = ox + dx * len * 0.68 + Math.cos(perp) * b2;
+      var c2y = oy + dy * len * 0.68 + Math.sin(perp) * b2;
+      var c = cols[i % 3];
+      var g = ctx.createLinearGradient(ox, oy, ex, ey);
+      g.addColorStop(0, rgba(c, 0));
+      g.addColorStop(0.12, rgba(c, 0.5));
+      g.addColorStop(0.55, rgba(c, 0.2));
+      g.addColorStop(1, rgba(c, 0));
+      ctx.strokeStyle = g;
+      ctx.lineWidth = rnd(0.7, 1.5);
+      ctx.shadowColor = rgba(c, 0.5);
+      ctx.shadowBlur = 6;
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ex, ey);
+      ctx.stroke();
+      ends.push([ex, ey, c]);
+      if (Math.random() < 0.5) ends.push([c2x, c2y, c]); // a node mid-curl too
+    }
+
+    // glowing nodes at the filament ends
+    for (var j = 0; j < ends.length; j++) {
+      var p = ends[j];
+      ctx.fillStyle = rgba(p[2], 0.75);
+      ctx.shadowColor = rgba(p[2], 0.85);
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.arc(p[0], p[1], rnd(1.1, 2.1), 0, 6.2832);
+      ctx.fill();
+    }
+
+    ctx.shadowBlur = 0;
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  draw();
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(draw, 150); });
 })();
 
 // Rotating hero headline: cycle the slogan lines (bytes.co.uk-style).
