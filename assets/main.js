@@ -87,56 +87,62 @@
     ctx.globalCompositeOperation = 'lighter';
     ctx.lineCap = 'round';
 
-    // origin = centre of the logo (fall back to the upper-left)
-    var ox = W * 0.14, oy = H * 0.4;
-    if (logo) {
-      var lr = logo.getBoundingClientRect();
-      ox = lr.left - r.left + lr.width / 2;
-      oy = lr.top - r.top + lr.height / 2;
+    // Measure the text block so the light never crosses the wording.
+    var sel = ['.hero-logo', '.eyebrow', '.hero-slogan', '.lede', '.cta-row'];
+    var tL = 1e9, tT = 1e9, tR = -1e9, tB = -1e9, k;
+    for (k = 0; k < sel.length; k++) {
+      var el = document.querySelector('.hero-home ' + sel[k]);
+      if (!el) continue;
+      var b = el.getBoundingClientRect();
+      tL = Math.min(tL, b.left - r.left); tT = Math.min(tT, b.top - r.top);
+      tR = Math.max(tR, b.right - r.left); tB = Math.max(tB, b.bottom - r.top);
     }
+    if (tR < 0) { tL = 0; tT = 0; tR = W * 0.55; tB = H; }
+    // beams live to the right of the wording and fade out before reaching it
+    var safeRight = Math.min(W * 0.74, Math.max(W * 0.46, tR + 56));
 
-    var N = 52;
-    var ends = [];
-    for (var i = 0; i < N; i++) {
-      var ang = (-104 + (i / (N - 1)) * 220 + rnd(-7, 7)) * Math.PI / 180; // wide fan, up -> down-right
-      var len = rnd(170, Math.max(300, W * 0.82));
-      var dx = Math.cos(ang), dy = Math.sin(ang);
-      var ex = ox + dx * len, ey = oy + dy * len;
-      var perp = ang + Math.PI / 2;
-      var b1 = rnd(-0.28, 0.28) * len, b2 = rnd(-0.5, 0.5) * len; // bend / curl
-      var c1x = ox + dx * len * 0.34 + Math.cos(perp) * b1;
-      var c1y = oy + dy * len * 0.34 + Math.sin(perp) * b1;
-      var c2x = ox + dx * len * 0.68 + Math.cos(perp) * b2;
-      var c2y = oy + dy * len * 0.68 + Math.sin(perp) * b2;
+    // Hard safeguard: clip the text box out so nothing can paint over the words.
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, 0, W, H);
+    ctx.rect(tL - 14, tT - 14, (tR - tL) + 28, (tB - tT) + 28);
+    ctx.clip('evenodd');
+
+    // Long, thick, curved beams of light flowing in from the right.
+    var M = 20;
+    for (var i = 0; i < M; i++) {
+      var sx = W + rnd(20, 90);                            // enter off the right edge
+      var sy = (i / (M - 1)) * 1.25 * H - 0.12 * H + rnd(-0.05, 0.05) * H; // spread top -> bottom
+      var ex = safeRight + rnd(-40, W * 0.08);             // long: reach in to just right of the text
+      var ey = sy + rnd(-0.24, 0.24) * H;                  // gentle vertical drift
+      var c1x = sx - (sx - ex) * 0.34, c1y = sy + rnd(-0.12, 0.12) * H;
+      var c2x = sx - (sx - ex) * 0.7,  c2y = ey + rnd(-0.12, 0.12) * H;
       var c = cols[i % 3];
-      var g = ctx.createLinearGradient(ox, oy, ex, ey);
+      var bright = (i % 4 === 0);                           // a few crisp leading beams
+      var g = ctx.createLinearGradient(sx, sy, ex, ey);
       g.addColorStop(0, rgba(c, 0));
-      g.addColorStop(0.12, rgba(c, 0.5));
-      g.addColorStop(0.55, rgba(c, 0.2));
+      g.addColorStop(0.10, rgba(c, bright ? 0.95 : 0.6));
+      g.addColorStop(0.50, rgba(c, bright ? 0.7 : 0.4));
+      g.addColorStop(0.80, rgba(c, bright ? 0.45 : 0.22));
       g.addColorStop(1, rgba(c, 0));
       ctx.strokeStyle = g;
-      ctx.lineWidth = rnd(0.7, 1.5);
-      ctx.shadowColor = rgba(c, 0.5);
-      ctx.shadowBlur = 6;
+      ctx.lineWidth = bright ? rnd(1.4, 2.6) : rnd(4, 10);  // crisp + thick soft beams
+      ctx.shadowColor = rgba(c, 0.6);
+      ctx.shadowBlur = bright ? 7 : 18;
       ctx.beginPath();
-      ctx.moveTo(ox, oy);
+      ctx.moveTo(sx, sy);
       ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ex, ey);
       ctx.stroke();
-      ends.push([ex, ey, c]);
-      if (Math.random() < 0.5) ends.push([c2x, c2y, c]); // a node mid-curl too
     }
 
-    // glowing nodes at the filament ends
-    for (var j = 0; j < ends.length; j++) {
-      var p = ends[j];
-      ctx.fillStyle = rgba(p[2], 0.75);
-      ctx.shadowColor = rgba(p[2], 0.85);
-      ctx.shadowBlur = 8;
-      ctx.beginPath();
-      ctx.arc(p[0], p[1], rnd(1.1, 2.1), 0, 6.2832);
-      ctx.fill();
+    // A scatter of glowing nodes on the right.
+    for (var j = 0; j < 16; j++) {
+      var nx = rnd(safeRight, W), ny = rnd(0, H), nc = cols[j % 3];
+      ctx.fillStyle = rgba(nc, 0.7); ctx.shadowColor = rgba(nc, 0.85); ctx.shadowBlur = 8;
+      ctx.beginPath(); ctx.arc(nx, ny, rnd(1, 2.2), 0, 6.2832); ctx.fill();
     }
 
+    ctx.restore();
     ctx.shadowBlur = 0;
     ctx.globalCompositeOperation = 'source-over';
   }
