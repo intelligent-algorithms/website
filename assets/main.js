@@ -81,8 +81,8 @@
   var colours = ['#5aa2f5', '#4cd4ec', '#2fe0c4'];
   var particles = [];
   var W = 0, H = 0, ox = 53, oy = 0;
-  var GRAV = 0.02;   // gentle gravity → long, wide arcs
-  var MAX = 200;     // cap concurrent beams
+  var GRAV = 0.010; // very low gravity → very long, wide arcs that ripple out
+  var MAX = 130;    // safety cap (emission is throttled in frame())
 
   function resize() {
     var r = canvas.getBoundingClientRect();
@@ -96,33 +96,36 @@
   window.addEventListener('resize', resize);
 
   function emit() {
-    var ang = (-86 + (Math.random() * 120 - 60)) * Math.PI / 180; // upward, wide spread +/-60deg
-    var sp = 1.5 + Math.random() * 1.5;                            // slow
+    var ang = (-82 + (Math.random() * 148 - 74)) * Math.PI / 180; // upward, very wide spread +/-74deg
+    var sp = 0.9 + Math.random() * 0.9;                            // very slow
     particles.push({
       x: ox, y: oy,
       vx: Math.cos(ang) * sp,
       vy: Math.sin(ang) * sp,
-      life: 0,
+      life: 0, max: 320 + Math.random() * 120,                     // long-lived → ripples far out
       c: colours[(Math.random() * 3) | 0],
-      len: 34 + sp * 12 + Math.random() * 26                       // long thin beams
+      len: 64 + sp * 18 + Math.random() * 46                       // very long thin beams
     });
   }
 
-  var running = true;
+  var running = true, tick = 0;
   function frame() {
     if (!running) return;
     ctx.clearRect(0, 0, W, H);
     var i;
-    for (i = 0; i < 2; i++) { if (particles.length < MAX) emit(); }
+    tick++;
+    if (tick % 5 === 0 && particles.length < MAX) emit();          // throttled → fewer beams
     for (i = particles.length - 1; i >= 0; i--) {
       var p = particles[i];
       p.vy += GRAV;
       p.x += p.vx; p.y += p.vy;
       p.life++;
-      if (p.y > H + 24 || p.x < -48 || p.x > W + 48) { particles.splice(i, 1); continue; }
-      var a = 0.82;
-      if (p.life < 12) a *= p.life / 12;                                   // fade in
-      if (p.y > oy) a *= Math.max(0, 1 - (p.y - oy) / (H - oy + 24));       // fade as it spills below the logo
+      if (p.life > p.max || p.y > H + 30 || p.x < -70 || p.x > W + 70) { particles.splice(i, 1); continue; }
+      var t = p.life / p.max;
+      var a = 0.8;
+      if (p.life < 16) a *= p.life / 16;                                       // fade in
+      if (t > 0.72) a *= Math.max(0, 1 - (t - 0.72) / 0.28);                   // fade out near end
+      if (p.y > oy) a *= Math.max(0.15, 1 - (p.y - oy) / (H - oy + 30));       // dim as it spills below the logo
       var spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy) || 1;
       ctx.globalAlpha = a;
       ctx.strokeStyle = p.c;

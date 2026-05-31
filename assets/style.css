@@ -1228,11 +1228,11 @@ button:focus-visible,
 /* Particle spray (JS). Sits over the fallback beams; the logo stays on top. */
 .hero-fountain .fountain-canvas {
   position: absolute;
-  inset: -90px 0 0 0;        /* headroom so the long arcs aren't clipped */
+  inset: -120px 0 0 0;       /* headroom so the long arcs aren't clipped */
   left: 0;
-  width: 60vw;               /* let the spray fan out wide across the hero */
-  min-width: 680px;
-  height: calc(100% + 90px);
+  width: 86vw;               /* let the spray ripple out wide across the hero */
+  min-width: 900px;
+  height: calc(100% + 120px);
   z-index: 1;
   pointer-events: none;
 }
