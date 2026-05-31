@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css?v=17">
+  <link rel="stylesheet" href="../assets/style.css?v=18">
   <link rel="icon" href="../assets/logo.svg">
 </head>
 <body>
@@ -21,10 +21,23 @@
     <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
     <nav class="site-nav" aria-label="Primary">
       <a href="../index.html">Home</a>
-      <a href="../work.html">Work</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
       <a href="../domains.html">Domains</a>
       <a href="../research.html">Research</a>
-      <a href="../writing.html" class="active">Writing</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
       <a href="../publications.html">Publications</a>
       <a href="../about.html">About</a>
     </nav>
@@ -33,7 +46,7 @@
 
 <main class="page page-article">
   <div class="article-head">
-    <a href="../writing.html" class="back">&larr; Back to writing</a>
+    <a href="../articles.html" class="back">&larr; Back to articles</a>
     <p class="eyebrow">Article</p>
     <h1>Diversity in AI</h1>
     <p class="subtitle">How the technology transcends far more than just the industries it is benefiting.</p>

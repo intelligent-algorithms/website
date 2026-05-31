@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Financial NLP Needs Interpretability by Design &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="With the EU AI Act in force, interpretability, uncertainty quantification and lifecycle monitoring are operational requirements for financial NLP, not afterthoughts.">
+  <meta property="og:title" content="Why Financial NLP Needs Interpretability by Design, Not by Retrofit">
+  <meta property="og:description" content="With the EU AI Act in force, interpretability is an operational requirement for financial NLP, not an afterthought.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/financial-nlp-interpretability.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=18">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Why Financial NLP Needs Interpretability by Design, Not by Retrofit</h1>
+    <p class="subtitle">With the EU AI Act in force, interpretability, uncertainty quantification and lifecycle monitoring are operational requirements &mdash; not afterthoughts.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">May 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    The EU AI Act is now in force, with its high-risk obligations phasing in.
+    MiFID II has shaped European financial supervision since 2018. Both regimes
+    converge on a requirement
+    that the machine learning community has been slow to internalise: models
+    that influence credit, trading, or client-facing decisions must be
+    explainable, reproducible, and auditable as a condition of deployment, not
+    as an afterthought. Financial NLP sits squarely inside this perimeter, and
+    on our reading, much of the field is not yet ready for it.
+  </p>
+
+  <p>
+    Text-based models increasingly inform credit assessment, trading signals,
+    and compliance workflows. Yet many state-of-the-art architectures
+    misinterpret domain-specific financial language or rely on dense contextual
+    embeddings that resist transparency. Our work in this area has clarified a
+    view we now hold with some conviction: interpretability, uncertainty
+    quantification, and lifecycle monitoring are no longer desirable extensions
+    to financial machine learning systems. They are operational requirements,
+    and the regulatory clock is enforcing that.
+  </p>
+
+  <h2>A structural problem, not a tooling gap</h2>
+
+  <p>
+    The interpretability literature, read carefully, suggests that the
+    limitations of opaque models are not incidental artefacts to be patched,
+    but structural features of how such systems learn. Post-hoc explanation
+    methods such as LIME (Ribeiro et al., 2016) and SHAP (Lundberg &amp; Lee,
+    2017), alongside broader surveys of black-box explainability (Guidotti et
+    al., 2019), document a recurring tension: explanations approximate model
+    behaviour rather than reveal it. A growing body of work on trustworthy XAI
+    and prompt sensitivity in large language models points to persistent instability under
+    distributional shift, which is precisely the operating regime of financial
+    markets.
+  </p>
+
+  <p>
+    We think this matters more than the field usually admits. A regulator
+    asking why a specific lending decision was made deserves an answer about the
+    model, not an answer about a surrogate of the model. For high-stakes
+    deployment, approximate transparency is not a stepping stone to real
+    transparency. It is a category error.
+  </p>
+
+  <h2>Reframing the problem statistically</h2>
+
+  <p>
+    One productive response is to treat financial sentiment analysis as a
+    high-dimensional statistical problem rather than a representation-learning
+    problem alone. Contextual embeddings from domain-adapted Transformers encode
+    discriminative information in spaces whose geometry is largely opaque to
+    downstream users. Applying nonlinear manifold projection to such embeddings
+    offers a route to preserve predictive signal while exposing structure that
+    auditors and risk teams can inspect. Comparative work across linear, sparse,
+    and nonlinear projection methods, evaluated against both bag-of-words and
+    contextual representations under matched experimental conditions, makes the
+    trade-off explicit. No single method wins outright. What the comparison does
+    sharpen is the question of when projection-based pipelines are more
+    deployable and governance-aligned than end-to-end Transformers &mdash; a
+    question the field tends to treat too loosely.
+  </p>
+
+  <p>
+    The broader point we would press is that simpler, more transparent baselines
+    deserve more serious treatment in financial NLP than they typically receive.
+    Benchmark leaderboards reward accuracy on static test sets. Deployment
+    rewards stability, auditability, and the ability to explain a specific
+    decision to a specific stakeholder. These are different objectives, and the
+    gap between them is where most production failures live.
+  </p>
+
+  <h2>What deployment teaches that benchmarks do not</h2>
+
+  <p>
+    Predictive models degrade under regime shifts, noisy data, and real-time
+    latency pressures in ways that hold-out evaluation rarely surfaces.
+    Modelling assumptions that appear robust in retrospective analysis prove
+    brittle in live market conditions. Institutional workflows interpret,
+    stress-test, and embed models in ways that benchmark performance does not
+    anticipate. Those realities sharpen the regulatory emphasis on fairness,
+    explainability, and accountability in model-driven decisions (Bracke et
+    al., 2019), and they should sharpen the research emphasis in the same
+    direction.
+  </p>
+
+  <h2>The view we would defend</h2>
+
+  <p>
+    A widening gap separates the rapid advancement of generative models from
+    the accountability infrastructure required for responsible use in financial
+    services. We think the institutions that close that gap fastest will hold a
+    material advantage. Regulators are increasingly unwilling to defer
+    interpretability questions; supervisory expectations under the EU AI Act
+    will harden rather than soften, and litigation risk around opaque automated
+    decisions is rising in parallel.
+  </p>
+
+  <p>
+    What this calls for, in our view, is a research and engineering programme
+    that treats explainability, sensitivity analysis, uncertainty
+    quantification, and lifecycle monitoring as first-class design constraints
+    rather than retrofitted features. Hybrid architectures that combine modern
+    representation learning with interpretable projection or sparse modelling
+    layers are one tractable direction. We do not claim they outperform
+    end-to-end models on every metric. We do claim they expose the geometric and
+    statistical structure that regulated workflows require, and that this
+    structural property matters more, over a five-year horizon, than marginal
+    benchmark gains.
+  </p>
+
+  <p>
+    The most useful work in financial machine learning over the next several
+    years will sit at this intersection: principled enough to satisfy
+    statistical scrutiny, deployable enough to survive contact with live
+    markets, and transparent enough to meet obligations that no longer admit
+    delay. That is where we are placing our bet.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Bracke, P., Datta, A., Jung, C., &amp; Sen, S. (2019). Machine learning explainability in finance. <em>Bank of England Staff Working Paper</em> No. 816.</li>
+      <li>Guidotti, R., Monreale, A., Ruggieri, S., Turini, F., Giannotti, F., &amp; Pedreschi, D. (2019). A survey of methods for explaining black box models. <em>ACM Computing Surveys</em>, 51(5), Article 93.</li>
+      <li>Lundberg, S. M., &amp; Lee, S.-I. (2017). A unified approach to interpreting model predictions. <em>Advances in Neural Information Processing Systems</em>, 30, 4765&ndash;4774.</li>
+      <li>Ribeiro, M. T., Singh, S., &amp; Guestrin, C. (2016). &ldquo;Why should I trust you?&rdquo;: Explaining the predictions of any classifier. In <em>Proceedings of KDD &rsquo;16</em> (pp. 1135&ndash;1144).</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js" defer></script></body>
+</html>

@@ -1007,3 +1007,209 @@ button:focus-visible,
 /* ---------- Sticky-header anchor offset ---------- */
 /* Stop in-page jumps (e.g. article footnotes) landing under the sticky header. */
 [id] { scroll-margin-top: 88px; }
+
+/* ---------- Dropdown navigation ---------- */
+.site-nav { align-items: center; }
+.nav-item { position: relative; display: inline-flex; }
+.nav-top {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  padding: 0 0 4px;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  position: relative;
+  transition: color 0.15s ease;
+}
+.nav-top .caret {
+  width: 0.66em;
+  height: 0.66em;
+  margin-top: 1px;
+  transition: transform 0.2s ease;
+}
+.nav-item:hover .nav-top .caret,
+.nav-item:focus-within .nav-top .caret,
+.nav-item.open .nav-top .caret { transform: rotate(180deg); }
+.nav-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--blue-600), var(--cyan));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.nav-top:hover { color: var(--blue-600); }
+.nav-item:hover .nav-top::after,
+.nav-item:focus-within .nav-top::after,
+.nav-item.open .nav-top::after,
+.nav-top.active::after { transform: scaleX(1); }
+.nav-top.active { color: var(--navy); }
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 9px);
+  min-width: 186px;
+  background: rgba(255, 255, 255, 0.98);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: 60;
+}
+/* invisible hover bridge so the menu doesn't close in the gap */
+.nav-menu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -11px;
+  height: 11px;
+}
+.nav-item:hover .nav-menu,
+.nav-item:focus-within .nav-menu,
+.nav-item.open .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 4px);
+}
+.nav-menu a {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  border-bottom: none;
+}
+.nav-menu a::after { display: none; }
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+  background: var(--sky-50);
+  color: var(--blue-700);
+}
+.nav-menu a.active { color: var(--blue-700); font-weight: 600; }
+
+/* ---------- Hero light beams ---------- */
+.hero-beams {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-beams .beam {
+  position: absolute;
+  top: -35%;
+  height: 170%;
+  background: linear-gradient(to bottom,
+    rgba(143, 193, 245, 0) 0%,
+    rgba(79, 155, 240, 0.5) 42%,
+    rgba(120, 220, 245, 0.7) 52%,
+    rgba(56, 189, 216, 0.4) 62%,
+    rgba(143, 193, 245, 0) 100%);
+  filter: blur(12px);
+  mix-blend-mode: screen;
+  transform: rotate(var(--rot, 14deg));
+  transform-origin: top center;
+  opacity: 0.55;
+  animation: beam-sway 13s ease-in-out infinite alternate;
+}
+.hero-beams .beam:nth-child(1) { left: 4%;  width: 9vw;  --rot: 15deg; animation-duration: 12s; opacity: 0.5; }
+.hero-beams .beam:nth-child(2) { left: 22%; width: 6vw;  --rot: 10deg; animation-duration: 16s; animation-delay: -4s; opacity: 0.68; }
+.hero-beams .beam:nth-child(3) { left: 44%; width: 12vw; --rot: 17deg; animation-duration: 14s; animation-delay: -7s; opacity: 0.42; }
+.hero-beams .beam:nth-child(4) { left: 64%; width: 7vw;  --rot: 12deg; animation-duration: 18s; animation-delay: -2s; opacity: 0.6; }
+.hero-beams .beam:nth-child(5) { left: 82%; width: 11vw; --rot: 16deg; animation-duration: 15s; animation-delay: -9s; opacity: 0.48; }
+@keyframes beam-sway {
+  from { transform: translateX(-4%) rotate(var(--rot, 14deg)); opacity: 0.28; }
+  to   { transform: translateX(4%)  rotate(var(--rot, 14deg)); opacity: 0.7; }
+}
+
+/* ---------- Rotating hero headline ---------- */
+.hero-slogan.rotator { display: grid; }
+.hero-slogan.rotator .rot-line {
+  grid-area: 1 / 1;
+  background: linear-gradient(100deg, #ffffff 0%, #9ec9f7 22%, #4cc4e0 50%, #9ec9f7 78%, #ffffff 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(0.32em);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  animation: tagline-shimmer 8s linear infinite;
+}
+.hero-slogan.rotator .rot-line.is-active {
+  opacity: 1;
+  transform: none;
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-slogan.rotator .rot-line { -webkit-text-fill-color: #eaf3ff; color: #eaf3ff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-beams .beam { animation: none; }
+  .hero-slogan.rotator .rot-line { transition: none; animation: none; }
+}
+
+/* ---------- Coming-soon resource cards ---------- */
+.soon-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  background: var(--rule-soft);
+  border: 1px solid var(--rule);
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+/* ---------- Mobile nav (dropdowns inline) ---------- */
+@media (max-width: 600px) {
+  .nav-item { display: block; width: 100%; }
+  .nav-top { width: 100%; justify-content: flex-start; padding-top: 0.35rem; padding-bottom: 0.35rem; }
+  .nav-top::after { display: none; }
+  .nav-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: none;
+    border: none;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    padding: 0 0 0.3rem 1rem;
+    min-width: 0;
+  }
+  .nav-menu::before { display: none; }
+  .nav-menu a { padding: 0.3rem 0; }
+}

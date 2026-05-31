@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=17">
+  <link rel="stylesheet" href="assets/style.css?v=18">
   <link rel="icon" href="assets/logo.svg">
 </head>
 <body>
@@ -21,10 +21,23 @@
     <a href="/" class="brand"><img class="brand-mark" src="assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html" class="active">Home</a>
-      <a href="work.html">Work</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="clients.html" role="menuitem">Our clients</a>
+          <a href="work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
       <a href="domains.html">Domains</a>
       <a href="research.html">Research</a>
-      <a href="writing.html">Writing</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="articles.html" role="menuitem">Articles</a>
+          <a href="blogs.html" role="menuitem">Blogs</a>
+          <a href="reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
       <a href="publications.html">Publications</a>
       <a href="about.html">About</a>
     </nav>
@@ -38,9 +51,22 @@
       <span class="blob blob2"></span>
       <span class="blob blob3"></span>
     </div>
+    <div class="hero-beams" aria-hidden="true">
+      <span class="beam"></span>
+      <span class="beam"></span>
+      <span class="beam"></span>
+      <span class="beam"></span>
+      <span class="beam"></span>
+    </div>
     <div class="hero-inner">
       <p class="eyebrow on-dark">Intelligent Algorithms Ltd</p>
-      <h1 class="hero-slogan"><span class="w">Turning</span> <span class="w">rigorous</span> <span class="w">research</span> <span class="w">into</span> <span class="w">intelligent</span> <span class="w">systems.</span></h1>
+      <h1 class="hero-slogan rotator" aria-label="Turning rigorous research into intelligent systems.">
+        <span class="rot-line is-active" aria-hidden="true">Turning rigorous research into intelligent systems.</span>
+        <span class="rot-line" aria-hidden="true">Bringing peer-reviewed research into production.</span>
+        <span class="rot-line" aria-hidden="true">Optimisation and machine learning you can trust.</span>
+        <span class="rot-line" aria-hidden="true">Explainable AI for regulated, mission-critical sectors.</span>
+        <span class="rot-line" aria-hidden="true">From the research lab to real-world systems.</span>
+      </h1>
       <p class="lede on-dark">
         An AI research and advanced software consultancy delivering production-grade machine learning, optimisation, analytics, and cloud-based software solutions.
       </p>

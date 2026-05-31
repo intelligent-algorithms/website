@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  POST TEMPLATE — copy this file to writing/<your-post-slug>.html and fill in.
+  Then add a matching <li class="item"> to blogs.html (or articles.html / reports.html).
+  Notes:
+   - All asset/links use ../ because this file lives in the writing/ folder.
+   - Keep <link ...style.css?v=18> in step with the version used site-wide.
+   - The first paragraph automatically gets a drop cap.
+   - For citations, use the <section class="bibliography"> block at the foot.
+   - Set the active dropdown item below: Articles, Blogs, or Reports.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POST TITLE &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="ONE-SENTENCE SUMMARY OF THE POST.">
+  <meta property="og:title" content="POST TITLE">
+  <meta property="og:description" content="ONE-SENTENCE SUMMARY OF THE POST.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/YOUR-POST-SLUG.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=18">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <!-- mark the relevant one with class="active" -->
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>POST TITLE</h1>
+    <p class="subtitle">A short standfirst / subtitle that sets up the piece.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">Month Year.</p>
+  </div>
+
+  <div class="article-body">
+
+    <p>Opening paragraph. The first letter gets a drop cap automatically.</p>
+
+    <h2>1. First section</h2>
+    <p>Body text&hellip;</p>
+
+    <h2>2. Second section</h2>
+    <p>Body text&hellip;</p>
+
+  </div>
+
+  <!-- Optional: delete this whole block if the post has no references. -->
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Author, A. (Year). Title. <em>Source.</em></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js" defer></script></body>
+</html>
