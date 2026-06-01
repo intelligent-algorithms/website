@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading the Signal in Time: How Forecasting Has Matured, and Why Finance Stays Hard &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Time series analysis has grown from a specialist's craft into a capability any developer can reach in an afternoon. The tools have improved markedly; financial data remains among the hardest of all to forecast.">
+  <meta property="og:title" content="Reading the Signal in Time: How Forecasting Has Matured, and Why Finance Stays Hard">
+  <meta property="og:description" content="Forecasting that once demanded a specialist now takes a developer an afternoon. Why the tools have matured, and why financial data stays among the hardest of all to forecast.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/time-series-forecasting-evolution.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Reading the Signal in Time: How Forecasting Has Matured, and Why Finance Stays Hard</h1>
+    <p class="subtitle">Time series analysis has grown from a specialist&rsquo;s craft into a capability available to any developer with a library and an afternoon. We built a seasonal forecasting model in 2021 and watched that ease arrive. The tools have improved markedly. Financial data remains, for reasons worth explaining, among the hardest of all to forecast.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">April 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    Almost everything worth knowing arrives as a sequence in time. Sales by the
+    day, patients by the week, transactions by the hour, a client&rsquo;s
+    engagement month after month. Time series analysis is the discipline of
+    reading the signal in those sequences, separating what recurs from what
+    trends from what is merely noise, and projecting the pattern forward. We
+    worked closely with these methods when building a seasonal forecasting model
+    in 2021, and the experience left us with a clear view of how far the field
+    has come and where it remains genuinely difficult. The tools have improved
+    out of recognition. The underlying problem, in finance especially, has not
+    become much easier to get right.
+  </p>
+
+  <h2>The classical foundation</h2>
+
+  <p>
+    The discipline rests on a foundation laid decades ago. The Box-Jenkins
+    methodology of the 1970s gave the field its workhorses, the autoregressive
+    and moving-average models known as ARMA and ARIMA, which describe a series in
+    terms of its own past values and past errors. They were a genuine advance,
+    they remain in heavy use today, and any serious treatment of forecasting
+    still begins with them. They also carry assumptions, chiefly that the series
+    is stationary or can be made so, and that its structure is stable enough for
+    the recent past to instruct the near future. Those assumptions hold well in
+    many domains and poorly in others, and knowing which is which is much of the
+    skill.
+  </p>
+
+  <h2>When the classical tools do not fit</h2>
+
+  <p>
+    We found, in 2021, that the classical tools did not fit the problem in front
+    of us. The task was to forecast client activity across daily and monthly
+    horizons, a series shaped strongly by season, by the time of year, and by the
+    rhythms of institutional behaviour, and the standard ARIMA approach was not
+    the right instrument for it. What served instead was decomposition. We turned
+    to STL, Seasonal-Trend decomposition using Loess, a method developed by
+    Cleveland and colleagues in 1990 and by then available as a mature Python
+    library (Cleveland, Cleveland, McRae, &amp; Terpenning, 1990). Rather than
+    model the series as a single process, STL separates it into three parts: a
+    trend, a seasonal component that is allowed to change over time, and a
+    remainder. That separation suited the problem exactly. It let the model
+    capture the recurring shape of client engagement while tracking the slower
+    drift beneath it, and it was robust to the occasional unusual observation in a
+    way the classical models were not.
+  </p>
+
+  <p>
+    The result predicted future client engagement across daily and monthly
+    horizons, fed visual dashboards that flagged when each client was next
+    expected to engage, and so enabled timely, personalised outreach. It was more
+    accurate than the legacy approach it replaced, and it was integrated into the
+    firm&rsquo;s analytics platform, contributing to measurable gains in client
+    retention and sales effectiveness. The technical lesson was simple and
+    durable: match the method to the structure of the data, rather than reaching
+    for the most familiar tool.
+  </p>
+
+  <h2>Why forecasting has become easier</h2>
+
+  <p>
+    What has changed most since then, and what we witnessed directly, is how much
+    easier good forecasting has become. Not long before, the practitioner worked
+    with a limited set of R libraries and a fair amount of hand-built code, and
+    applying a method like STL meant real implementation effort. Within a few
+    years the landscape transformed. Mature, well-documented libraries in Python
+    and R put decomposition, state-space models, exponential smoothing, and
+    automated model selection within reach of any developer. Tools emerged that
+    would fit a seasonal model with minimal configuration, and later ones brought
+    machine-learning and deep-learning forecasters to the same level of
+    accessibility. Forecasting that once demanded a specialist now takes a
+    competent developer an afternoon. That democratisation is the same arc we have
+    watched across optimisation, big data, and recommendation: a hard, bespoke
+    capability becomes commoditised, and the work moves up from implementing the
+    method to choosing and interpreting it well.
+  </p>
+
+  <h2>Why finance stays hard</h2>
+
+  <p>
+    Easier to apply is not the same as easy to get right, and here finance stands
+    apart. A genome, a weather system, or a manufacturing process is complex, but
+    its time series is governed largely by the process itself. Financial series
+    are not. They are codependent on a web of other variables, influenced by what
+    else is happening at that moment in the markets, by the time of year, by
+    sentiment, by policy, and by events of a magnitude that no amount of
+    historical data anticipates. The 2008 crash is the standard illustration: a
+    forecast trained on prior behaviour had no means of foreseeing it, because the
+    event lay outside everything the series had previously expressed. Isolating
+    the effect of any one variable is extraordinarily difficult when so many move
+    together and influence one another. This is why financial forecasting remains
+    harder than forecasting in many data-rich domains that appear, on the surface,
+    more complex. The difficulty is not volume. It is codependency, regime change,
+    and the persistent intrusion of the genuinely unprecedented.
+  </p>
+
+  <h2>Where it goes from here</h2>
+
+  <p>
+    What we take from this is the same theme that runs through the technologies we
+    have written about, with one financial caveat. The methods have matured, the
+    tooling has made them widely available, and the binding constraint has moved
+    from implementation to judgement. The forecaster&rsquo;s task is no longer
+    chiefly to build the model. It is to understand the structure of the data well
+    enough to choose the right approach, to know what the model can and cannot
+    see, and to hold an appropriate humility about a series whose future may not
+    resemble its past. In finance that humility is not optional. The tools will
+    keep improving, and they should be welcomed. They will not relieve the
+    practitioner of the harder work, which is knowing the limits of what any
+    forecast can honestly claim.
+  </p>
+
+  <p>
+    <em>The last of three notes on prediction in finance, after
+    <a href="customer-value-modelling.html">customer value modelling</a> and
+    <a href="recommender-systems-evolution.html">recommender systems</a>; on the
+    responsibility that this reach carries, see
+    <a href="big-data-algorithmic-decisions-foresight.html">Foresight, Not
+    Hindsight</a>.</em>
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Box, G. E. P., &amp; Jenkins, G. M. (1970). <em>Time Series Analysis: Forecasting and Control</em>. Holden-Day.</li>
+      <li>Cleveland, R. B., Cleveland, W. S., McRae, J. E., &amp; Terpenning, I. (1990). STL: A seasonal-trend decomposition procedure based on loess. <em>Journal of Official Statistics</em>, 6(1), 3&ndash;73.</li>
+      <li>Hyndman, R. J., &amp; Athanasopoulos, G. (2021). <em>Forecasting: Principles and Practice</em> (3rd ed.). OTexts. https://otexts.com/fpp3</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
