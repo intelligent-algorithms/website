@@ -366,8 +366,21 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   margin: 0 0 1.15rem;
   filter: drop-shadow(0 0 20px rgba(76, 212, 236, 0.55)) drop-shadow(0 3px 8px rgba(4, 18, 40, 0.45));
 }
-/* Keep the home hero still: freeze the aurora drift */
-.hero-home .hero-aurora .blob { animation: none; }
+/* Darker home hero so the full-width beams shine (reference look) */
+.hero.hero-home {
+  background: radial-gradient(125% 95% at 60% 100%, #0a1f3e 0%, #060f1f 46%, #03070f 100%);
+}
+.hero.hero-home::after { opacity: 0.22; }
+.hero-home .hero-aurora { display: none; }
+/* Dark scrim keeps the wording readable over the full-width beams */
+.hero-home .hero-inner::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -1.5rem -2rem -2rem;
+  z-index: -1;
+  background: linear-gradient(95deg, rgba(3, 8, 18, 0.86) 0%, rgba(3, 8, 18, 0.62) 26%, rgba(3, 8, 18, 0.24) 46%, rgba(3, 8, 18, 0) 60%);
+  pointer-events: none;
+}
 @media (max-width: 600px) {
   .hero-home .hero-logo { width: 76px; height: 76px; }
 }

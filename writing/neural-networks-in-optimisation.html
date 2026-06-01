@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neural Networks in Optimisation: Patience, Not Hype &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Long before the data and compute arrived, the metaheuristics community treated neural networks as a serious method, assessed honestly. We think that judgement aged well.">
+  <meta property="og:title" content="Neural Networks in Optimisation: Patience, Not Hype">
+  <meta property="og:description" content="Long before the data and compute arrived, the metaheuristics community treated neural networks as a serious method. We think that judgement aged well.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/neural-networks-in-optimisation.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=28">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Neural Networks in Optimisation: Patience, Not Hype</h1>
+    <p class="subtitle">Long before the data and the compute arrived, the metaheuristics community treated neural networks as a serious method &mdash; we think that judgement aged well.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">May 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    Neural networks are now treated as the engine of modern artificial
+    intelligence, which makes it easy to assume they arrived fully formed around
+    2012. Within optimisation research, the picture is older and more
+    interesting. Decades before deep learning reached the mainstream, the
+    metaheuristics community already regarded neural networks as a legitimate
+    member of the methodological family: studied, debated, hybridised, and
+    assessed on the same empirical footing as simulated annealing, genetic
+    algorithms, and tabu search. We think the way that community held the
+    method, with patience rather than hype, is worth revisiting.
+  </p>
+
+  <h2>A serious method, honestly assessed</h2>
+
+  <p>
+    Optimisation gave neural networks an early and concrete role. Hopfield and
+    Tank showed that certain combinatorial problems could be framed as energy
+    minimisation in a recurrent network, with the network&rsquo;s stable states
+    corresponding to candidate solutions (Hopfield &amp; Tank, 1985). Standard
+    reference works of the period covered the approach alongside its rivals, and
+    the leading AI textbook of the decade treated neural networks as one method
+    among several under active development, neither dismissed nor oversold
+    (Russell &amp; Norvig, 1995). Within the metaheuristics community, the honest
+    assessment on the evidence then available was that artificial neural networks
+    had not yet proved competitive with other metaheuristics on hard
+    combinatorial problems. That conclusion was cautious in proportion to the
+    evidence, and it was a judgement about the present state of the method, not a
+    verdict on its potential.
+  </p>
+
+  <h2>Engagement, not dismissal</h2>
+
+  <p>
+    Caution did not mean neglect. Practitioners engaged with neural networks as a
+    serious research direction and looked actively for ways to combine them with
+    established search methods. Glover&rsquo;s work on optimisation by ghost
+    image processes integrated Kohonen&rsquo;s self-organising maps and the
+    Hopfield and Tank penalty formulation with the adaptive memory structures of
+    tabu search, treating the methodologies as complementary rather than
+    competing (Glover, 1994). Dialogue between the two communities ran in both
+    directions. Researchers who built their careers on evolutionary or
+    trajectory-based methods read the neural network literature, cited it, and
+    folded its ideas into hybrid frameworks. A method kept alive in that way is a
+    method a field expects to need later.
+  </p>
+
+  <h2>What changed, and what did not</h2>
+
+  <p>
+    When the reversal came, it was a change in conditions rather than a change in
+    kind. Around 2012, neural networks moved from promising to dominant across
+    vision and language, driven by graphics-processor compute and dataset scale
+    that earlier decades could not supply (Krizhevsky, Sutskever, &amp; Hinton,
+    2012; LeCun, Bengio, &amp; Hinton, 2015). Those architectures owed a clear
+    debt to ideas worked out in the 1980s and 1990s. What had been missing was
+    never the concept. Missing instead were the hardware to train large models
+    and the data to train them on, and both arrived together. Consensus advice of
+    the late 1990s, which read the evidence of its moment correctly, turned out
+    to be reading a temporary state as a permanent one.
+  </p>
+
+  <h2>Where they sit now</h2>
+
+  <p>
+    Neural networks have since returned to optimisation as an active partner,
+    much as the hybrid instinct of the 1990s anticipated. Learned models now
+    guide combinatorial solvers, predicting promising branching decisions,
+    representing problem instances, and steering search toward regions worth the
+    effort (Bengio, Lodi, &amp; Prouvost, 2021). Graph neural networks have
+    proved a natural fit for routing, scheduling, and assignment problems whose
+    structure is itself a graph. We read this as the original judgement
+    vindicated on its own terms. A method can be both not-yet-competitive and
+    worth sustained investment, and the metaheuristics community treated neural
+    networks as exactly that for the better part of two decades.
+  </p>
+
+  <p>
+    That wider lesson outlasts the example. A field serves itself well when it
+    assesses a promising method honestly, reports what the evidence shows, and
+    keeps engaging with the method while the surrounding conditions catch up. We
+    try to hold new methods the same way now, neither dismissing them on early
+    results nor adopting them on enthusiasm alone.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Bengio, Y., Lodi, A., &amp; Prouvost, A. (2021). Machine learning for combinatorial optimization: a methodological tour d&rsquo;horizon. <em>European Journal of Operational Research</em>, 290(2), 405&ndash;421.</li>
+      <li>Glover, F. (1994). Optimization by ghost image processes in neural networks. <em>Computers &amp; Operations Research</em>, 21(8), 801&ndash;822.</li>
+      <li>Hopfield, J. J., &amp; Tank, D. W. (1985). &ldquo;Neural&rdquo; computation of decisions in optimization problems. <em>Biological Cybernetics</em>, 52(3), 141&ndash;152.</li>
+      <li>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. <em>Advances in Neural Information Processing Systems</em>, 25, 1097&ndash;1105.</li>
+      <li>LeCun, Y., Bengio, Y., &amp; Hinton, G. (2015). Deep learning. <em>Nature</em>, 521(7553), 436&ndash;444.</li>
+      <li>Russell, S. J., &amp; Norvig, P. (1995). <em>Artificial Intelligence: A Modern Approach</em> (1st ed.). Prentice Hall.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=28" defer></script></body>
+</html>
