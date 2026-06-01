@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Tension Worth Watching: Optimisation, Cryptography, and the Problems Between Them &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Optimisation researchers want hard problems to fall. Cryptographers need them to stand. A thirty-year view of the tension between them, and the unsettled mathematics beneath both.">
+  <meta property="og:title" content="A Tension Worth Watching: Optimisation, Cryptography, and the Problems Between Them">
+  <meta property="og:description" content="Optimisation researchers want hard problems to fall. Cryptographers need them to stand. A thirty-year view of the tension between them.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/optimisation-and-cryptography.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>A Tension Worth Watching: Optimisation, Cryptography, and the Problems Between Them</h1>
+    <p class="subtitle">Optimisation researchers want hard problems to fall. Cryptographers need them to stand. Having worked first hand on intractable problems in the 1990s, we have watched that tension sharpen over three decades. This is an observation, not a prediction.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">September 2025</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    We spent years in the 1990s on a problem that, in formal terms, could not be
+    solved. The radio link frequency assignment problem is NP-hard, which means
+    no known algorithm solves all instances in time polynomial in the input size,
+    and most researchers believe none exists, though no one has proved it. The
+    instances we worked on held tens of thousands of transmitters, far beyond the
+    reach of exact methods. Heuristics such as tabu search, simulated annealing,
+    and genetic algorithms produced solutions good enough to use, with no claim
+    of optimality. That is the working position of combinatorial optimisation as
+    a whole: the problems that matter are intractable in the worst case, the
+    methods are heuristic, and the field has learned to be productive in the gap
+    between what it can prove and what it can do. We experienced that gap first
+    hand, and it shapes how we read a tension that has grown sharper since.
+  </p>
+
+  <h2>Two faces of computational hardness</h2>
+
+  <p>
+    Hardness serves opposite masters. An optimisation researcher wants hard
+    problems to become tractable, and treats every gain in solving them faster as
+    progress. A cryptographer wants specific hard problems to stay intractable,
+    and treats every threat to that difficulty as a danger. Both communities work
+    the same underlying questions from opposite ends. RSA, one of the foundations
+    of secure web communication, rests on the believed difficulty of integer
+    factorisation. A great deal of online commerce depends on a problem remaining
+    hard that an optimisation researcher would, in principle, like to see fall.
+  </p>
+
+  <p>
+    For most of the period in which we worked in optimisation, the tension stayed
+    latent. Classical heuristics give good approximate solutions to NP-hard
+    problems without threatening the worst-case intractability that cryptography
+    relies on. Tabu search does not break RSA. What has sharpened the tension is
+    the arrival of computational approaches with a more direct line to the
+    cryptographic foundations of the modern internet.
+  </p>
+
+  <h2>What sharpened it</h2>
+
+  <p>
+    In 1994 Peter Shor showed that a quantum computer could factor integers in
+    polynomial time (Shor, 1994). That result was theoretical, and remains so: no
+    quantum machine capable of running it at cryptographically relevant scales
+    existed then or exists now. Its significance is conditional. A sufficiently
+    large fault-tolerant quantum computer, if one is ever built, would force the
+    replacement of the cryptography that secures the web.
+  </p>
+
+  <p>
+    Alongside the theory, quantum annealing hardware has developed, most visibly
+    from D-Wave, solving certain optimisation problems through physical processes
+    that exploit quantum effects. Such hardware naturally addresses a formulation
+    closely related to Quadratic Unconstrained Binary Optimisation, or QUBO. Fred
+    Glover, whose work on tabu search was central to the methods we used,
+    contributed substantially in later years to QUBO as a unifying framework and
+    to classical algorithms for solving it (Kochenberger et al., 2014).
+    Continuity between his classical work and the formulations now run on quantum
+    hardware is one of the more elegant threads in the field, and the kind a long
+    view is well placed to notice.
+  </p>
+
+  <p>
+    We will not claim to judge whether quantum annealing yet offers a genuine
+    speedup over the best classical methods on practically important problems.
+    That question is contested, the evidence incomplete, and the resolution will
+    need more empirical work than has been done. What can be said is that the
+    question is open, serious people are investigating it, and the answer will
+    shape whether the coming decades of optimisation are mainly classical, mainly
+    quantum, or hybrid.
+  </p>
+
+  <h2>The question that has never settled</h2>
+
+  <p>
+    Beneath all of this sits P versus NP, open since the early 1970s (Cook,
+    1971). It asks whether every problem whose solution can be checked quickly can
+    also be solved quickly. Were P to equal NP, most of modern cryptography would
+    lose its foundation, since the problems it relies on being hard would be
+    solvable efficiently. Were P not to equal NP, those foundations would be
+    secure against classical attack, though not necessarily against quantum
+    attack, which is a separate and narrower question. Consensus among complexity
+    theorists holds that P does not equal NP, the proof has resisted the
+    field&rsquo;s most sustained efforts, and the Clay Mathematics Institute&rsquo;s
+    million-dollar prize for a resolution has stood unclaimed since 2000.
+  </p>
+
+  <p>
+    On the cryptographic side, the response is already underway. Standards bodies,
+    NIST among them, have begun standardising algorithms believed to resist
+    quantum attack, and the long work of replacing the internet&rsquo;s
+    cryptographic infrastructure with post-quantum alternatives has started (NIST,
+    2024). How confident anyone should be that the new hard problems stay hard
+    against future advances is a question for cryptographers. We are not among
+    them, and will not pretend otherwise.
+  </p>
+
+  <h2>Slow mathematics, fast engineering</h2>
+
+  <p>
+    What this period has clarified, for us, is the relationship between
+    mathematical results and engineering practice. Mathematical results are slow.
+    They take decades to prove and longer to understand. Engineering, meanwhile,
+    does what it must: it builds on assumptions it cannot prove, develops
+    heuristics that work without guarantees, and adapts when assumptions fail or
+    better methods arrive. Combinatorial optimisation is the engineering practice
+    of working with problems whose structure we do not fully understand.
+    Cryptography is the engineering practice of relying on that same incomplete
+    understanding to provide guarantees that real systems need. The tension
+    between them is, at one level, a tension between two engineering disciplines
+    drawing on the same unsettled mathematics, and its resolution, if it comes,
+    will come from the mathematics rather than from either practice.
+  </p>
+
+  <p>
+    We do not know how it resolves. We do not know whether quantum computing will
+    threaten deployed cryptography within the timeframes that matter, whether the
+    post-quantum alternatives will hold, or whether optimisation will keep
+    advancing mainly by classical means. What we can offer is the perspective of
+    having watched these questions stay open for thirty years while the practice
+    on both sides adapted to their openness. The questions are no nearer
+    settlement than when we began. They are more pressing, since the stakes of
+    resolving them have grown, and they remain, for now, exactly what they have
+    always been: open.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Cook, S. A. (1971). The complexity of theorem-proving procedures. In <em>Proceedings of the Third Annual ACM Symposium on Theory of Computing</em> (pp. 151&ndash;158).</li>
+      <li>Shor, P. W. (1994). Algorithms for quantum computation: discrete logarithms and factoring. In <em>Proceedings of the 35th Annual Symposium on Foundations of Computer Science</em> (pp. 124&ndash;134). IEEE.</li>
+      <li>Kochenberger, G., Hao, J.-K., Glover, F., Lewis, M., L&uuml;, Z., Wang, H., &amp; Wang, Y. (2014). The unconstrained binary quadratic programming problem: a survey. <em>Journal of Combinatorial Optimization</em>, 28(1), 58&ndash;81.</li>
+      <li>National Institute of Standards and Technology. (2024). <em>Module-Lattice-Based Key-Encapsulation Mechanism Standard</em> (FIPS 203) and related post-quantum cryptography standards.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
