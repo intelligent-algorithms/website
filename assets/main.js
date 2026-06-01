@@ -108,35 +108,42 @@
     ctx.rect(tL - 14, tT - 14, (tR - tL) + 28, (tB - tT) + 28);
     ctx.clip('evenodd');
 
-    // Long, thick, curved beams of light flowing in from the right.
-    var M = 20;
+    // Straight long laser beams, fanned out like rays from a bright source
+    // at the bottom-right. Bright at the source, fading in toward the centre.
+    var ox = W * 0.9, oy = H * 1.04;       // source just off the bottom-right
+    var a0 = -150, a1 = -8;                // fan span (degrees), upward
+    var M = 24;
+    var maxLen = Math.max(W, H);
     for (var i = 0; i < M; i++) {
-      var sx = W + rnd(20, 90);                            // enter off the right edge
-      var sy = (i / (M - 1)) * 1.25 * H - 0.12 * H + rnd(-0.05, 0.05) * H; // spread top -> bottom
-      var ex = safeRight + rnd(-40, W * 0.08);             // long: reach in to just right of the text
-      var ey = sy + rnd(-0.24, 0.24) * H;                  // gentle vertical drift
-      var c1x = sx - (sx - ex) * 0.34, c1y = sy + rnd(-0.12, 0.12) * H;
-      var c2x = sx - (sx - ex) * 0.7,  c2y = ey + rnd(-0.12, 0.12) * H;
+      var ang = (a0 + (i / (M - 1)) * (a1 - a0) + rnd(-1.5, 1.5)) * Math.PI / 180;
+      var len = rnd(0.78, 1.25) * maxLen;  // long — reaches toward the centre
+      var ex = ox + Math.cos(ang) * len;
+      var ey = oy + Math.sin(ang) * len;
       var c = cols[i % 3];
-      var bright = (i % 4 === 0);                           // a few crisp leading beams
-      var g = ctx.createLinearGradient(sx, sy, ex, ey);
-      g.addColorStop(0, rgba(c, 0));
-      g.addColorStop(0.10, rgba(c, bright ? 0.95 : 0.6));
-      g.addColorStop(0.50, rgba(c, bright ? 0.7 : 0.4));
-      g.addColorStop(0.80, rgba(c, bright ? 0.45 : 0.22));
-      g.addColorStop(1, rgba(c, 0));
+      var bright = (i % 3 === 0);           // crisp laser cores + softer wide beams
+      var g = ctx.createLinearGradient(ox, oy, ex, ey);
+      g.addColorStop(0, rgba(c, bright ? 0.95 : 0.6));
+      g.addColorStop(0.45, rgba(c, bright ? 0.55 : 0.3));
+      g.addColorStop(1, rgba(c, 0));        // fade toward the centre / tip
       ctx.strokeStyle = g;
-      ctx.lineWidth = bright ? rnd(1.4, 2.6) : rnd(4, 10);  // crisp + thick soft beams
+      ctx.lineWidth = bright ? rnd(1, 2) : rnd(2.5, 6);
       ctx.shadowColor = rgba(c, 0.6);
-      ctx.shadowBlur = bright ? 7 : 18;
+      ctx.shadowBlur = bright ? 6 : 14;
       ctx.beginPath();
-      ctx.moveTo(sx, sy);
-      ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ex, ey);
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(ex, ey);
       ctx.stroke();
     }
 
+    // Bright bloom at the source.
+    var rg = ctx.createRadialGradient(ox, oy, 0, ox, oy, 150);
+    rg.addColorStop(0, 'rgba(150, 220, 255, 0.55)');
+    rg.addColorStop(1, 'rgba(150, 220, 255, 0)');
+    ctx.fillStyle = rg;
+    ctx.beginPath(); ctx.arc(ox, oy, 150, 0, 6.2832); ctx.fill();
+
     // A scatter of glowing nodes on the right.
-    for (var j = 0; j < 16; j++) {
+    for (var j = 0; j < 14; j++) {
       var nx = rnd(safeRight, W), ny = rnd(0, H), nc = cols[j % 3];
       ctx.fillStyle = rgba(nc, 0.7); ctx.shadowColor = rgba(nc, 0.85); ctx.shadowBlur = 8;
       ctx.beginPath(); ctx.arc(nx, ny, rnd(1, 2.2), 0, 6.2832); ctx.fill();
