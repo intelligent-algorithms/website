@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Old Methods, New Combinations: Optimisation Since the 1980s &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Simulated annealing, genetic algorithms and tabu search still run much of the infrastructure around us. Forty years on, the frontier lies in how we combine them.">
+  <meta property="og:title" content="Old Methods, New Combinations: Why 1980s Optimisation Still Runs the World">
+  <meta property="og:description" content="Simulated annealing, genetic algorithms and tabu search still run much of the infrastructure around us. The frontier now lies in how we combine them.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/optimisation-since-the-1980s.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=27">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Old Methods, New Combinations: Why 1980s Optimisation Still Runs the World</h1>
+    <p class="subtitle">Simulated annealing, genetic algorithms and tabu search still run much of the infrastructure around us &mdash; today&rsquo;s frontier lies in how we combine them.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">May 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    Metaheuristic optimisation entered the mainstream of computing in the 1980s
+    as a pragmatic answer to a hard fact: many of the problems industry most
+    wanted solved were combinatorial, NP-hard, and far too large for exact
+    methods to touch within any usable timeframe. Simulated annealing, genetic
+    algorithms, and tabu search emerged within a few years of one another, each
+    offering solutions good enough for practical use inside the compute and time
+    budgets of the day. Four decades on, those same families of methods quietly
+    run a great deal of the infrastructure around us. We think their durability
+    is worth examining, both for what it says about the methods and for where it
+    points next.
+  </p>
+
+  <h2>A pragmatic response to intractable problems</h2>
+
+  <p>
+    Three foundational methods anchor the period. Simulated annealing borrowed
+    the physics of slow cooling to escape local optima (Kirkpatrick, Gelatt, &amp;
+    Vecchi, 1983). Genetic algorithms recast search as population-based
+    recombination and selection (Goldberg, 1989). Tabu search added adaptive
+    memory, steering search away from recently visited regions and toward
+    unexplored ones (Glover, 1986). Each reflected the constraints of its moment.
+    Exact optimisation was intractable at the problem sizes practitioners cared
+    about, so the research question shifted from finding the provably optimal
+    solution to finding a strong solution within a fixed budget. Methods that
+    answered that question well earned their place, and they have kept it.
+  </p>
+
+  <h2>Where the methods actually live now</h2>
+
+  <p>
+    Forty years later, metaheuristics sit inside systems most people never think
+    about. University and examination timetabling, vehicle routing and last-mile
+    delivery, staff rostering, production scheduling, resource assignment, and
+    radio spectrum allocation all rely on heuristic search to produce workable
+    plans at scale. We worked on one such problem directly in the 1990s,
+    assigning frequencies to tens of thousands of radio transmitters while
+    holding interference within tolerance, a task that remains a textbook case of
+    large-scale combinatorial optimisation. Demand for these solutions has grown
+    rather than receded. Logistics networks, cloud workloads, and energy systems
+    have only made the underlying problems larger and the value of
+    good-enough-fast solutions higher.
+  </p>
+
+  <h2>No single method wins outright</h2>
+
+  <p>
+    A formal result clarified what practitioners had already observed: averaged
+    across all possible problems, no optimisation method outperforms any other
+    (Wolpert &amp; Macready, 1997). Performance is earned on specific problem
+    structures, not in general. Simulated annealing may suit one landscape, an
+    evolutionary method another, tabu search a third. That finding reframed the
+    field&rsquo;s ambition. Rather than chasing a single best algorithm,
+    researchers began combining methods so that the strengths of one cover the
+    weak spots of another. Memetic algorithms fused population search with local
+    refinement. Matheuristics married exact mathematical programming with
+    heuristic guidance. Hyper-heuristics raised the level of abstraction again,
+    selecting or generating heuristics automatically for the instance at hand
+    (Burke et al., 2013).
+  </p>
+
+  <h2>What we are still learning</h2>
+
+  <p>
+    Hybridisation raised a harder question than it settled. Knowing that a
+    mixture can outperform its components says little about which mixture, for
+    which problem, configured how. Much current research addresses exactly that
+    composition problem. Machine learning now informs choices that metaheuristics
+    once made by hand, learning which moves to favour, which instances resemble
+    which, and where search effort pays off (Bengio, Lodi, &amp; Prouvost, 2021).
+    Automated algorithm configuration and selection have turned tuning from craft
+    into a measurable, repeatable process. We read this as continuity rather than
+    replacement. Learning components are augmenting the metaheuristic scaffolding
+    built in the 1980s, not discarding it, and the most capable systems we see in
+    practice are hybrids of hybrids: classical search, mathematical programming,
+    and learned heuristics working in concert.
+  </p>
+
+  <p>
+    For applied work, the lesson of forty years is steady. Understand the
+    problem&rsquo;s structure first, choose or compose methods to fit it, and
+    treat the optimiser as something to be measured and improved rather than
+    settled once. Forty years on, the core techniques have aged remarkably well.
+    Composition is where the interesting work now lies.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Bengio, Y., Lodi, A., &amp; Prouvost, A. (2021). Machine learning for combinatorial optimization: a methodological tour d&rsquo;horizon. <em>European Journal of Operational Research</em>, 290(2), 405&ndash;421.</li>
+      <li>Burke, E. K., Gendreau, M., Hyde, M., Kendall, G., Ochoa, G., &Ouml;zcan, E., &amp; Qu, R. (2013). Hyper-heuristics: a survey of the state of the art. <em>Journal of the Operational Research Society</em>, 64(12), 1695&ndash;1724.</li>
+      <li>Glover, F. (1986). Future paths for integer programming and links to artificial intelligence. <em>Computers &amp; Operations Research</em>, 13(5), 533&ndash;549.</li>
+      <li>Goldberg, D. E. (1989). <em>Genetic Algorithms in Search, Optimization, and Machine Learning.</em> Addison-Wesley.</li>
+      <li>Kirkpatrick, S., Gelatt, C. D., &amp; Vecchi, M. P. (1983). Optimization by simulated annealing. <em>Science</em>, 220(4598), 671&ndash;680.</li>
+      <li>Wolpert, D. H., &amp; Macready, W. G. (1997). No free lunch theorems for optimization. <em>IEEE Transactions on Evolutionary Computation</em>, 1(1), 67&ndash;82.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=27" defer></script></body>
+</html>
