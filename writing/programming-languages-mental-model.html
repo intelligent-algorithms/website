@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closer to the Machine: What Decades of Programming Languages Have Taught Us &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Programming languages have evolved toward ever greater abstraction, and the evolution has been good. It has also left a gap. Why every programmer should spend real time closer to the machine.">
+  <meta property="og:title" content="Closer to the Machine: What Decades of Programming Languages Have Taught Us">
+  <meta property="og:description" content="Programming languages have evolved toward ever greater abstraction, and the evolution has been good. It has also left a gap closer to the machine.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/programming-languages-mental-model.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Closer to the Machine: What Decades of Programming Languages Have Taught Us</h1>
+    <p class="subtitle">Programming languages have evolved toward ever greater abstraction, and the evolution has been good. It has also left a gap. Having worked across many languages over thirty years, we think every programmer should spend real time closer to the machine.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">July 2025</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    We have written production code across Ada, COBOL, Pascal, C, C++, Java, R,
+    and Python over more than three decades, and the experience has produced a
+    view we often share with students. Programming languages have evolved across
+    that span toward ever greater abstraction, and the evolution has been, on
+    balance, good. It has also produced a gap. A programmer who learns only
+    high-level languages, Python first and another high-level language later,
+    develops a particular blind spot about what a computer is doing when their
+    code runs. The gap is not catastrophic and does not stop anyone being
+    productive, though it is real, and it shows in their work in ways they may not
+    recognise. Closing it has nothing to do with nostalgia for older languages,
+    and everything to do with the intellectual equipment the full range of the
+    field requires.
+  </p>
+
+  <h2>Before Java, programs were tied to machines</h2>
+
+  <p>
+    What we have witnessed most clearly is how much the ground has shifted beneath
+    what students now take for granted. Before Java, a program was tied to its
+    machine. A programmer had to know which operating system it would run on,
+    which hardware architecture, which compiler, and which system libraries were
+    available, and code written for one combination often needed real work to run
+    on another. Cross-platform incompatibility was a daily fact of professional
+    life, and it shaped how software was designed and shipped.
+  </p>
+
+  <p>
+    Java&rsquo;s promise, when it arrived in 1996, was write once, run anywhere,
+    delivered through a virtual machine that ran on top of whatever hardware and
+    operating system a user happened to have. The same compiled bytecode ran
+    unchanged across platforms. Students now inherit that achievement without
+    seeing it, since the managed execution environments that followed, Python
+    among them, sit on the conceptual ground Java laid. We built cross-platform
+    production systems in Java in the late 1990s precisely for that guarantee, and
+    the relief it brought is hard to convey to anyone who did not work through the
+    pain that preceded it.
+  </p>
+
+  <h2>What C and C++ teach</h2>
+
+  <p>
+    We spent the 1990s and early 2000s in C and C++, in research and in industry,
+    and the experience of debugging in them is the one worth describing, since it
+    produces the mental model the argument turns on. In these languages the
+    programmer is responsible for memory: where a structure lives, how long it
+    lives, and who releases it. Get that wrong and the program leaks memory until
+    it falls over, or reads memory that has already been freed, or writes past the
+    end of a buffer into data belonging to something else. Each failure surfaces
+    in production as a segmentation fault, the operating system&rsquo;s signal that
+    the program touched memory it should not have, and the symptom usually sits
+    far from the cause.
+  </p>
+
+  <p>
+    Tracking down such a fault is a serious intellectual exercise. The programmer
+    reasons about the layout of objects in memory, the lifetimes of references to
+    them, and the order of operations that could have left the program in the
+    state it crashed in, with tools that were primitive by current standards. We
+    will not pretend the work was enjoyable. What it produced, in those who did it
+    long enough, was a working model of what the machine actually does: that
+    allocating an object costs something, that copying it costs something, that
+    the layout of data governs how fast it can be reached, and that every resource
+    has a lifetime the program must track. That model is not a curiosity. It
+    underpins almost all work where performance matters at the level the hardware
+    can deliver, and the higher-level languages have made it possible to program
+    for years without acquiring it.
+  </p>
+
+  <p>
+    The languages that came after, with garbage collection and richer type
+    systems, are improvements for most kinds of work. C and C++ are not better.
+    What matters is that the model the experience builds is one a programmer who
+    has only used managed languages does not have, and its absence shows in their
+    work whether or not they notice.
+  </p>
+
+  <h2>What Python hides, and what it offers</h2>
+
+  <p>
+    Python is a useful and important language, and we use it without resistance
+    for most data and machine-learning work. Its case is real: it is productive,
+    its library ecosystem is unmatched, and a student can produce useful work
+    within weeks. We will not write a polemic against it.
+  </p>
+
+  <p>
+    What is worth saying is that Python is built on layers of abstraction that
+    hide most of what the machine is doing. A list looks like a list, and is an
+    array of pointers to heap-allocated objects under reference counting. A
+    dictionary looks like a dictionary, and is a hash table whose performance
+    depends on details the language never surfaces. A loop looks like a loop, and
+    carries dynamic dispatch and memory management with no analogue in a compiled
+    language. None of this criticises Python. What matters is that a programmer
+    who has only worked in it may not know any of this is happening, and when
+    speed eventually becomes a problem, as it does for any non-trivial
+    application, the tools for diagnosing it, dropping into NumPy, reaching for
+    Cython, or rewriting the hot path, all draw on the very model a lower-level
+    language builds. We found Python hard to adjust to at first, and the
+    discomfort was not irrational. It was the response of a model richer than the
+    language required, finding the extra richness no longer used.
+  </p>
+
+  <h2>What we tell students</h2>
+
+  <p>
+    What we tell students, especially those who learned Python first and were
+    never required to leave it, is to spend real time in C or C++. Not as a
+    historical exercise, and not for the sake of the languages themselves, but for
+    the model of computation the experience builds.
+  </p>
+
+  <p>
+    Our reasons are practical as much as intellectual. Lower-level languages
+    remain the default across substantial parts of the field: algorithmic trading
+    and high-frequency systems, where latency tolerates no managed overhead, and
+    operating system kernels, device drivers, embedded systems, game engines, and
+    scientific computing libraries for similar reasons. A student who has never
+    seen them is shut out of a real portion of the industry. Beyond that, the
+    model makes better programmers at every level. The Python developer who knows
+    what their data structures cost chooses differently from the one who does not,
+    and the difference shows in the result.
+  </p>
+
+  <p>
+    We have been fortunate, by the accident of when we entered the field, to have
+    worked across many languages over many years. That has produced a perspective
+    worth offering, not as a claim that the old ways were better, but as a
+    reminder that the field is larger than any one language, that the mental
+    models different languages build are not interchangeable, and that a long
+    career rewards holding more than one of them. The languages we learned first,
+    Ada on a civil head-up display project in the early 1990s and Pascal before
+    it, are not ones we expect students to seek out. The ones we would point them
+    toward are C and C++. That experience will be uncomfortable, and it will be
+    one of the more useful uncomfortable experiences a computer science education
+    can offer.
+  </p>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
