@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Difference of Category: Hardware and Software Since the 1990s &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="The gap between a 1998 server and a 2026 cloud instance is not one of degree. Working inside that scarcity shaped the engineering, and some of what it taught is worth keeping.">
+  <meta property="og:title" content="A Difference of Category: Hardware and Software Since the 1990s">
+  <meta property="og:description" content="The gap between a 1998 server and a 2026 cloud instance is not one of degree. Working inside that scarcity shaped the engineering.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/hardware-since-the-1990s.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>A Difference of Category: Hardware and Software Since the 1990s</h1>
+    <p class="subtitle">The gap between what a 1998 server could do and what a cloud instance does now is not one of degree. Working inside that scarcity shaped the engineering, and some of what it taught is worth keeping.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">December 2025</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    We have written about how the operations of finance were rebuilt in the
+    1990s. Beneath those operations sat the machines that ran them, and the gap
+    between the hardware of that period and the hardware of today is wide enough
+    to deserve its own account. A server in 1998 and a cloud instance in 2026 are
+    not two points on the same scale. They differ in kind, and the engineering
+    each one demands differs in kind with them.
+  </p>
+
+  <h2>Computing under scarcity</h2>
+
+  <p>
+    Compute was a budget rather than an assumption. A dataset that now resolves
+    in seconds on a laptop took hours on the Unix workstations of the period, and
+    that single fact shaped how work proceeded. Experiments were rationed. Long
+    runs were scheduled for nights and weekends when machines stood free. Memory
+    was counted carefully, storage was finite in a way that disciplined every
+    design, and a network that dropped messages under load was a problem the
+    engineer solved rather than a property the platform guaranteed. Databases
+    failed often enough that a skilled administrator stayed close to every
+    production system, restarting and recovering by hand what modern
+    infrastructure now repairs without anyone noticing.
+  </p>
+
+  <h2>Software built from first principles</h2>
+
+  <p>
+    Software matched the hardware. Standard utilities that ship with every
+    platform today had to be written by the people who needed them. A reliable
+    socket listener in Java that did not lose messages under load was hand-built
+    and hand-tested, often by breaking the connection deliberately and watching
+    what happened, since no library yet wrapped the work for you. Database access
+    from a high-level language was a recently solved problem rather than a given,
+    with JDBC newly arrived and a crash-prone engine such as Sybase underneath.
+    The integration technologies of the day, CORBA and the early message buses
+    chief among them, were young, and an engineer learned them in the same months
+    they shipped production systems on top of them, with vendor manuals, a few
+    books, and a colleague down the corridor as the available sources. Glue code
+    was not a minor category of work. It was most of the system, and writing it
+    well was the craft of the period.
+  </p>
+
+  <h2>What abundance gave, and what it quietly removed</h2>
+
+  <p>
+    Every one of those constraints has since lifted. Compute is effectively
+    unbounded for most purposes. Storage is cheap and elastic. Databases manage
+    and heal themselves, and the administrator&rsquo;s role has moved from
+    constant operational rescue to strategic design. Libraries now handle the
+    socket layer, the connection pool, the retry logic, and a hundred other
+    things that once had to be built by hand. The gains are real, and we would
+    not trade them.
+  </p>
+
+  <p>
+    Abundance carried a quieter cost. Operating close to the machine produced an
+    awareness the constraints made compulsory. An engineer who had written a
+    socket listener by hand, watched a database fail under load, and been paged
+    to restart it on a Wednesday afternoon understood the failure modes of their
+    systems in a way comfortable abstractions no longer require. We do not
+    romanticise the scarcity. The present is better in almost every measurable
+    way. The habit worth carrying forward is the one scarcity enforced: treating
+    compute, memory, latency, and failure as real costs to be understood rather
+    than properties the platform is assumed to handle. The engineers we most
+    admire still reason that way, and their systems are sturdier for it.
+  </p>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
