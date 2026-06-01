@@ -885,6 +885,17 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   font-size: 1.5rem;
   margin-top: 2.75rem;
 }
+/* Pull quotes / epigraphs within an article */
+.article-body blockquote {
+  margin: 1.9rem 0;
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  border-left: 3px solid var(--blue-500);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.32rem;
+  line-height: 1.5;
+  color: var(--navy);
+}
 
 /* Drop cap on first paragraph of article */
 .article-body > p:first-of-type::first-letter {
