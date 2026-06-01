@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Data Outgrew the Machine: The Infrastructure That Made Scale Easy &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="A query over a petabyte now runs as easily as a query over a spreadsheet once did. We watched that ease arrive, and it was not inevitable. The hardware and software that tamed data at scale.">
+  <meta property="og:title" content="When Data Outgrew the Machine: The Infrastructure That Made Scale Easy">
+  <meta property="og:description" content="A query over a petabyte now runs as easily as a query over a spreadsheet once did. The hardware and software that tamed data at scale, and why it was not inevitable.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/big-data-infrastructure-evolution.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>When Data Outgrew the Machine: The Infrastructure That Made Scale Easy</h1>
+    <p class="subtitle">A query over a petabyte now runs as easily as a query over a spreadsheet once did. We watched that ease arrive, and it was not inevitable. The hardware and software that tamed data at scale are worth describing, as recent history and as the companion to the harder question of what we should do with the capability.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">May 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    A query over a petabyte of data now runs about as easily as a query over a
+    spreadsheet did a generation ago. We have watched that ease arrive, and the
+    arrival was not inevitable. Big data, the problem of storing and processing
+    more information than any single machine could hold, was for a period one of
+    the harder things in computing, and the reason most institutions could not act
+    on the data they already possessed. The infrastructure that tamed it, in
+    hardware and in software, is worth describing, both as a piece of recent
+    history and as a companion to the harder question of what we should do with
+    the capability now that we have it.
+  </p>
+
+  <h2>When data outgrew the machine</h2>
+
+  <p>
+    For most of computing&rsquo;s history, the answer to a larger problem was a
+    larger machine. More memory, a faster processor, more disk. That answer held
+    until data outgrew what any single machine could economically hold or process,
+    which happened in earnest as the web turned every interaction into a record
+    and datasets reached sizes no affordable computer could manage. With that, the
+    bottleneck shifted. Difficulty no longer lay in how fast one processor could
+    run. It lay in how to store and move information across many machines without
+    the whole thing collapsing when one of them failed, as one of them always did.
+    Scaling up had reached its ceiling. Scaling out was the only way forward, and
+    scaling out is a genuinely harder problem.
+  </p>
+
+  <h2>The infrastructure answer</h2>
+
+  <p>
+    An answer that reshaped the field came from treating failure as normal rather
+    than exceptional. Google&rsquo;s work in the early 2000s, the Google File
+    System and the MapReduce programming model (Dean &amp; Ghemawat, 2004), spread
+    both data and computation across large numbers of cheap, unreliable machines
+    and assumed that some would fail at any moment. Storage was replicated, so the
+    loss of a machine lost no data. Computation was divided, so the loss of a
+    machine cost only the small piece it had been working on. Hadoop carried the
+    same ideas into open source in the mid-2000s, putting web-scale data
+    processing within reach of any organisation willing to run a cluster. Cloud
+    platforms, with object storage and rentable compute arriving from 2006,
+    removed even the need to own the hardware. Cost of storing and processing a
+    terabyte fell by orders of magnitude over a decade, and a capability that had
+    belonged to a handful of web giants became ordinary.
+  </p>
+
+  <h2>The software answer</h2>
+
+  <p>
+    Hardware and distribution were only half of it. Early large-scale data work
+    was bespoke and difficult. A programmer reasoned explicitly about how data was
+    partitioned across the cluster, wrote computation in the rigid shape that
+    MapReduce required, and handled the consequences of machines failing mid-job.
+    That work was powerful and unpleasant in equal measure. What followed was a
+    steady climb in abstraction. Apache Spark, in the early 2010s, replaced the
+    rigid MapReduce shape with a richer and faster model that kept data in memory
+    across steps (Zaharia et al., 2012). SQL was layered back on top of
+    distributed storage, so analysts could query enormous datasets in a language
+    they already knew. Cloud data warehouses then hid the cluster entirely,
+    presenting petabytes behind an interface no more demanding than a database
+    table. Each layer concealed more of the distributed machinery beneath it,
+    until the difficulty that had defined the field a decade earlier was, for most
+    users, simply gone.
+  </p>
+
+  <h2>What we witnessed</h2>
+
+  <p>
+    What we witnessed in big data is the arc that recurs across every transition
+    we have written about. A problem that was hard, bespoke, and the preserve of
+    specialists became commoditised and easy, and the work moved up the stack as a
+    result. We worked with data at a scale that strained the available tools
+    before those tools matured, and the relief when the infrastructure caught up
+    was considerable. The constraint that had defined the work, whether the data
+    could be processed at all, dissolved, and a different constraint took its
+    place.
+  </p>
+
+  <p>
+    That different constraint is the more interesting one, and it is where this
+    piece hands off to its companion. Once storing and processing data at scale
+    became easy, the binding question stopped being technical. It became a
+    question of judgement: what the data should be used for, what it does to the
+    people represented in it, and whether the ease of acting on it has outrun our
+    care in deciding whether to. Infrastructure made the capability universal.
+    Harder still is the discipline of deciding what to do with a capability that
+    no longer pushes back, and that is the one still being learned. As with the
+    abstractions in any maturing field, the ease is a genuine gain, and it rewards
+    anyone who still understands what sits beneath it.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Dean, J., &amp; Ghemawat, S. (2004). MapReduce: Simplified data processing on large clusters. In <em>Proceedings of the 6th USENIX Symposium on Operating Systems Design and Implementation (OSDI)</em>.</li>
+      <li>Ghemawat, S., Gobioff, H., &amp; Leung, S.-T. (2003). The Google File System. In <em>Proceedings of the 19th ACM Symposium on Operating Systems Principles (SOSP)</em>.</li>
+      <li>Zaharia, M., Chowdhury, M., Das, T., Dave, A., Ma, J., McCauley, M., Franklin, M. J., Shenker, S., &amp; Stoica, I. (2012). Resilient distributed datasets: A fault-tolerant abstraction for in-memory cluster computing. In <em>Proceedings of the 9th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</em>.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
