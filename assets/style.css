@@ -415,11 +415,19 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
 .hero-slogan {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(3.4rem, 8.4vw, 6.4rem);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-  max-width: 18ch;
+  font-size: clamp(3.9rem, 9.6vw, 7.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.027em;
+  max-width: 19ch;
   margin: 0.2rem 0 1.5rem;
+}
+/* Brand line standing in for the dropped hero logo: capitals, blue, prominent */
+.hero-home .brand-kicker {
+  font-size: 0.98rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--sky-300);
+  margin-bottom: 1.1rem;
 }
 .hero-slogan .w {
   display: inline-block;
