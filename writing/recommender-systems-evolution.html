@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Should You See Next? The Long Evolution of Recommender Systems &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="From a simple question about which film you might like, recommender systems have become the quiet logic shaping much of what we read, buy, and believe. We explored their early promise for finance in 2014.">
+  <meta property="og:title" content="What Should You See Next? The Long Evolution of Recommender Systems">
+  <meta property="og:description" content="From a question about which film you might like, recommender systems became the quiet logic shaping much of what we read, buy, and believe. A decade-long view of their reach and their problems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/recommender-systems-evolution.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>What Should You See Next? The Long Evolution of Recommender Systems</h1>
+    <p class="subtitle">From a simple question about which film you might like, recommender systems have become the quiet logic shaping much of what we read, buy, and believe. We explored their early promise for finance in 2014, and we have watched their reach, and their problems, grow ever since.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">February 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    Few technologies have moved as quietly from novelty to ubiquity as the
+    recommender system. It began as an answer to a narrow question, which film
+    might you enjoy, which book, which product, and it now shapes a substantial
+    share of what people read, watch, buy, and come to believe. We have followed
+    its development with particular interest, having explored its early promise
+    for institutional finance when the methods were still young. The arc from that
+    period to the present is worth setting down, because the same techniques that
+    made the technology useful are the source of the problems it now raises.
+  </p>
+
+  <h2>From neighbours to the Netflix Prize</h2>
+
+  <p>
+    The founding idea was collaborative filtering, and it was elegant in its
+    simplicity. To predict what someone will like, look at people who have behaved
+    as they have, and recommend what those people liked. No understanding of the
+    items themselves was required, only the pattern of who engaged with what.
+    Early systems in the 1990s built on this, alongside content-based approaches
+    that recommended items resembling ones a person had already chosen. The
+    field&rsquo;s defining moment came with the Netflix Prize, the open
+    competition that ran from 2006 to 2009 offering a million dollars for a
+    material improvement in rating prediction. It drew the global research
+    community to the problem, established matrix factorisation as the workhorse
+    method of the era, and turned recommendation from a useful feature into a
+    serious discipline. The lesson of that competition, that combining many models
+    beats any single one, shaped practice for years.
+  </p>
+
+  <h2>Maturing into infrastructure</h2>
+
+  <p>
+    By the early 2010s the methods had matured and were beginning to spread beyond
+    the web giants who had pioneered them. This is the moment we encountered the
+    field directly. When the fintech company we were involved with was being
+    established in 2014, we were reading the early innovation in recommender
+    systems and following the researchers behind PredictionIO, then an independent
+    open-source project run by a small team and founded by Simon Chan, which gave
+    developers a ready stack for personalisation, recommendation, and content
+    discovery without assembling the underlying machinery themselves. We were
+    working with the releases that small team made available in 2014 and 2015, a
+    year or two before the project was acquired by Salesforce and later donated to
+    the Apache Software Foundation. Built on the Spark and MLlib ecosystem, it was
+    part of a broader democratisation that put recommendation engines, which had
+    taken specialist teams months to build, within reach of an ordinary developer
+    in weeks.
+  </p>
+
+  <p>
+    What struck us was that the same logic could apply to institutional finance.
+    The question a retailer asks, who will buy what and when, is the question a
+    fixed-income desk asks of its institutional clients. We built an internal
+    proof of concept using PredictionIO&rsquo;s item-ranking capability to predict
+    institutional fixed-income demand, and wrote a prototype paper exploring the
+    idea. The work was early, developed before client data or a platform existed,
+    and its value was as seed rather than product, but the underlying intuition,
+    that recommender logic generalises far beyond retail, proved sound and
+    informed forecasting work that came later. The wider point holds: by the
+    mid-2010s the techniques had become general infrastructure, applicable
+    wherever behaviour leaves a trace.
+  </p>
+
+  <h2>The deep-learning turn</h2>
+
+  <p>
+    The next phase deepened the methods considerably. Deep learning brought neural
+    architectures that could model sequences of behaviour, learn rich
+    representations of users and items, and capture patterns that matrix
+    factorisation could not. The large platforms moved their feeds, timelines, and
+    product recommendations onto these systems, and the engines grew from
+    suggesting items to ranking the entirety of what a person sees. That shift,
+    from recommending a few products to ordering an entire information
+    environment, is the most consequential development in the field&rsquo;s
+    history, and it is the one that turned a useful tool into a force with social
+    weight. When a system decides not just which film to suggest but which posts,
+    news, and viewpoints reach a person, it has stopped being a convenience and
+    become an editor.
+  </p>
+
+  <h2>The problems the methods created</h2>
+
+  <p>
+    The difficulties the field now faces are not failures of the technology. They
+    are direct consequences of how well it works. A system trained to maximise
+    engagement learns that certain content holds attention, and if outrage,
+    novelty, or confirmation of existing belief holds attention best, the system
+    amplifies them, regardless of whether they inform or mislead. Optimising for
+    what people click is not the same as serving what is good for them, and the
+    gap between the two is where the problems live.
+  </p>
+
+  <p>
+    Bias is the clearest example. A recommender trained on historical behaviour
+    reproduces the patterns in that behaviour, including its inequities, and can
+    entrench them by showing people more of what people like them have seen
+    before, narrowing rather than broadening what they encounter. Commercial bias
+    compounds this, since the party operating the system has its own interests in
+    what gets promoted, and those interests need not align with the user&rsquo;s.
+    Misinformation thrives where engagement is the objective, because false and
+    sensational content often travels further than measured truth. Filter bubbles
+    and the narrowing of shared reality follow from systems doing exactly what
+    they were built to do, optimising individual engagement without regard to the
+    collective effect. None of this was designed. All of it emerged from
+    objectives that seemed reasonable when the only question was which film you
+    might like.
+  </p>
+
+  <h2>Where the responsibility now sits</h2>
+
+  <p>
+    What we draw from watching this field for over a decade is that its evolution
+    mirrors the broader pattern of the technologies we have written about. A method
+    that solved a narrow problem became general infrastructure, its reach grew
+    faster than the understanding of its effects, and the binding question shifted
+    from technical to ethical. Developers building these systems now carry a
+    responsibility that the early collaborative-filtering researchers never faced.
+    The choice of what to optimise for is a choice about what kind of information
+    environment to create, and engagement, the easiest objective to measure, is
+    rarely the right one on its own. The harder work, and the direction the field
+    is slowly turning toward, is building systems that account for diversity,
+    accuracy, and the long-term interests of the people they serve, not only the
+    next click.
+  </p>
+
+  <p>
+    The technology that began by asking what you might like to watch now helps
+    determine what a great many people know about the world. That is an
+    extraordinary reach for an idea that started with the behaviour of neighbours,
+    and it places a corresponding weight on the judgement of the people who build
+    and tune these systems. The methods are mature. The discipline of using them
+    well is the part still being learned, and it is the part that matters most now.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Bennett, J., &amp; Lanning, S. (2007). The Netflix Prize. In <em>Proceedings of KDD Cup and Workshop</em>.</li>
+      <li>Koren, Y., Bell, R., &amp; Volinsky, C. (2009). Matrix factorization techniques for recommender systems. <em>Computer</em>, 42(8), 30&ndash;37.</li>
+      <li>Zhang, S., Yao, L., Sun, A., &amp; Tay, Y. (2019). Deep learning based recommender system: A survey and new perspectives. <em>ACM Computing Surveys</em>, 52(1), 1&ndash;38.</li>
+      <li>Apache PredictionIO. Apache Software Foundation. https://predictionio.apache.org</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
