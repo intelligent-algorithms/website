@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Requests for Comments: How Open Standards Built the Network We Trust &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Networking runs on protocols agreed by people asking each other what should go in them. We used the early ones, when remote access meant trust rather than encryption, and watched the standards adapt as the network's problem shifted from connection to security.">
+  <meta property="og:title" content="Requests for Comments: How Open Standards Built the Network We Trust">
+  <meta property="og:description" content="From the plaintext tools of the research networks to the encrypted standards that secure everything today: how open standards are made, and how completely their priorities shifted from trust to security.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/network-protocols-evolution.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Requests for Comments: How Open Standards Built the Network We Trust</h1>
+    <p class="subtitle">Networking runs on protocols agreed by people asking each other what should go in them. We used the early ones, when remote access meant trust rather than encryption. Watching those standards adapt, as the network&rsquo;s problems changed from connection to security, has been one of the quiet pleasures of a long career.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">July 2025</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    The internet runs on agreements, not just on wires. Behind every connection
+    sits a protocol, a shared standard for how two machines should talk, and
+    behind every protocol sits a remarkable tradition of people circulating their
+    opinions about what the standard ought to contain. We have used these
+    protocols across their whole modern span, from the plaintext tools of the
+    early research networks to the encrypted standards that secure everything
+    today, and watching them adapt to the changing problems of the network has
+    been one of the quieter pleasures of a long career. The story is worth
+    telling, because it shows both how open standards are made and how completely
+    the priorities behind them have shifted.
+  </p>
+
+  <h2>The humblest beginning</h2>
+
+  <p>
+    The tradition began with a deliberately modest gesture. In April 1969, a
+    graduate student named Steve Crocker, working on the early ARPANET, wrote up
+    some ideas about host software and titled the document a Request for Comments,
+    choosing that name precisely so it would not sound authoritative, but would
+    instead invite the community to respond (Crocker, 1969). That first RFC began
+    a series that continues to this day and that has defined the technical
+    standards of the internet ever since. The naming captured something essential
+    about how the network would be built. The standards were not handed down. They
+    emerged from researchers proposing, debating, and refining specifications
+    together, and the protocols that resulted carried the marks of that collective
+    process. The email standards we still depend on, along with the foundations of
+    nearly everything else in networking, came out of those early ARPANET
+    discussions and the open process they established.
+  </p>
+
+  <h2>When the network ran on trust</h2>
+
+  <p>
+    We used the protocols of that era directly, on research networks before the
+    public internet existed. Remote access meant Telnet, rlogin, and FTP. You
+    logged in to another machine, sometimes with little more than your email
+    identity, and ran your code there as a fully trusted user. What is striking,
+    looking back, is what we did not think about. We did not think about
+    interception. We did not think about a third party sitting between us and the
+    remote machine, reading or altering what passed. Those protocols sent
+    everything, passwords included, as plain text across the wire, and that was
+    simply how things were done. The network was a community of researchers, the
+    priority was communication and sharing, and security was not at the front of
+    anyone&rsquo;s mind. It is hard to convey now how much that assumption of trust
+    shaped the early network, because the assumption has been so completely
+    abandoned since.
+  </p>
+
+  <h2>The shift to security</h2>
+
+  <p>
+    The change came as the network grew beyond the community that could be
+    trusted, and the protocols changed with it, each new one answering a problem
+    the older ones had not been built to face. Secure Shell is the clearest
+    example. Tatu Yl&ouml;nen created SSH in 1995, in direct response to a
+    password-sniffing attack on his university network, precisely to replace the
+    plaintext Telnet, rlogin, and rsh that had exposed those credentials
+    (Yl&ouml;nen, 1996). What had been unthinkable to design against in the
+    research era, an attacker reading the traffic, was now the threat the protocol
+    existed to defeat. The same pattern repeated across the stack. Secure file
+    transfer moved to SFTP, carried over SSH. The web&rsquo;s HTTP gained its
+    secure form, HTTPS, layered over Transport Layer Security, and TLS has since
+    become the foundation on which essentially all web protocols now rest. The
+    progression is consistent: a protocol built for an age of trust gives way to
+    one built for an age of interception, and each adaptation reflects an issue
+    that the society and technology of its moment had brought to the surface.
+  </p>
+
+  <h2>Researchers and the open-source community together</h2>
+
+  <p>
+    The way SSH became universal also illustrates how this ecosystem actually
+    works, through the combined effort of researchers and the open-source
+    community. Yl&ouml;nen designed and released the original protocol, but his
+    later versions became progressively more proprietary. In 1999 the OpenBSD
+    project took the last freely licensed release and forked it into OpenSSH,
+    cleaning up the code and keeping it open, and it is OpenSSH that now runs on
+    virtually every server in the world (OpenBSD Project, 1999). A researcher
+    created the protocol; an open-source community kept it free and carried it
+    everywhere. That division of labour, invention by researchers and stewardship
+    by a community willing to maintain and protect the open version, recurs
+    throughout the history of the standards we rely on, and it is one of the more
+    admirable features of how this part of computing has developed.
+  </p>
+
+  <h2>The old mathematics underneath</h2>
+
+  <p>
+    One detail in all of this continues to strike us. The security that the modern
+    protocols provide rests on public-key cryptography, on the Diffie-Hellman key
+    exchange and the related mathematics that let two parties establish a shared
+    secret over a channel an adversary can read. That mathematics was established
+    decades before it was woven into the everyday protocols that now depend on it.
+    The network spent its first era assuming trust and its second era engineering
+    against its absence, and the tools it reached for in that second era were
+    mathematical ideas that had been waiting, largely unused in this context,
+    since well before the problems arrived. There is a lesson in that, and it is
+    one we have seen across several fields: foundational mathematics often
+    precedes its application by a generation or more, and the patience to develop
+    it before its use is visible repays itself when the need finally comes.
+  </p>
+
+  <p>
+    What we take from watching this evolution is admiration, for the openness of
+    the process that produced these standards, for the researchers who designed
+    them and the communities who kept them free, and for a tradition that began
+    with a graduate student asking his colleagues what they thought. The protocols
+    have changed continuously, always in response to the problems of their time,
+    and they will keep changing as new problems arrive. The method by which they
+    change, open, collaborative, and rooted in a request for comments rather than
+    a decree, is the part most worth preserving.
+  </p>
+
+  <p>
+    <em>One of three notes on security and its mathematical foundations, alongside
+    <a href="churchhouse-cryptography-security.html">Robert Churchhouse and the
+    long arc of cryptography</a> and <a href="optimisation-and-cryptography.html">optimisation
+    and cryptography</a>.</em>
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Crocker, S. (1969). <em>Host Software</em>. RFC 1, Network Working Group. https://www.rfc-editor.org/rfc/rfc1</li>
+      <li>Yl&ouml;nen, T. (1996). The SSH (Secure Shell) Remote Login Protocol. Internet-Draft, IETF. (Protocol introduced 1995; later standardised as RFC 4251&ndash;4254, 2006.)</li>
+      <li>OpenBSD Project. (1999). <em>OpenSSH project history</em>. https://www.openssh.com/history.html</li>
+      <li>Rescorla, E. (2018). <em>The Transport Layer Security (TLS) Protocol Version 1.3</em>. RFC 8446, IETF. https://www.rfc-editor.org/rfc/rfc8446</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
