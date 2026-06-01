@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Long Way Round to a Simple Idea: Customer Value Modelling in Finance &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="A handful of distributions taught to us as undergraduates &mdash; Poisson, gamma, negative binomial &mdash; predict customer behaviour in financial services with a robustness that still surprises us.">
+  <meta property="og:title" content="The Long Way Round to a Simple Idea: Customer Value Modelling in Finance">
+  <meta property="og:description" content="A handful of distributions taught to us as undergraduates predict customer behaviour in financial services with a robustness that still surprises us.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/customer-value-modelling.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>The Long Way Round to a Simple Idea: Customer Value Modelling in Finance</h1>
+    <p class="subtitle">We were taught the Poisson and the negative binomial as undergraduates in the early 1990s. Two decades later we watched the same handful of distributions predict customer behaviour in financial services with a robustness that still surprises us.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">October 2025</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    We met these distributions early. A-level computer science in 1988
+    introduced the Poisson, and a computing and statistics degree from 1990 to
+    1993 added the beta, the gamma, the negative binomial, and the geometric,
+    taught as they usually are, as mathematical objects with particular shapes
+    and convenient properties. We computed their moments, derived their
+    relationships, and used them in coursework. What no undergraduate course
+    conveyed was what they were actually good for in the world. Closing that gap
+    took roughly twenty years, and the closing is the more interesting half of
+    the story.
+  </p>
+
+  <h2>From textbook to production</h2>
+
+  <p>
+    In 2014 we came across the work of Peter Fader and the family of models known
+    as Buy Till You Die, which built on the Pareto/NBD approach that Schmittlein,
+    Morrison, and Colombo had set out in 1987 (Schmittlein, Morrison, &amp;
+    Colombo, 1987; Fader, Hardie, &amp; Lee, 2005). Its proposition is compact. A
+    customer&rsquo;s purchasing is described by two hidden processes, a
+    transaction process governing how often they buy while active, and a dropout
+    process governing the unobserved moment they stop. Modelling transactions as
+    a Poisson process with a customer-specific rate, the spread of those rates
+    across the population as a gamma or beta distribution, and the dropout as
+    geometric or exponential, yields a negative binomial mixture that fits
+    observed behaviour from a small number of parameters, conventionally alpha
+    and lambda. Nothing in that construction was new mathematics. It was the
+    mathematics we had been taught as undergraduates, in the same notation.
+  </p>
+
+  <p>
+    At the time we were working at a financial analytics company whose platform
+    held substantial data on the engagement of institutional clients, and used it
+    only for the standard counts: how many clients, how often they engaged, how
+    much they spent. The platform was not taking the predictive step that turns
+    those counts into forecasts of who would still be active in a year, who would
+    defect, and who was most valuable over their remaining lifetime. We
+    implemented the models first in R, using the open-source BTYD library, to
+    test whether financial services data behaved as retail and subscription data
+    did. It did. Institutional clients, superficially nothing like supermarket
+    shoppers, cast the same distributional shadow, with parameters that made
+    sense once seen. Recent activity did not always mean high value. Some quiet
+    clients were very likely to return, and some active-looking ones were
+    drifting toward dropout. We then wrote a Python implementation, before the
+    lifetimes library that would later make this routine existed, and it went
+    into the platform as a customer value and defection model, with an internal
+    note to colleagues explaining how to read its outputs.
+  </p>
+
+  <h2>Why the models are so robust</h2>
+
+  <p>
+    What has stayed with us is the question of why such simple mathematics
+    describes such varied behaviour so well. The Buy Till You Die family needs no
+    deep learning, no large data sets, and no domain-specific tuning. It needs
+    recency and frequency, the two oldest variables in direct marketing, and the
+    assumption that customers differ in their underlying rates of activity and
+    their propensity to leave. Given those, the model fits, and its predictions
+    are calibrated well enough to act on.
+  </p>
+
+  <p>
+    We think the reason is that the model captures the statistical shadow that
+    behaviour casts on data rather than the behaviour itself. People do not buy
+    on fixed schedules. They have rates of engagement that vary across a
+    population and over time, and at some point, often without any visible
+    signal, they stop. A Poisson process with heterogeneous rates and a geometric
+    dropout is not how anyone would describe their own habits. It is, however, a
+    faithful description of the shadow those habits leave, and the shadow proves
+    more regular than the behaviour. The same family works for retail,
+    subscription, media, and finance because the same shadow falls in each. That
+    recurrence is the deep fact, and the distributions are the language for
+    expressing it. Anyone teaching probability now would serve their students
+    well by showing them this far earlier than it was shown to us.
+  </p>
+
+  <h2>Where it has gone, and the way forward</h2>
+
+  <p>
+    Customer analytics has expanded considerably since 2014. The lifetimes
+    library arrived soon after and made these models standard. Much of the field
+    has since moved toward deep learning and sequence models, with mixed returns:
+    the simple Buy Till You Die models remain competitive on the problems they
+    were built for, and the heavier machinery earns its keep only when the data
+    is rich and the patterns complex enough to justify it. A good deal of
+    analytical effort across the industry now goes into elaborate approaches that
+    do not materially beat the simple ones.
+  </p>
+
+  <p>
+    What changed more than the mathematics was the surrounding environment. The
+    General Data Protection Regulation took effect in 2018, other jurisdictions
+    followed, and public awareness of how customer data is used has risen. We
+    regard this evolution as broadly healthy. The same recency-and-frequency
+    calculation that identifies a client worth keeping will identify one worth
+    shedding, and the choice between those directions is a matter of values and
+    governance rather than mathematics. Requiring institutions to be deliberate
+    about it, with the audit trails and explainability that have grown up around
+    customer modelling, is an improvement. Further progress lies less in heavier
+    models than in the disciplined application of light ones, inside a governance
+    framework that treats the customer as more than a number to be optimised.
+  </p>
+
+  <h2>What we took from it</h2>
+
+  <p>
+    Our technical contribution was modest. The library we wrote was an early
+    version of methods that open source would shortly make routine. What stays
+    with us is the lesson about the relationship between mathematical training and
+    practical use. Those distributions we learned as teenagers and undergraduates
+    were not abstractions. They were the working tools of a discipline we would
+    eventually contribute to, and the twenty-year delay between learning them and
+    seeing their purpose was longer than it needed to be. No blame attaches to
+    the teaching, which was good. The field had simply not yet developed the
+    applications, the data at the required volume, or the cultural readiness to
+    treat customer behaviour as a modellable thing. Patience to learn mathematics
+    whose value is not yet visible turns out to be one of the better long-term
+    investments a career can make. Those distributions we learned in 1988 and the
+    early 1990s became the most directly useful training we ever received, and
+    nobody, ourselves included, could have known it at the time.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Schmittlein, D. C., Morrison, D. G., &amp; Colombo, R. (1987). Counting your customers: Who are they and what will they do next? <em>Management Science</em>, 33(1), 1&ndash;24.</li>
+      <li>Fader, P. S., Hardie, B. G. S., &amp; Lee, K. L. (2005). &ldquo;Counting your customers&rdquo; the easy way: An alternative to the Pareto/NBD model. <em>Marketing Science</em>, 24(2), 275&ndash;284.</li>
+      <li>Fader, P. S., Hardie, B. G. S., &amp; Lee, K. L. (2005). RFM and CLV: Using iso-value curves for customer base analysis. <em>Journal of Marketing Research</em>, 42(4), 415&ndash;430.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
