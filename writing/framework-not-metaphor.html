@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Framework, Not Metaphor: What a Metaheuristic Actually Is &mdash; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="A history of metaheuristics, co-written by Fred Glover, restates what the term really means: a framework, not an algorithm, powered by memory and learning rather than randomness dressed in metaphor.">
+  <meta property="og:title" content="Framework, Not Metaphor: What a Metaheuristic Actually Is">
+  <meta property="og:description" content="A metaheuristic is a framework, not an algorithm, and its substance is memory and learning, not randomness dressed in a metaphor.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/framework-not-metaphor.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=32">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../research.html">Research</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top active" aria-haspopup="true" aria-expanded="false">Resources <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../articles.html" role="menuitem">Articles</a>
+          <a href="../blogs.html" role="menuitem" class="active">Blogs</a>
+          <a href="../reports.html" role="menuitem">Reports</a>
+        </div>
+      </div>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../blogs.html" class="back">&larr; Back to blog</a>
+    <p class="eyebrow">Blog</p>
+    <h1>Framework, Not Metaphor: What a Metaheuristic Actually Is</h1>
+    <p class="subtitle">A history of the field, co-written by the man who named it, makes an argument worth restating: a metaheuristic is a framework, not an algorithm, and its substance is memory and learning &mdash; not randomness dressed in a metaphor.</p>
+    <p class="byline">Intelligent Algorithms Ltd</p>
+    <p class="dateline">June 2026</p>
+  </div>
+
+  <div class="article-body">
+
+  <p>
+    S&ouml;rensen, Sevaux, and Glover set out to write not a list of methods but
+    the story of how a field changed its mind about itself (S&ouml;rensen,
+    Sevaux, &amp; Glover, 2018). Having one of the authors be Fred Glover, who
+    coined the word <em>metaheuristic</em> in the first place, gives the account
+    unusual authority. We read it as a working practitioner who lived through its
+    middle chapters &mdash; presenting tabu search at the EURO conference in
+    Glasgow in 1994 and corresponding with Glover as the framework took hold.
+    Three of its arguments deserve wider circulation, and the first is a matter
+    of definition.
+  </p>
+
+  <h2>A framework, not an algorithm</h2>
+
+  <p>
+    The history adopts a precise definition: a metaheuristic is a high-level,
+    problem-independent framework offering strategies from which heuristic
+    algorithms are built, rather than a fixed sequence of steps (S&ouml;rensen
+    &amp; Glover, 2013). The distinction is not pedantic. Variable neighbourhood
+    search, on this reading, is the idea that switching local search operators
+    when one stalls will reach solutions a single operator cannot, since a local
+    optimum for one neighbourhood is rarely a local optimum for another
+    (Mladenovi&cacute; &amp; Hansen, 1997). Naming that idea an algorithm misses
+    the point. A practitioner still has to instantiate it for the problem at
+    hand, and the engineering involved in that step is where solution quality is
+    won or lost. Recognising metaheuristics as frameworks rather than recipes is
+    the conceptual shift the authors place at the centre of the field&rsquo;s
+    maturation &mdash; the move from a method-centric era to a framework-centric
+    one.
+  </p>
+
+  <h2>Memory over randomness</h2>
+
+  <p>
+    Glover&rsquo;s deeper argument concerns what gives heuristic search its
+    power. The field developed an early and lasting attraction to randomness, the
+    intuition that useful order could emerge from blind perturbation given enough
+    restarts. Tabu search advanced a different premise: that information gathered
+    during a search should be remembered and used to guide it, through
+    intensification toward regions that have yielded good solutions and
+    diversification into regions left unexplored (Glover, 1989). The history is
+    careful to separate this from the exploitation-and-exploration language
+    borrowed from control theory, where a memoryless recipe runs until it fails
+    and random departures follow. Intensification and diversification are
+    memory-based and purposeful, moving deliberately into new territory rather
+    than shaking the system and hoping (Glover &amp; Laguna, 1997). Forty years of
+    results have favoured the memory view. A metaheuristic that exploits the
+    structure of its problem reliably beats one that treats the problem as a
+    black box, whatever framework either is built on.
+  </p>
+
+  <h2>The misuse of the name</h2>
+
+  <p>
+    A definition matters most when it is abused, and the history devotes a
+    pointed section to a parallel development it declines even to number among
+    the field&rsquo;s real periods. Beginning in the 1980s and continuing still,
+    a stream of methods has appeared, each motivated by a fresh metaphor &mdash;
+    ants and bees giving way to wolves, fireflies, mine blasts, and cloud
+    formation &mdash; and each claiming the status of a novel metaheuristic. Many
+    of these metaphors describe no optimising process at all, and the mechanics
+    underneath are usually familiar ones in unfamiliar costume. The authors are
+    blunt that this is not science, an assessment argued at length elsewhere
+    (S&ouml;rensen, 2015). The definitional stakes are real. If any metaphor can
+    license a new metaheuristic regardless of whether it optimises anything, the
+    term describes nothing. Holding the framework definition is what keeps the
+    word meaningful.
+  </p>
+
+  <h2>Toward a science</h2>
+
+  <p>
+    The history closes by naming a period that has not yet arrived: a scientific
+    period in which the design of metaheuristics becomes a discipline rather than
+    a craft. Glover noted as early as 1977 that exact algorithms enjoyed academic
+    prestige while heuristics were treated as expedient and accorded lower
+    standing, and the imbalance in theoretical underpinning has been slow to
+    correct. The authors set out what the transition requires: honest testing
+    protocols, meta-analysis to establish whether celebrated components earn
+    their complexity, disclosure of source code, and general-purpose heuristic
+    solvers built on accepted modelling languages. Glover&rsquo;s own recent
+    direction points the same way, with multi-wave algorithms that exploit how
+    the reliability of search information grows as decisions accumulate, and a
+    renewed emphasis on joining adaptive memory with classical learning (Glover,
+    2016). Our reading, after three decades alongside the field, is that the
+    framework definition and the primacy of memory are settled gains, and the
+    work that remains is to make the design of these methods answer to evidence.
+    A field that can write its own intellectual history this clearly is closer to
+    that science than the history modestly claims.
+  </p>
+
+  </div>
+
+  <section class="bibliography">
+    <h2>References</h2>
+    <ol>
+      <li>Glover, F. (1986). Future paths for integer programming and links to artificial intelligence. <em>Computers &amp; Operations Research</em>, 13(5), 533&ndash;549.</li>
+      <li>Glover, F. (1989). Tabu search &mdash; Part I. <em>ORSA Journal on Computing</em>, 1(3), 190&ndash;206.</li>
+      <li>Glover, F. (2016). Multi-wave algorithms for metaheuristic optimization. <em>Journal of Heuristics</em>, 22(3), 331&ndash;358.</li>
+      <li>Glover, F., &amp; Laguna, M. (1997). <em>Tabu Search.</em> Kluwer Academic Publishers.</li>
+      <li>Mladenovi&cacute;, N., &amp; Hansen, P. (1997). Variable neighborhood search. <em>Computers &amp; Operations Research</em>, 24(11), 1097&ndash;1100.</li>
+      <li>S&ouml;rensen, K. (2015). Metaheuristics: the metaphor exposed. <em>International Transactions in Operational Research</em>, 22(1), 3&ndash;18.</li>
+      <li>S&ouml;rensen, K., &amp; Glover, F. (2013). Metaheuristics. In S. I. Gass &amp; M. C. Fu (Eds.), <em>Encyclopedia of Operations Research and Management Science</em> (3rd ed., pp. 960&ndash;970). Springer.</li>
+      <li>S&ouml;rensen, K., Sevaux, M., &amp; Glover, F. (2018). A history of metaheuristics. In <em>Handbook of Heuristics</em> (pp. 791&ndash;808). Springer.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
