@@ -242,12 +242,13 @@ em { font-style: italic; }
   position: relative;
   overflow: hidden;
   color: #fff;
-  background: linear-gradient(135deg, #0a2540 0%, #14467f 48%, #1d4ed8 100%);
+  background: radial-gradient(125% 95% at 60% 100%, #0a1f3e 0%, #060f1f 46%, #03070f 100%);
 }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
+  opacity: 0.5;
   background:
     radial-gradient(110% 80% at 88% -10%, rgba(56, 189, 216, 0.35), transparent 55%),
     radial-gradient(90% 70% at 0% 110%, rgba(143, 193, 245, 0.20), transparent 55%);
@@ -349,8 +350,8 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
 .hero-home .hero-inner { width: 100%; padding: 2.5rem 1.5rem 4rem; position: relative; z-index: 1; }
 .hero-home .eyebrow { margin-bottom: 0.9rem; }
 
-/* Static curved-light network spread across the hero (drawn by main.js) */
-.hero-home .hero-net {
+/* Beam-burst canvas spread across every hero (drawn by main.js) */
+.hero .hero-net {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -358,7 +359,9 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   z-index: 0;
   pointer-events: none;
 }
-/* Prominent, static brand logo at the top-left of the hero */
+.hero .hero-inner { position: relative; z-index: 1; }
+.hero-marquee { position: relative; z-index: 1; }
+/* Prominent, static brand logo at the top-left of the home hero */
 .hero-home .hero-logo {
   display: block;
   width: 92px;
@@ -366,14 +369,9 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   margin: 0 0 1.15rem;
   filter: drop-shadow(0 0 20px rgba(76, 212, 236, 0.55)) drop-shadow(0 3px 8px rgba(4, 18, 40, 0.45));
 }
-/* Darker home hero so the full-width beams shine (reference look) */
-.hero.hero-home {
-  background: radial-gradient(125% 95% at 60% 100%, #0a1f3e 0%, #060f1f 46%, #03070f 100%);
-}
-.hero.hero-home::after { opacity: 0.22; }
 .hero-home .hero-aurora { display: none; }
-/* Dark scrim keeps the wording readable over the full-width beams */
-.hero-home .hero-inner::before {
+/* Dark scrim keeps the wording readable over the full-width beams (all heroes) */
+.hero .hero-inner::before {
   content: "";
   position: absolute;
   inset: -2rem -1.5rem -2rem -2rem;
