@@ -13,6 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css?v=32">
+  <style>
+    /* Homepage only: larger hero type to fill the space, and close the light gap
+       between the dark hero and the dark footer so the two blend. */
+    .hero-home .hero-slogan { font-size: clamp(4.4rem, 10.5vw, 8.2rem); }
+    .hero-home .lede.on-dark { font-size: 1.6rem; max-width: 48ch; }
+    .hero-home .brand-kicker { font-size: 1.06rem; }
+    .site-foot { margin-top: 0; }
+  </style>
   <link rel="icon" href="assets/logo.svg">
 </head>
 <body>
