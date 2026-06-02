@@ -16,9 +16,9 @@
   --sky-100:   #e3eefb;
   --sky-50:    #eef5fe;
 
-  /* Secondary accent (cyan) for pops of colour */
-  --cyan:      #0ea5c4;
-  --cyan-soft: #38bdd8;
+  /* Secondary accent (blue) for pops of colour */
+  --cyan:      #4f9bf0;
+  --cyan-soft: #8fc1f5;
 
   /* Ink (blue-grey neutrals) */
   --ink:       #14233b;
@@ -250,7 +250,7 @@ em { font-style: italic; }
   inset: 0;
   opacity: 0.5;
   background:
-    radial-gradient(110% 80% at 88% -10%, rgba(56, 189, 216, 0.35), transparent 55%),
+    radial-gradient(110% 80% at 88% -10%, rgba(79, 155, 240, 0.35), transparent 55%),
     radial-gradient(90% 70% at 0% 110%, rgba(143, 193, 245, 0.20), transparent 55%);
   pointer-events: none;
 }
@@ -462,8 +462,8 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
   mix-blend-mode: screen;
 }
 .hero-aurora .blob1 { width: 46vw; height: 46vw; max-width: 560px; max-height: 560px; background: #2f7fe0; top: -14%; left: -6%; animation: drift1 19s ease-in-out infinite alternate; }
-.hero-aurora .blob2 { width: 42vw; height: 42vw; max-width: 520px; max-height: 520px; background: #38bdd8; bottom: -20%; right: -8%; animation: drift2 23s ease-in-out infinite alternate; }
-.hero-aurora .blob3 { width: 36vw; height: 36vw; max-width: 460px; max-height: 460px; background: #0d9488; top: 16%; right: 24%; animation: drift3 27s ease-in-out infinite alternate; }
+.hero-aurora .blob2 { width: 42vw; height: 42vw; max-width: 520px; max-height: 520px; background: #2f72d6; bottom: -20%; right: -8%; animation: drift2 23s ease-in-out infinite alternate; }
+.hero-aurora .blob3 { width: 36vw; height: 36vw; max-width: 460px; max-height: 460px; background: #4f9bf0; top: 16%; right: 24%; animation: drift3 27s ease-in-out infinite alternate; }
 @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(14%, 10%) scale(1.18); } }
 @keyframes drift2 { from { transform: translate(0, 0) scale(1.05); } to { transform: translate(-12%, -8%) scale(1.22); } }
 @keyframes drift3 { from { transform: translate(0, 0) scale(1); } to { transform: translate(10%, -12%) scale(1.16); } }
@@ -652,9 +652,9 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
 .cat-fin { --c: #1d4ed8; --c-sh: rgba(29, 78, 216, 0.45); }   /* royal blue */
 .cat-eng { --c: #14467f; --c-sh: rgba(20, 70, 127, 0.45); }   /* deep blue */
 .cat-opt { --c: #0284c7; --c-sh: rgba(2, 132, 199, 0.45); }   /* azure */
-.cat-nlp { --c: #0891b2; --c-sh: rgba(8, 145, 178, 0.45); }   /* cyan */
-.cat-env { --c: #0d9488; --c-sh: rgba(13, 148, 136, 0.45); }  /* teal */
-.cat-edu { --c: #0f766e; --c-sh: rgba(15, 118, 110, 0.45); }  /* deep teal */
+.cat-nlp { --c: #2f72d6; --c-sh: rgba(47, 114, 214, 0.45); }  /* medium blue */
+.cat-env { --c: #4f9bf0; --c-sh: rgba(79, 155, 240, 0.45); }  /* azure */
+.cat-edu { --c: #1551a3; --c-sh: rgba(21, 81, 163, 0.45); }   /* deep blue */
 
 /* ---------- Capabilities / skill cloud ---------- */
 .capabilities { margin: 2rem 0 1rem; }
@@ -695,11 +695,11 @@ main:has(.hero-home) { display: flex; flex-direction: column; }
 .skill.sk-lg { font-size: 1.18rem; padding: 0.5rem 1.2rem; }
 .skill.sk-md { font-size: 1rem; }
 .skill.sk-sm { font-size: 0.86rem; }
-/* tri-colour rotation (blue / teal / indigo) to match the case-study palette */
-.skill:nth-child(3n+2) { color: #0e7d93; background: #e6f6fa; border-color: #bfe6ef; }
-.skill:nth-child(3n+2):hover { background: #0e9bb8; border-color: #0e9bb8; color: #fff; box-shadow: 0 8px 18px -8px rgba(14, 155, 184, 0.55); }
-.skill:nth-child(3n) { color: #0f766e; background: #e6f5f1; border-color: #c2e8df; }
-.skill:nth-child(3n):hover { background: #0d9488; border-color: #0d9488; color: #fff; box-shadow: 0 8px 18px -8px rgba(13, 148, 136, 0.55); }
+/* tri-colour rotation (blue / azure / indigo) */
+.skill:nth-child(3n+2) { color: #1d4ed8; background: #eaf1fc; border-color: #cdddf2; }
+.skill:nth-child(3n+2):hover { background: #2f72d6; border-color: #2f72d6; color: #fff; box-shadow: 0 8px 18px -8px rgba(47, 114, 214, 0.55); }
+.skill:nth-child(3n) { color: #1551a3; background: #e8eefb; border-color: #cdddf2; }
+.skill:nth-child(3n):hover { background: #4f9bf0; border-color: #4f9bf0; color: #fff; box-shadow: 0 8px 18px -8px rgba(79, 155, 240, 0.55); }
 
 
 /* ---------- Section ornament ---------- */
@@ -1181,8 +1181,8 @@ button:focus-visible,
   background: linear-gradient(to bottom,
     rgba(143, 193, 245, 0) 0%,
     rgba(79, 155, 240, 0.5) 42%,
-    rgba(120, 220, 245, 0.7) 52%,
-    rgba(56, 189, 216, 0.4) 62%,
+    rgba(150, 200, 250, 0.7) 52%,
+    rgba(79, 155, 240, 0.4) 62%,
     rgba(143, 193, 245, 0) 100%);
   filter: blur(2.5px);
   mix-blend-mode: screen;
