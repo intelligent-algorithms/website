@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intelligent Algorithms Ltd</title>
-  <meta name="description" content="Applied AI and software consultancy specialising in optimisation, machine learning, quantitative analytics and data-driven systems.">
-  <meta property="og:title" content="Intelligent Algorithms Ltd">
-  <meta property="og:description" content="Applied AI and software consultancy specialising in optimisation, machine learning, quantitative analytics and data-driven systems.">
+  <title>Intelligent Algorithms Ltd &mdash; AI governance &amp; responsible-AI advisory</title>
+  <meta name="description" content="Independent AI governance and responsible-AI advisory — bringing deep machine-learning expertise to the assurance, compliance and oversight of AI systems in financial services and other regulated settings.">
+  <meta property="og:title" content="Intelligent Algorithms Ltd — AI governance & responsible-AI advisory">
+  <meta property="og:description" content="Independent AI governance and responsible-AI advisory — assurance, compliance and oversight of AI systems in financial services and other regulated settings.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://intelligent-algorithms.co.uk/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +14,219 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css?v=33">
   <style>
-    /* Homepage only: hero type sizing, a true-blue slogan shimmer (no cyan/teal),
-       and close the light gap between the dark hero and the dark footer. */
-    .hero-home .hero-slogan { font-size: clamp(2.8rem, 6.5vw, 5rem); }
-    .hero-home .hero-slogan .w {
-      background-image: linear-gradient(100deg, #ffffff 0%, #8fc1f5 22%, #2f72d6 50%, #8fc1f5 78%, #ffffff 100%);
+    /* ============================================================
+       Calm, institutional homepage — page-scoped overrides only.
+       Aesthetic: closer to a boutique risk-advisory or research
+       institute than a tech product. Deep, restrained palette, one
+       steel-blue accent used sparingly, generous whitespace, serious
+       typography, a faint abstract network motif — no decorative
+       imagery, no gradients/shimmer/glows. Lives only on this page;
+       style.css and the other pages are untouched.
+       ============================================================ */
+    body.home-calm {
+      --c-bg:        #0e1726;   /* deep slate */
+      --c-bg-2:      #111827;
+      --c-surface:   #161f2e;   /* cards */
+      --c-line:      rgba(255,255,255,0.09);
+      --c-text:      #e9eef5;   /* off-white (AA on the slate bg) */
+      --c-muted:     #9fb1c6;   /* muted body (AA on the slate bg) */
+      --c-accent:    #74a4dd;   /* muted steel blue — the single accent */
+      --c-accent-2:  #93b7e7;   /* slightly brighter for hover/highlight */
+      background: var(--c-bg);
     }
-    .hero-home .lede.on-dark { font-size: 1.45rem; max-width: 50ch; }
-    .hero-home .brand-kicker { font-size: 1.02rem; }
-    .site-foot { margin-top: 0; }
+    /* Let the hero size to its content rather than stretching full-height */
+    body.home-calm main { display: block; }
+
+    /* ---- Header: calmed to a single steel hairline (no cyan gradient) ---- */
+    body.home-calm .site-head-wrap {
+      background: rgba(10,16,26,0.82);
+      border-top: 3px solid var(--c-accent);
+      border-image: none;
+      border-bottom: 1px solid var(--c-line);
+    }
+    body.home-calm .site-nav a::after,
+    body.home-calm .nav-top::after { background: var(--c-accent); }
+
+    /* ---- Hero ---- */
+    body.home-calm .hero.hero-home {
+      flex: none;
+      min-height: auto;
+      display: block;
+      background: linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-2) 100%);
+      color: var(--c-text);
+    }
+    body.home-calm .hero::after { display: none; }           /* kill glow layer */
+    body.home-calm .hero .hero-inner::before { display: none; } /* kill beam scrim */
+    body.home-calm .hero-home .hero-inner {
+      max-width: var(--max-wide);
+      padding: 7rem 1.5rem 5.5rem;
+    }
+
+    /* Faint abstract network motif, upper-right, very low contrast */
+    body.home-calm .hero-graph {
+      position: absolute;
+      top: -4%;
+      right: -4%;
+      width: min(46rem, 70%);
+      height: auto;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.6;
+      -webkit-mask-image: radial-gradient(120% 120% at 80% 10%, #000 0%, rgba(0,0,0,0.35) 55%, transparent 80%);
+      mask-image: radial-gradient(120% 120% at 80% 10%, #000 0%, rgba(0,0,0,0.35) 55%, transparent 80%);
+    }
+    body.home-calm .hero-graph line { stroke: rgba(255,255,255,0.10); stroke-width: 1; }
+    body.home-calm .hero-graph circle { fill: rgba(255,255,255,0.16); }
+    body.home-calm .hero-graph circle.node-accent { fill: rgba(116,164,221,0.5); }
+
+    /* Brand kicker */
+    body.home-calm .hero-home .brand-kicker {
+      font-family: var(--sans);
+      color: var(--c-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0 0 1.2rem;
+    }
+
+    /* Headline: solid off-white serif with gravitas — no shimmer */
+    body.home-calm .hero-slogan {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2.8rem, 6vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--c-text);
+      max-width: 15ch;
+      margin: 0.2rem 0 1.6rem;
+    }
+
+    /* Subline */
+    body.home-calm .hero-home .lede.on-dark {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: var(--c-muted);
+      max-width: 60ch;
+      margin: 0 0 2rem;
+    }
+
+    /* CTA: quiet outline that warms to the accent on hover */
+    body.home-calm .hero a.btn {
+      background: transparent;
+      color: var(--c-text);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: none;
+    }
+    body.home-calm .hero a.btn:hover {
+      background: rgba(116,164,221,0.10);
+      color: var(--c-text);
+      border-color: var(--c-accent);
+      box-shadow: none;
+      transform: none;
+    }
+
+    /* Capability strip — quiet, slow, proves the depth without shouting */
+    body.home-calm .hero-marquee {
+      position: static;
+      border-top: 1px solid var(--c-line);
+      padding: 1.15rem 0;
+    }
+    body.home-calm .hero-home .hero-marquee { position: static; }
+    body.home-calm .marquee { border-bottom: none; }
+    body.home-calm .hero-marquee .marquee-track { animation-duration: 64s; }
+    body.home-calm .hero-marquee .marquee-track span {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      color: var(--c-muted);
+      opacity: 0.9;
+    }
+    body.home-calm .hero-marquee .marquee-track span::after {
+      content: "\2022";
+      color: var(--c-accent);
+      opacity: 0.7;
+      margin: 0 1.4rem;
+    }
+
+    /* ---- "How I can help" ---- */
+    body.home-calm .help {
+      background: var(--c-bg);
+      padding: 5.5rem 1.5rem 6.5rem;
+    }
+    body.home-calm .help-inner { max-width: var(--max-wide); margin: 0 auto; }
+    body.home-calm .help h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.75rem;
+      color: var(--c-text);
+      margin: 0 0 0.7rem;
+    }
+    body.home-calm .help h2::before { background: var(--c-accent); }
+    body.home-calm .help-intro {
+      font-family: var(--sans);
+      color: var(--c-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 62ch;
+      margin: 0 0 2.75rem;
+    }
+    body.home-calm .help-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    body.home-calm .help-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-radius: 14px;
+      padding: 1.9rem 1.7rem;
+    }
+    body.home-calm .help-card .rule {
+      display: block;
+      width: 34px;
+      height: 2px;
+      background: var(--c-accent);
+      border-radius: 2px;
+      margin-bottom: 1.1rem;
+    }
+    body.home-calm .help-card h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--c-text);
+      margin: 0 0 0.6rem;
+    }
+    body.home-calm .help-card p {
+      font-family: var(--sans);
+      color: var(--c-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ---- Footer: flat slate to match the calm page ---- */
+    body.home-calm .site-foot {
+      background: var(--c-bg-2);
+      border-top: 1px solid var(--c-line);
+      color: var(--c-muted);
+      margin-top: 0;
+    }
+    body.home-calm .site-foot a { color: var(--c-text); border-bottom-color: rgba(255,255,255,0.25); }
+    body.home-calm .site-foot a:hover { color: var(--c-accent-2); border-bottom-color: var(--c-accent-2); }
+
+    @media (max-width: 600px) {
+      body.home-calm .hero-home .hero-inner { padding: 4rem 1.25rem 3.5rem; }
+      body.home-calm .help { padding: 4rem 1.25rem 4.5rem; }
+      body.home-calm .hero-graph { opacity: 0.4; width: 90%; }
+    }
   </style>
   <link rel="icon" href="assets/logo.svg">
 </head>
-<body>
+<body class="home-calm">
 <div class="site-head-wrap">
   <header class="site-head">
     <a href="/" class="brand"><img class="brand-mark" src="assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
@@ -56,17 +256,40 @@
 
 <main>
   <section class="hero hero-home">
-    <div class="hero-aurora" aria-hidden="true">
-      <span class="blob blob1"></span>
-      <span class="blob blob2"></span>
-      <span class="blob blob3"></span>
-    </div>
-    <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
+    <svg class="hero-graph" viewBox="0 0 600 500" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <line x1="80" y1="60" x2="220" y2="40"/>
+      <line x1="220" y1="40" x2="360" y2="110"/>
+      <line x1="80" y1="60" x2="150" y2="180"/>
+      <line x1="220" y1="40" x2="150" y2="180"/>
+      <line x1="220" y1="40" x2="300" y2="210"/>
+      <line x1="360" y1="110" x2="300" y2="210"/>
+      <line x1="360" y1="110" x2="470" y2="170"/>
+      <line x1="150" y1="180" x2="300" y2="210"/>
+      <line x1="150" y1="180" x2="230" y2="300"/>
+      <line x1="300" y1="210" x2="230" y2="300"/>
+      <line x1="300" y1="210" x2="410" y2="310"/>
+      <line x1="470" y1="170" x2="410" y2="310"/>
+      <line x1="230" y1="300" x2="410" y2="310"/>
+      <line x1="230" y1="300" x2="120" y2="330"/>
+      <line x1="120" y1="330" x2="150" y2="180"/>
+      <line x1="230" y1="300" x2="360" y2="420"/>
+      <line x1="410" y1="310" x2="360" y2="420"/>
+      <circle cx="80" cy="60" r="3.5"/>
+      <circle cx="220" cy="40" r="4" class="node-accent"/>
+      <circle cx="360" cy="110" r="3.5"/>
+      <circle cx="150" cy="180" r="3.5"/>
+      <circle cx="300" cy="210" r="4.5" class="node-accent"/>
+      <circle cx="470" cy="170" r="3.5"/>
+      <circle cx="230" cy="300" r="4.5" class="node-accent"/>
+      <circle cx="410" cy="310" r="3.5"/>
+      <circle cx="120" cy="330" r="3.5"/>
+      <circle cx="360" cy="420" r="4" class="node-accent"/>
+    </svg>
     <div class="hero-inner">
       <p class="eyebrow on-dark brand-kicker">Intelligent Algorithms Ltd</p>
-      <h1 class="hero-slogan"><span class="w">Turning</span> <span class="w">rigorous</span> <span class="w">research</span> <span class="w">into</span> <span class="w">intelligent</span> <span class="w">systems.</span></h1>
+      <h1 class="hero-slogan">Trustworthy AI, by design.</h1>
       <p class="lede on-dark">
-        An AI research and advanced software consultancy delivering production-grade machine learning, optimisation, analytics, and cloud-based software solutions.
+        Independent AI governance and responsible-AI advisory — bringing deep machine-learning expertise to the assurance, compliance and oversight of AI systems in financial services and other regulated settings.
       </p>
       <p class="cta-row">
         <a class="btn" href="mailto:hello@intelligent-algorithms.co.uk">Start a conversation &rarr;</a>
@@ -74,7 +297,33 @@
     </div>
     <div class="marquee hero-marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Optimisation</span><span>Forecasting &amp; Time Series</span><span>Customer &amp; Predictive Analytics</span><span>Anomaly Detection</span><span>MLOps &amp; Cloud Architecture</span><span>Explainable AI</span><span>Optimisation</span><span>Forecasting &amp; Time Series</span><span>Customer &amp; Predictive Analytics</span><span>Anomaly Detection</span><span>MLOps &amp; Cloud Architecture</span><span>Explainable AI</span>
+        <span>AI Governance</span><span>Responsible AI</span><span>Model Validation &amp; Assurance</span><span>LLM &amp; RAG Governance</span><span>MLOps &amp; Monitoring</span><span>Explainable AI</span><span>EU AI Act Readiness</span><span>AI Governance</span><span>Responsible AI</span><span>Model Validation &amp; Assurance</span><span>LLM &amp; RAG Governance</span><span>MLOps &amp; Monitoring</span><span>Explainable AI</span><span>EU AI Act Readiness</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="help" aria-labelledby="help-title">
+    <div class="help-inner">
+      <h2 id="help-title">How I can help</h2>
+      <p class="help-intro">
+        Deep machine-learning expertise applied where it now matters most — to the judgement, governance and accountability of AI systems, not just their construction.
+      </p>
+      <div class="help-grid">
+        <div class="help-card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>Model assurance &amp; validation</h3>
+          <p>Independent validation, testing and challenge of machine-learning models — performance, robustness, bias and documentation fit for audit and regulatory review.</p>
+        </div>
+        <div class="help-card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>AI compliance &amp; EU AI Act readiness</h3>
+          <p>Mapping your AI systems to emerging obligations — risk classification, governance frameworks and the evidence regulators and boards will expect.</p>
+        </div>
+        <div class="help-card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>LLM/RAG &amp; agentic governance</h3>
+          <p>Oversight for generative and agentic systems — evaluation, guardrails, monitoring and clear lines of accountability before they reach production.</p>
+        </div>
       </div>
     </div>
   </section>
