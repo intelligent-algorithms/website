@@ -30,8 +30,10 @@
       --c-line:      rgba(255,255,255,0.09);
       --c-text:      #e9eef5;   /* off-white (AA on the slate bg) */
       --c-muted:     #9fb1c6;   /* muted body (AA on the slate bg) */
-      --c-accent:    #74a4dd;   /* muted steel blue — the single accent */
+      --c-accent:    #74a4dd;   /* muted steel blue — primary accent */
       --c-accent-2:  #93b7e7;   /* slightly brighter for hover/highlight */
+      --c-gold:      #e0b15e;   /* warm gold — secondary accent (the pop) */
+      --c-iris:      #9b9cf0;   /* soft iris — tertiary accent */
       background: var(--c-bg);
     }
     /* Let the hero size to its content rather than stretching full-height */
@@ -52,7 +54,12 @@
       flex: none;
       min-height: auto;
       display: block;
-      background: linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-2) 100%);
+      /* base slate + two soft, low-opacity colour blooms so the dark
+         background reads with depth and a little warmth, not flat black */
+      background:
+        radial-gradient(58% 48% at 86% 6%, rgba(116,164,221,0.16), transparent 62%),
+        radial-gradient(46% 42% at 64% 74%, rgba(224,177,94,0.08), transparent 64%),
+        linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-2) 100%);
       color: var(--c-text);
     }
     body.home-calm .hero::after { display: none; }           /* kill glow layer */
@@ -77,12 +84,14 @@
     }
     body.home-calm .hero-graph line { stroke: rgba(255,255,255,0.10); stroke-width: 1; }
     body.home-calm .hero-graph circle { fill: rgba(255,255,255,0.16); }
-    body.home-calm .hero-graph circle.node-accent { fill: rgba(116,164,221,0.5); }
+    body.home-calm .hero-graph circle.node-accent { fill: rgba(116,164,221,0.55); }
+    body.home-calm .hero-graph circle.node-gold { fill: rgba(224,177,94,0.6); }
+    body.home-calm .hero-graph circle.node-iris { fill: rgba(155,156,240,0.6); }
 
     /* Brand kicker */
     body.home-calm .hero-home .brand-kicker {
       font-family: var(--sans);
-      color: var(--c-muted);
+      color: var(--c-accent);
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.22em;
@@ -182,14 +191,24 @@
     body.home-calm .help-card {
       background: var(--c-surface);
       border: 1px solid var(--c-line);
+      border-top: 3px solid var(--cc, var(--c-accent));
       border-radius: 14px;
-      padding: 1.9rem 1.7rem;
+      padding: 1.7rem 1.7rem 1.9rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
+    body.home-calm .help-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px -22px var(--cc-sh, rgba(116,164,221,0.4));
+    }
+    /* per-card accent — a small, deliberate three-tone palette */
+    body.home-calm .help-card.c-blue { --cc: var(--c-accent); --cc-sh: rgba(116,164,221,0.40); }
+    body.home-calm .help-card.c-gold { --cc: var(--c-gold);   --cc-sh: rgba(224,177,94,0.34); }
+    body.home-calm .help-card.c-iris { --cc: var(--c-iris);   --cc-sh: rgba(155,156,240,0.38); }
     body.home-calm .help-card .rule {
       display: block;
       width: 34px;
       height: 2px;
-      background: var(--c-accent);
+      background: var(--cc, var(--c-accent));
       border-radius: 2px;
       margin-bottom: 1.1rem;
     }
@@ -278,12 +297,12 @@
       <circle cx="220" cy="40" r="4" class="node-accent"/>
       <circle cx="360" cy="110" r="3.5"/>
       <circle cx="150" cy="180" r="3.5"/>
-      <circle cx="300" cy="210" r="4.5" class="node-accent"/>
+      <circle cx="300" cy="210" r="4.5" class="node-gold"/>
       <circle cx="470" cy="170" r="3.5"/>
       <circle cx="230" cy="300" r="4.5" class="node-accent"/>
       <circle cx="410" cy="310" r="3.5"/>
       <circle cx="120" cy="330" r="3.5"/>
-      <circle cx="360" cy="420" r="4" class="node-accent"/>
+      <circle cx="360" cy="420" r="4" class="node-iris"/>
     </svg>
     <div class="hero-inner">
       <p class="eyebrow on-dark brand-kicker">Intelligent Algorithms Ltd</p>
@@ -309,17 +328,17 @@
         Deep machine-learning expertise applied where it now matters most — to the judgement, governance and accountability of AI systems, not just their construction.
       </p>
       <div class="help-grid">
-        <div class="help-card">
+        <div class="help-card c-blue">
           <span class="rule" aria-hidden="true"></span>
           <h3>Model assurance &amp; validation</h3>
           <p>Independent validation, testing and challenge of machine-learning models — performance, robustness, bias and documentation fit for audit and regulatory review.</p>
         </div>
-        <div class="help-card">
+        <div class="help-card c-gold">
           <span class="rule" aria-hidden="true"></span>
           <h3>AI compliance &amp; EU AI Act readiness</h3>
           <p>Mapping your AI systems to emerging obligations — risk classification, governance frameworks and the evidence regulators and boards will expect.</p>
         </div>
-        <div class="help-card">
+        <div class="help-card c-iris">
           <span class="rule" aria-hidden="true"></span>
           <h3>LLM/RAG &amp; agentic governance</h3>
           <p>Oversight for generative and agentic systems — evaluation, guardrails, monitoring and clear lines of accountability before they reach production.</p>
