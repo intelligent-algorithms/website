@@ -45,7 +45,8 @@
     <h1>It&rsquo;s More Than Calling an API</h1>
     <p class="subtitle">You bought the capability in an afternoon, shipped a demo by Friday, and budgeted for none of the years it now has to keep working.</p>
     <p class="byline">Diane Castelino &middot; Intelligent Algorithms Ltd</p>
-    <p class="dateline" style="font-style:italic;">For founders, CTOs, and the teams they hand the work to, alongside the data scientists, ML engineers and MLOps people who will run it long after the demo. One debated point per piece, on what works in practice and what quietly fails. Written to help the community think it through, not to sell you anything.</p>
+    <p class="dateline">July 2026</p>
+    <p class="meta" style="font-style:italic;max-width:62ch;margin-top:0.5rem;">For founders, CTOs, and the teams they hand the work to, alongside the data scientists, ML engineers and MLOps people who will run it long after the demo. One debated point per piece, on what works in practice and what quietly fails. Written to help the community think it through, not to sell you anything.</p>
   </div>
 
   <div class="article-body">
@@ -102,11 +103,70 @@
       an embedding is, deploy a forecast without knowing what stationarity
       assumes, or ship a classifier without knowing what its confidence score
       does and does not mean. This is not a failing of the individuals, who are
-      often excellent at the building. It is a
+      often excellent at the building. It is a structural gap: the libraries
+      advanced faster than the understanding required to question their output,
+      and a system nobody on the team can evaluate is a system running on hope.
+    </p>
+    <p>
+      The second is who priced the life of the thing. Enthusiasm for new
+      technology is an asset, and development teams are right to want to work
+      with it; the failure is when management, reasonably trusting that
+      enthusiasm, approves a build whose ongoing cost and maintenance were never
+      put on the table. RAG is the clearest case. A team scopes the retriever,
+      ships the pilot, and only later discovers the parts no one estimated: the
+      documents must be re-indexed as they change, the chunks re-embedded when
+      the model updates, the retrieval quality re-evaluated as the corpus grows,
+      the token bill watched as usage climbs, and someone must own all of it
+      indefinitely. None of that appears in the cost of the API call. All of it
+      appears in the cost of the system, and discovering it after launch is how a
+      project that looked cheap becomes one that cannot be afforded or maintained.
+    </p>
+
+    <h2>The iceberg, named</h2>
+    <p>
+      If it helps to make the invisible part concrete, here is what sits beneath
+      the call, roughly in the order it bites:
+    </p>
+    <p>
+      The data you feed it: its quality, its freshness, who is allowed to write
+      to it, and who keeps it current. The evaluation: how you know, in numbers,
+      whether answers are right, and who looks when they are not. The cost model:
+      what a query costs now that it scales, and what you do when it climbs. The
+      failure modes: the stale source, the confident-wrong answer, the question
+      outside the system&rsquo;s competence, and what each one does to whoever is
+      on the other end. The maintenance: the re-indexing, re-embedding,
+      re-evaluation and retraining that a living system needs, with an owner and a
+      schedule. And the accountability: who decided this was fit to ship, on what
+      evidence, and who answers when it is wrong. The API gives you none of these.
+      They are the project.
+    </p>
+
+    <h2>Why this matters more for GenAI than for the software before it</h2>
+    <p>
+      Worth being fair to the obvious objection: every technology looks easy in a
+      demo and harder in production, so what is special here? Two things. First,
+      the gap between how easy GenAI is to start and how hard it is to run well is
+      wider than almost any technology before it, because the starting cost has
+      fallen nearly to zero while the running discipline has not fallen at all.
+      Second, the failure is quieter. A traditional system that breaks tends to
+      stop, visibly; a GenAI system that is failing keeps producing fluent,
+      plausible, confident output while being wrong, and a failure that does not
+      announce itself is one an organisation can run on for a long time before it
+      learns the cost. The ease hides the difficulty, and the fluency hides the
+      failure. That combination is what makes this worth saying out loud.
+    </p>
+
+    <h2>The line worth keeping</h2>
+    <p>
+      GenAI rewards the organisation that treats the model as the beginning of the
+      work and frustrates the one that treats it as the end of it. Calling the API
+      is not the project: it is the moment the project becomes possible, and
+      everything that determines whether it succeeds (the data, the evaluation,
+      the cost, the failure modes, the maintenance, the accountability) is the
+      part that was always going to be
     </p>
     <!-- TEMP 2026-06-29: transcription ends here; the pasted image cut off
-         mid-sentence. The rest of this section (and the second failure) is to
-         be pasted in. -->
+         again mid-sentence ("...always going to be"). Final clause still to come. -->
 
   </div>
 </main>
