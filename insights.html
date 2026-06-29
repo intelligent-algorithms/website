@@ -31,6 +31,20 @@
     .tag.is-key { color: #0e1726; background: var(--c-accent); }
     .tag.is-quiet { color: var(--c-muted); background: transparent; border: 1px solid var(--c-line-2); }
     .writing-list .item .tags { margin-top: 0.8rem; }
+
+    /* TEMP 2026-06-29: essay links gated while Diane reads through them.
+       Previews stay visible; links are disabled. To reactivate, delete this
+       block and the review notice in the body. */
+    .writing-list .item h3 a,
+    .writing-list .item .blurb a,
+    .anchors .anchor h4 a,
+    .anchors .anchor p a {
+      pointer-events: none;
+      cursor: default;
+      color: var(--c-muted);
+      text-decoration: none;
+      border-bottom: none;
+    }
   </style>
   <link rel="icon" href="assets/logo.svg">
 </head>
@@ -107,6 +121,9 @@
   </section>
 
   <div class="page">
+
+  <!-- TEMP 2026-06-29: review notice; delete to reactivate essay links -->
+  <p class="meta" style="margin:0 0 1.75rem;padding:0.85rem 1.1rem;border:1px solid var(--c-line);border-radius:10px;background:var(--c-surface);">&#9998; These essays are being reviewed and are temporarily not open for reading; the previews below show what is coming.</p>
 
   <h2>Start here</h2>
   <p class="series-desc">Three essays that together show governance judgement, regulatory awareness and the technical-to-current synthesis.</p>
