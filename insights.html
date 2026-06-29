@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insights · Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Essays on building and governing AI systems: as the techniques mature, the binding constraint moves to judgement, governance and accountability.">
+  <meta property="og:title" content="Insights · Intelligent Algorithms Ltd">
+  <meta property="og:description" content="Essays on building and governing AI systems: as the techniques mature, the binding constraint moves to judgement, governance and accountability.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/insights.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=35">
+  <style>
+    /* Insights hub - page-scoped helpers (series headers, topic tags) */
+    .series { margin-top: 3.25rem; }
+    .series-desc { color: var(--c-muted); max-width: 60ch; margin: 0 0 0.5rem; }
+    .series-meta {
+      font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-accent);
+      margin: 0 0 0.4rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.7rem 0 0; padding: 0; list-style: none; }
+    .tag {
+      font-family: var(--sans); font-size: 0.64rem; font-weight: 600;
+      letter-spacing: 0.09em; text-transform: uppercase; line-height: 1.4;
+      padding: 0.22rem 0.55rem; border-radius: 999px;
+    }
+    .tag.is-key { color: #0e1726; background: var(--c-accent); }
+    .tag.is-quiet { color: var(--c-muted); background: transparent; border: 1px solid var(--c-line-2); }
+    .writing-list .item .tags { margin-top: 0.8rem; }
+  </style>
+  <link rel="icon" href="assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="/" class="brand"><img class="brand-mark" src="assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="clients.html" role="menuitem">Our clients</a>
+          <a href="work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="domains.html">Domains</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="publications.html">Publications</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main>
+  <section class="hero hero-page">
+    <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
+    <svg class="hero-graph" viewBox="0 0 600 500" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <line x1="80" y1="60" x2="220" y2="40"/>
+      <line x1="220" y1="40" x2="360" y2="110"/>
+      <line x1="80" y1="60" x2="150" y2="180"/>
+      <line x1="220" y1="40" x2="150" y2="180"/>
+      <line x1="220" y1="40" x2="300" y2="210"/>
+      <line x1="360" y1="110" x2="300" y2="210"/>
+      <line x1="360" y1="110" x2="470" y2="170"/>
+      <line x1="150" y1="180" x2="300" y2="210"/>
+      <line x1="150" y1="180" x2="230" y2="300"/>
+      <line x1="300" y1="210" x2="230" y2="300"/>
+      <line x1="300" y1="210" x2="410" y2="310"/>
+      <line x1="470" y1="170" x2="410" y2="310"/>
+      <line x1="230" y1="300" x2="410" y2="310"/>
+      <line x1="230" y1="300" x2="120" y2="330"/>
+      <line x1="120" y1="330" x2="150" y2="180"/>
+      <line x1="230" y1="300" x2="360" y2="420"/>
+      <line x1="410" y1="310" x2="360" y2="420"/>
+      <circle cx="80" cy="60" r="3.5"/>
+      <circle cx="220" cy="40" r="4" class="node-accent"/>
+      <circle cx="360" cy="110" r="3.5"/>
+      <circle cx="150" cy="180" r="3.5"/>
+      <circle cx="300" cy="210" r="4.5" class="node-gold"/>
+      <circle cx="470" cy="170" r="3.5"/>
+      <circle cx="230" cy="300" r="4.5" class="node-accent"/>
+      <circle cx="410" cy="310" r="3.5"/>
+      <circle cx="120" cy="330" r="3.5"/>
+      <circle cx="360" cy="420" r="4" class="node-iris"/>
+    </svg>
+    <div class="hero-inner">
+      <p class="tagline">Turning rigorous research into intelligent systems.</p>
+      <p class="eyebrow on-dark">Writing</p>
+      <h1>Insights.</h1>
+      <p class="lede on-dark">
+        Essays on building and governing AI systems. A recurring theme runs
+        through them: the techniques mature and become easy, while the binding
+        constraint moves to judgement, governance and accountability. Written
+        for data scientists, ML and MLOps engineers, students, and the people
+        deciding whether to build.
+      </p>
+    </div>
+    <div class="marquee hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AI Governance</span><span>RAG in practice</span><span>Evaluation</span><span>Security</span><span>MLOps</span><span>Optimisation</span><span>Computing history</span><span>AI Governance</span><span>RAG in practice</span><span>Evaluation</span><span>Security</span><span>MLOps</span><span>Optimisation</span><span>Computing history</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+
+  <h2>Start here</h2>
+  <p class="series-desc">Three essays that together show governance judgement, regulatory awareness and the technical-to-current synthesis.</p>
+  <div class="anchors">
+    <article class="anchor cat-fin">
+      <span class="soon-tag">In preparation</span>
+      <h4>Someone Has to Sign It</h4>
+      <p>Accountability is the binding constraint once a retrieval-augmented system reaches production. The coda to the RAG series.</p>
+      <p class="tags"><span class="tag is-key">Governance</span></p>
+    </article>
+    <article class="anchor cat-nlp">
+      <h4><a href="writing/big-data-algorithmic-decisions-foresight.html">Foresight, Not Hindsight</a></h4>
+      <p>Compliance is a floor, not a ceiling. What we owe the people whose lives sit inside the data, before harm arrives.</p>
+      <p class="tags"><span class="tag is-key">Governance</span></p>
+      <p><a href="writing/big-data-algorithmic-decisions-foresight.html">Read &rarr;</a></p>
+    </article>
+    <article class="anchor cat-edu">
+      <span class="soon-tag">In preparation</span>
+      <h4>What I Recognised in 2012</h4>
+      <p>Hinton, neural networks and the long road to deep learning: what the field looked like before the data and the GPUs arrived.</p>
+      <p class="tags"><span class="tag is-quiet">History</span></p>
+    </article>
+  </div>
+
+  <!-- ============ SERIES ============ -->
+
+  <section class="series">
+    <p class="series-meta">Series 1 &middot; Governance-forward</p>
+    <h2>RAG in Practice</h2>
+    <p class="series-desc">What quietly fails in retrieval-augmented generation, and how to catch it.</p>
+    <div class="anchors">
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>1. What Do You Want From RAG?</h4>
+        <p>Getting clear on the job before reaching for the architecture.</p>
+        <p class="tags"><span class="tag is-key">Governance</span> <span class="tag is-key">Evaluation</span></p>
+      </article>
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>2. RAG Does Not Stop Hallucination. It Relocates It.</h4>
+        <p>Where the errors move to once retrieval is in the loop.</p>
+        <p class="tags"><span class="tag is-key">Evaluation</span></p>
+      </article>
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>3. Cosine Similarity Is Flattering You.</h4>
+        <p>Why retrieval scores look better than the retrieval is.</p>
+        <p class="tags"><span class="tag is-key">Evaluation</span></p>
+      </article>
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>4. ROUGE and BLEU Will Not Save You.</h4>
+        <p>The limits of convenient metrics for generated answers.</p>
+        <p class="tags"><span class="tag is-key">Evaluation</span></p>
+      </article>
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>5. Do You Need a Vector Database at All?</h4>
+        <p>When the infrastructure is the badge, not the requirement.</p>
+        <p class="tags"><span class="tag is-key">MLOps</span></p>
+      </article>
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>6. Your Knowledge Base Is an Attack Surface.</h4>
+        <p>Retrieval opens a door; least privilege and provenance keep it watched.</p>
+        <p class="tags"><span class="tag is-key">Security</span></p>
+      </article>
+      <article class="anchor cat-fin">
+        <span class="soon-tag">In preparation</span>
+        <h4>7. Someone Has to Sign It.</h4>
+        <p>The coda: who is accountable when the system is wrong.</p>
+        <p class="tags"><span class="tag is-key">Governance</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="series">
+    <p class="series-meta">Series 2 &middot; Governance-forward</p>
+    <h2>GenAI &amp; LLMs in the Enterprise</h2>
+    <p class="series-desc">Why adopting AI well is more than calling an API.</p>
+    <p class="meta">Essays in preparation. The full running order for this series is being finalised.</p>
+    <div class="anchors">
+      <article class="anchor cat-nlp">
+        <span class="soon-tag">In preparation</span>
+        <h4>The API-Call Fallacy</h4>
+        <p>The gap between "we are using AI" and using it well. Most enterprise pilots never cross it.</p>
+        <p class="tags"><span class="tag is-key">Governance</span></p>
+      </article>
+      <article class="anchor cat-nlp">
+        <span class="soon-tag">In preparation</span>
+        <h4>The Wrong Model for the Job</h4>
+        <p>Using a language model for a task it was never built for, in a domain where being wrong costs money.</p>
+        <p class="tags"><span class="tag is-key">Evaluation</span></p>
+      </article>
+      <article class="anchor cat-nlp">
+        <span class="soon-tag">In preparation</span>
+        <h4>Agentic AI as the New Résumé Line</h4>
+        <p>Agents touching production systems and customer data with no monitoring, audit logs or least-privilege thinking.</p>
+        <p class="tags"><span class="tag is-key">Security</span> <span class="tag is-key">Governance</span></p>
+      </article>
+      <article class="anchor cat-nlp">
+        <span class="soon-tag">In preparation</span>
+        <h4>The MLOps Handoff</h4>
+        <p>Monitoring is a modelling task, not a scripting task: drift, retraining triggers and data-quality decay can't be governed by someone who doesn't know how the model works.</p>
+        <p class="tags"><span class="tag is-key">MLOps</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="series">
+    <p class="series-meta">Series 3 &middot; Depth &amp; perspective</p>
+    <h2>The Shape of Optimisation</h2>
+    <p class="series-desc">Where decades-old optimisation methods still run the world, and what is genuinely new.</p>
+    <ul class="writing-list">
+      <li class="item">
+        <h3><a href="writing/optimisation-since-the-1980s.html">Old Methods, New Combinations: Why 1980s Optimisation Still Runs the World</a></h3>
+        <p class="meta">February 2025</p>
+        <p class="blurb">Simulated annealing, genetic algorithms and tabu search still run much of the infrastructure around us. The frontier now lies in how we combine them, and in what machine learning adds to the mix. <a href="writing/optimisation-since-the-1980s.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">Optimisation</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/framework-not-metaphor.html">Framework, Not Metaphor: What a Metaheuristic Actually Is</a></h3>
+        <p class="meta">May 2025</p>
+        <p class="blurb">A history of the field, co-written by Fred Glover who coined the term, restating what a metaheuristic really is: a framework, not an algorithm, powered by memory and learning rather than randomness dressed in metaphor. <a href="writing/framework-not-metaphor.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">Optimisation</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/neural-networks-in-optimisation.html">Neural Networks in Optimisation: Patience, Not Hype</a></h3>
+        <p class="meta">April 2025</p>
+        <p class="blurb">Long before the 2012 breakthrough, optimisation researchers studied, debated and hybridised neural networks, assessing them honestly rather than dismissing or overselling. Why that patience aged well. <a href="writing/neural-networks-in-optimisation.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">Optimisation</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/metaheuristics-at-fifty.html">Metaheuristics at Fifty</a></h3>
+        <p class="meta">March 2025</p>
+        <p class="blurb">EURO marked its fiftieth anniversary with an invited review of the field: fifty years on, the techniques are everywhere and the most interesting work is still ahead. <a href="writing/metaheuristics-at-fifty.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">Optimisation</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/optimisation-and-cryptography.html">A Tension Worth Watching: Optimisation, Cryptography, and the Problems Between Them</a></h3>
+        <p class="meta">September 2025</p>
+        <p class="blurb">The same intractable problems optimisation wants to crack are the ones cryptography needs to hold. A thirty-year view of that tension and the unsettled mathematics beneath both. <a href="writing/optimisation-and-cryptography.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Security</span> <span class="tag is-quiet">Optimisation</span></p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="series">
+    <p class="series-meta">Series 4 &middot; Depth &amp; perspective</p>
+    <h2>Foundations &amp; Practice</h2>
+    <p class="series-desc">The history, infrastructure and engineering judgement underneath today's tools, with the applied ML that puts them to work.</p>
+    <ul class="writing-list">
+      <li class="item">
+        <h3><a href="writing/financial-nlp-interpretability.html">Why Financial NLP Needs Interpretability by Design, Not by Retrofit</a></h3>
+        <p class="meta">October 2025</p>
+        <p class="blurb">With the EU AI Act in force, interpretability, uncertainty quantification and lifecycle monitoring are no longer optional extras for financial NLP; they are operational requirements. <a href="writing/financial-nlp-interpretability.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Governance</span> <span class="tag is-key">Evaluation</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/big-data-infrastructure-evolution.html">When Data Outgrew the Machine: The Infrastructure That Made Scale Easy</a></h3>
+        <p class="meta">May 2026</p>
+        <p class="blurb">Replicated storage, divided computation and a steady climb in abstraction turned big data from a specialist ordeal into something ordinary. A short history of the hardware and software that tamed scale. <a href="writing/big-data-infrastructure-evolution.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">MLOps</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/time-series-forecasting-evolution.html">Reading the Signal in Time: How Forecasting Has Matured, and Why Finance Stays Hard</a></h3>
+        <p class="meta">April 2026</p>
+        <p class="blurb">Forecasting that once demanded a specialist now takes a competent developer an afternoon, yet financial data, for reasons of codependency and regime change, stays among the hardest of all to forecast. <a href="writing/time-series-forecasting-evolution.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Evaluation</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/recommender-systems-evolution.html">What Should You See Next? The Long Evolution of Recommender Systems</a></h3>
+        <p class="meta">March 2026</p>
+        <p class="blurb">From a narrow question about which film you might like, recommender systems became the quiet logic ordering much of what we read, buy and believe. <a href="writing/recommender-systems-evolution.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/customer-value-modelling.html">The Long Way Round to a Simple Idea: Customer Value Modelling in Finance</a></h3>
+        <p class="meta">February 2026</p>
+        <p class="blurb">A handful of distributions taught to us as undergraduates turned out to predict customer value and defection in financial services with surprising robustness. Why the simple Buy Till You Die models still hold their own against deep learning. <a href="writing/customer-value-modelling.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Evaluation</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/owning-the-whole-problem.html">Owning the Whole Problem: How Software Practice Changed</a></h3>
+        <p class="meta">January 2026</p>
+        <p class="blurb">Agile and continuous integration corrected the real failures of older practice, but a particular kind of depth went with it, and it is worth recovering inside the modern structure. <a href="writing/owning-the-whole-problem.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/hardware-since-the-1990s.html">A Difference of Category: Hardware and Software Since the 1990s</a></h3>
+        <p class="meta">December 2025</p>
+        <p class="blurb">Compute was a budget and memory was counted. Abundance lifted every one of those constraints, and quietly removed an awareness the scarcity once made compulsory. <a href="writing/hardware-since-the-1990s.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/straight-through-processing.html">Building Without the Scaffolding: What Finance Technology Achieved Before the Tools Caught Up</a></h3>
+        <p class="meta">November 2025</p>
+        <p class="blurb">Without hardened security libraries, reliable databases or open source, 1990s investment banks built straight-through processing anyway, reorganising how an entire industry moved information in a few years. <a href="writing/straight-through-processing.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/churchhouse-cryptography-security.html">From Caesar to the Internet: Robert Churchhouse and the Long Arc of Cryptography</a></h3>
+        <p class="meta">August 2025</p>
+        <p class="blurb">Taught by Turing and Newman, eleven years on ciphers inside Britain's signals-intelligence service, and a closing book that ran from Julius Caesar to the encryption of the internet: a lesson in the continuity of cryptographic security. <a href="writing/churchhouse-cryptography-security.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Security</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/network-protocols-evolution.html">Requests for Comments: How Open Standards Built the Network We Trust</a></h3>
+        <p class="meta">July 2025</p>
+        <p class="blurb">From plaintext Telnet on trusting research networks to SSH, TLS and the encrypted standards that secure everything today: how open standards are made, and why their priorities shifted from connection to security. <a href="writing/network-protocols-evolution.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Security</span> <span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/programming-languages-mental-model.html">Closer to the Machine: What Decades of Programming Languages Have Taught Us</a></h3>
+        <p class="meta">June 2025</p>
+        <p class="blurb">Thirty years across Ada, C, C++, Java and Python taught us that abstraction has been good for the field, and that it leaves a gap. Why every programmer should spend real time closer to the machine. <a href="writing/programming-languages-mental-model.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="series">
+    <p class="series-meta">Selected articles &middot; republished</p>
+    <h2>Earlier thought leadership</h2>
+    <p class="series-desc">Externally published pieces, republished here with formatting updated for readability.</p>
+    <ul class="writing-list">
+      <li class="item">
+        <h3><a href="writing/diversity-in-ai.html">Diversity in AI</a></h3>
+        <p class="meta">2020 &middot; The CSuite</p>
+        <p class="blurb">A thought-leadership article advocating inclusion and representation in AI. <a href="writing/diversity-in-ai.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Governance</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/ai-for-banks.html">Artificial Intelligence for Banks: The Revolution Starts Now</a></h3>
+        <p class="meta">March 2017 &middot; TABB Forum</p>
+        <p class="blurb">On how AI will reshape knowledge work in banking, from research to compliance, much as robots reshaped manufacturing. <a href="writing/ai-for-banks.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/predictive-analytics.html">The Power of Predictive Analytics &amp; Machine Learning</a></h3>
+        <p class="meta">March 2016 &middot; TABB Forum</p>
+        <p class="blurb">An ahead-of-the-curve argument for machine-learning adoption in banking, making the case for institutions to mine their own transaction data. <a href="writing/predictive-analytics.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-key">Evaluation</span></p>
+      </li>
+      <li class="item">
+        <h3><a href="writing/big-data-beyond-the-hype.html">Big Data: Going Beyond the Hype</a></h3>
+        <p class="meta">June 2016 &middot; TABB Forum</p>
+        <p class="blurb">An early industry commentary advocating data-driven transformation in banking, cutting through the hype to focus on where data genuinely creates value. <a href="writing/big-data-beyond-the-hype.html">Read &rarr;</a></p>
+        <p class="tags"><span class="tag is-quiet">History</span></p>
+      </li>
+    </ul>
+  </section>
+
+  <p class="meta" style="margin-top:3rem;">
+    For peer-reviewed papers and invited talks, see
+    <a href="publications.html">Publications</a>.
+  </p>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657. United Kingdom.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a> &middot; <a href="https://www.linkedin.com/company/intelligent-algorithms-ltd">LinkedIn</a></div>
+</footer>
+
+<script src="assets/main.js?v=32" defer></script></body>
+</html>
