@@ -13,6 +13,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css?v=35">
+  <style>
+    /* Publications: polished, colour-coded reference lists */
+    .page .pub-list { list-style: none; padding: 0; margin: 1.5rem 0 2.75rem; }
+    .page .pub-list li {
+      padding: 0.95rem 1.2rem 1rem;
+      margin: 0 0 0.7rem;
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-left: 3px solid var(--plc, var(--c-accent));
+      border-radius: 0 12px 12px 0;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .page .pub-list li:hover {
+      transform: translateX(3px);
+      background: var(--c-surface-2);
+      border-color: var(--c-line-2);
+      border-left-color: var(--plc, var(--c-accent));
+    }
+    .page .pub-list .year {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #0e1726;
+      background: var(--plc, var(--c-accent));
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      margin: 0 0.55rem 0 0;
+    }
+    .page .pub-list .title { color: var(--c-text); }
+    .page .pub-list .desc { margin-top: 0.45rem; }
+    .pl-blue { --plc: var(--c-accent); }
+    .pl-gold { --plc: var(--c-gold); }
+    .pl-iris { --plc: var(--c-iris); }
+    .page h2.sec-gold::before { background: var(--c-gold); }
+    .page h2.sec-iris::before { background: var(--c-iris); }
+  </style>
   <link rel="icon" href="assets/logo.svg">
 </head>
 <body>
@@ -73,11 +111,9 @@
       <p class="eyebrow on-dark">Publications &amp; talks</p>
       <h1>Selected publications.</h1>
       <p class="lede on-dark">
-        Peer-reviewed research is concentrated in adaptive metaheuristics
-        and applied combinatorial optimisation, carried out as doctoral and
-        post-doctoral work on the NP-hard radio frequency assignment problem.
-        Thought-leadership writing focuses on predictive analytics, machine
-        learning in capital markets, and diversity in AI.
+        Peer-reviewed research in adaptive metaheuristics and combinatorial
+        optimisation, alongside thought-leadership writing on machine learning,
+        predictive analytics and diversity in AI.
       </p>
     </div>
     <div class="marquee hero-marquee" aria-hidden="true">
@@ -90,7 +126,7 @@
   <div class="page">
 
   <h2>Peer-reviewed research</h2>
-  <ul class="pub-list">
+  <ul class="pub-list pl-blue">
     <li>
       <span class="year">2001</span>
       Castelino, D. J. &amp; Stephens, N. M.
@@ -131,8 +167,8 @@
     </li>
   </ul>
 
-  <h2>Invited talks</h2>
-  <ul class="pub-list">
+  <h2 class="sec-gold">Invited talks</h2>
+  <ul class="pub-list pl-gold">
     <li>
       <span class="year">2021</span>
       <span class="title">Explainable anomaly detection for FICC markets.</span>
@@ -153,13 +189,13 @@
     </li>
   </ul>
 
-  <h2>Thought leadership</h2>
-  <ul class="pub-list">
+  <h2 class="sec-iris">Thought leadership</h2>
+  <ul class="pub-list pl-iris">
     <li>
       <span class="year">2019&ndash;21</span>
       Castelino, D. (editor &amp; contributor).
       <span class="title">Frontiers in Quantitative Finance: seminar newsletter series.</span>
-      <span class="desc">Summarised the quantitative-finance seminar series for practitioners, academics, and regulators, and published it online with email alerts so the wider industry and thought leaders could follow.</span>
+      <span class="desc">A quantitative-finance seminar newsletter for practitioners, academics and regulators, published online with email alerts.</span>
     </li>
     <li>
       <span class="year">2020</span>
