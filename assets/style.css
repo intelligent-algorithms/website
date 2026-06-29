@@ -1358,3 +1358,133 @@ button:focus-visible,
   .hero-fountain .fbeam:nth-child(9) { height: 130px; }
   .hero-fountain .fountain-logo { width: 86px; height: 86px; }
 }
+
+/* ============================================================
+   DARK INSTITUTIONAL THEME — site-wide (v=34)
+   Repaints every page to match the calm homepage: deep slate
+   surfaces, off-white text, a steel-blue primary accent with warm
+   gold and soft iris as secondary tones. Appended last so these
+   rules win by source order; semantic tokens are repointed so most
+   components follow automatically.
+   ============================================================ */
+:root {
+  --c-bg:        #0e1726;
+  --c-bg-2:      #111827;
+  --c-surface:   #161f2e;
+  --c-surface-2: #1b2535;
+  --c-line:      rgba(255,255,255,0.09);
+  --c-line-2:    rgba(255,255,255,0.16);
+  --c-text:      #e9eef5;
+  --c-muted:     #9fb1c6;
+  --c-faint:     #7f93ab;
+  --c-accent:    #74a4dd;
+  --c-accent-2:  #93b7e7;
+  --c-gold:      #e0b15e;
+  --c-iris:      #9b9cf0;
+
+  /* Repoint existing semantic tokens to the dark palette.
+     (--navy is only ever used as a text colour, so this is safe.) */
+  --paper:     #0e1726;
+  --paper-2:   #161f2e;
+  --rule:      rgba(255,255,255,0.09);
+  --rule-soft: rgba(255,255,255,0.06);
+  --ink:       #e9eef5;
+  --ink-soft:  #9fb1c6;
+  --ink-faint: #7f93ab;
+  --navy:      #e9eef5;
+  --blue-500:  #74a4dd;
+  --blue-600:  #74a4dd;
+  --blue-700:  #93b7e7;
+  --blue-800:  #a9c6ec;
+  --cyan:      #74a4dd;
+  --cyan-soft: #93b7e7;
+  --primary:   #74a4dd;
+  --accent:    #74a4dd;
+}
+
+/* ---- Header: single steel hairline (no cyan gradient) ---- */
+.site-head-wrap {
+  background: rgba(10,16,26,0.82);
+  border-top: 3px solid var(--c-accent);
+  border-image: none;
+  border-bottom: 1px solid var(--c-line);
+}
+
+/* ---- Inner-page hero: calm flat slate, bright beam canvas hidden ---- */
+.hero .hero-net { display: none; }
+/* Calm the brand tagline: solid off-white, no cyan shimmer */
+.tagline {
+  background: none;
+  -webkit-text-fill-color: var(--c-text);
+  color: var(--c-text);
+  animation: tagline-in 0.8s ease-out both;
+}
+.hero-marquee .marquee-track { animation-duration: 60s; }
+.hero-marquee .marquee-track span { color: var(--c-muted); opacity: 0.9; font-weight: 500; }
+.hero-marquee .marquee-track span::after { color: var(--c-accent); opacity: 0.7; }
+
+/* ---- Category accents: cycle the steel / gold / iris palette ---- */
+.cat-fin { --c: #74a4dd; --c-sh: rgba(116,164,221,0.40); }
+.cat-eng { --c: #9b9cf0; --c-sh: rgba(155,156,240,0.40); }
+.cat-opt { --c: #e0b15e; --c-sh: rgba(224,177,94,0.36); }
+.cat-nlp { --c: #74a4dd; --c-sh: rgba(116,164,221,0.40); }
+.cat-env { --c: #e0b15e; --c-sh: rgba(224,177,94,0.36); }
+.cat-edu { --c: #9b9cf0; --c-sh: rgba(155,156,240,0.40); }
+
+/* ---- Skill / credential chips: dark surface, accent text ---- */
+.cred-chip {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--c-line-2);
+  color: var(--c, var(--c-accent-2));
+}
+.cred-chip:hover {
+  background: var(--c, var(--c-accent));
+  border-color: var(--c, var(--c-accent));
+  color: #0e1726;
+}
+.skill {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--c-line-2);
+  color: #c4d3e8;
+}
+.skill:hover {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: #0e1726;
+  box-shadow: 0 8px 18px -8px rgba(116,164,221,0.5);
+}
+.skill:nth-child(3n+2) { color: var(--c-gold); background: rgba(255,255,255,0.05); border-color: var(--c-line-2); }
+.skill:nth-child(3n+2):hover { background: var(--c-gold); border-color: var(--c-gold); color: #0e1726; box-shadow: 0 8px 18px -8px rgba(224,177,94,0.45); }
+.skill:nth-child(3n) { color: var(--c-iris); background: rgba(255,255,255,0.05); border-color: var(--c-line-2); }
+.skill:nth-child(3n):hover { background: var(--c-iris); border-color: var(--c-iris); color: #0e1726; box-shadow: 0 8px 18px -8px rgba(155,156,240,0.45); }
+.sector-icon-wrap { background: rgba(255,255,255,0.06); color: var(--c, var(--c-accent)); }
+
+/* ---- Long-form reading: slightly softened off-white ---- */
+.article-body p { color: #d8e0ec; }
+
+/* ---- Buttons: quiet outline that warms to the accent ---- */
+.btn {
+  background: transparent;
+  color: var(--c-text);
+  border: 1px solid var(--c-line-2);
+  box-shadow: none;
+}
+.btn:hover {
+  background: rgba(116,164,221,0.10);
+  color: var(--c-text);
+  border-color: var(--c-accent);
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+/* ---- Footer: flat slate to match ---- */
+.site-foot {
+  background: var(--c-bg-2);
+  border-top: 1px solid var(--c-line);
+  color: var(--c-muted);
+}
+.site-foot a { color: var(--c-text); border-bottom-color: rgba(255,255,255,0.25); }
+.site-foot a:hover { color: var(--c-accent-2); border-bottom-color: var(--c-accent-2); }
+
+/* ---- Selection ---- */
+::selection { background: rgba(116,164,221,0.30); color: var(--c-text); }
