@@ -23,9 +23,20 @@
       line-height: 1.28;
       letter-spacing: -0.01em;
       color: var(--c-text);
-      max-width: 40ch;
+      max-width: 42ch;
       margin: 1.6rem 0 0;
     }
+    /* Tri-colour accent bar unifies mission / vision / journey */
+    .hero-page .manifesto {
+      border-left: 3px solid var(--c-accent);
+      border-image: linear-gradient(180deg, var(--c-accent) 0%, var(--c-gold) 55%, var(--c-iris) 100%) 1;
+      padding-left: clamp(1.1rem, 2.5vw, 1.9rem);
+      margin-top: 0.7rem;
+    }
+    .hero-page .manifesto > :first-child { margin-top: 0; }
+    .hero-page .mission .mlabel { color: var(--c-accent); }
+    .hero-page .mission-stmt.vis .mlabel { color: var(--c-gold); }
+    .hero-page .mission-stmt.jou .mlabel { color: var(--c-iris); }
     .hero-page .mission-note {
       font-family: var(--sans);
       font-size: 1rem;
@@ -93,9 +104,11 @@
     <div class="hero-inner">
       <p class="tagline">Turning rigorous research into intelligent systems.</p>
       <p class="eyebrow on-dark">About Intelligent Algorithms</p>
-      <h1 class="mission">Our mission: to turn rigorous research into intelligent systems that organisations can trust.</h1>
-      <p class="mission-stmt">Our vision: machine learning that is research-grade and production-ready; explainable, robust and accountable.</p>
-      <p class="mission-stmt">Our journey: from a 2014 advisory practice to production analytics, funded space-agency research and university partnerships in quantitative finance.</p>
+      <div class="manifesto">
+        <h1 class="mission"><span class="mlabel">Our mission:</span> to turn rigorous research into intelligent systems that organisations can trust.</h1>
+        <p class="mission-stmt vis"><span class="mlabel">Our vision:</span> machine learning that is research-grade and production-ready; explainable, robust and accountable.</p>
+        <p class="mission-stmt jou"><span class="mlabel">Our journey:</span> from a 2014 advisory practice to production analytics, funded space-agency research and university partnerships in quantitative finance.</p>
+      </div>
       <p class="mission-note">The domain is rarely the constraint. <a href="domains.html">See the domains we cover.</a></p>
     </div>
   </section>
