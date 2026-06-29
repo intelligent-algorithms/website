@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TEMP 2026-06-29: gated draft under review. Remove noindex to publish. -->
+  <meta name="robots" content="noindex">
+  <title>It&rsquo;s More Than Calling an API &middot; Intelligent Algorithms Ltd</title>
+  <meta name="description" content="Why adopting AI well is more than calling an API: the easy part is the visible five percent, and the expensive part is keeping it working.">
+  <meta property="og:title" content="It&rsquo;s More Than Calling an API">
+  <meta property="og:description" content="Why adopting AI well is more than calling an API.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://intelligent-algorithms.co.uk/writing/its-more-than-calling-an-api.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=35">
+  <link rel="icon" href="../assets/logo.svg">
+</head>
+<body>
+<div class="site-head-wrap">
+  <header class="site-head">
+    <a href="../index.html" class="brand"><img class="brand-mark" src="../assets/logo-fountain.svg" alt="" width="28" height="28"><span class="brand-text">Intelligent Algorithms <em>Ltd</em></span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Clients <svg class="caret" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="nav-menu" role="menu">
+          <a href="../clients.html" role="menuitem">Our clients</a>
+          <a href="../work.html" role="menuitem">Case studies</a>
+        </div>
+      </div>
+      <a href="../domains.html">Domains</a>
+      <a href="../insights.html" class="active">Insights</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+</div>
+
+<main class="page page-article">
+  <div class="article-head">
+    <a href="../insights.html" class="back">&larr; Back to Insights</a>
+    <p class="eyebrow">GenAI &amp; LLMs in the Enterprise &middot; Opener</p>
+    <h1>It&rsquo;s More Than Calling an API</h1>
+    <p class="subtitle">You bought the capability in an afternoon, shipped a demo by Friday, and budgeted for none of the years it now has to keep working.</p>
+    <p class="byline">Diane Castelino &middot; Intelligent Algorithms Ltd</p>
+    <p class="dateline" style="font-style:italic;">For founders, CTOs, and the teams they hand the work to, alongside the data scientists, ML engineers and MLOps people who will run it long after the demo. One debated point per piece, on what works in practice and what quietly fails. Written to help the community think it through, not to sell you anything.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>The easy part is the part everyone sees</h2>
+    <p>
+      Here is the claim worth arguing: the API call is the cheapest, easiest,
+      most visible five percent of an enterprise GenAI system, and treating it
+      as the project is why so many of these systems impress in a demo and
+      disappoint in production.
+    </p>
+    <p>
+      Adopting a large language model has never been easier. A developer signs
+      up, pastes a key, and within an hour has something that answers questions
+      in fluent prose about the company&rsquo;s own documents. The speed is real
+      and it is seductive, and it produces a particular illusion: that because
+      the hard-looking part, the model, arrived ready-made, the system is largely
+      built. It is not. The model is the one part you did not have to build.
+      Everything that makes it safe, correct, affordable and durable in your
+      specific setting is still ahead of you, and almost none of it is visible in
+      the demo that got the project funded.
+    </p>
+
+    <h2>What the demo does not show</h2>
+    <p>
+      A demo runs once, for a friendly audience, on a question someone chose.
+      Production runs continuously, for strangers, on questions nobody
+      anticipated, and the gap between those two conditions is where the real
+      work lives.
+    </p>
+    <p>
+      The demo does not show what happens when the source documents go stale and
+      the system keeps answering confidently from last quarter&rsquo;s policy. It
+      does not show the cost when a hundred internal users become ten thousand
+      and every query bills by the token. It does not show the wrong-but-fluent
+      answer that no one catches because it arrived with a citation attached. It
+      does not show the question the system handles badly, because nobody asked
+      it on stage. The demo is an existence proof that the easy part works. It
+      says nothing about the expensive part, which is keeping it working,
+      correctly, for everyone, at cost, for years.
+    </p>
+
+    <h2>Two failures that arrive before a line of code</h2>
+    <p>
+      In practice the trouble usually starts before any engineering, in two
+      decisions that are not technical at all.
+    </p>
+    <p>
+      The first is who is doing the evaluating. The field has changed in a way
+      the org charts have not caught up with: many capable people now working
+      with data and models arrived from other roles, and the tooling has made it
+      possible to produce a working pipeline without the background that lets you
+      interrogate it. A developer can call an embedding model without knowing what
+      an embedding is, deploy a forecast without knowing what stationarity
+      assumes, or ship a classifier without knowing what its confidence score
+      does and does not mean. This is not a failing of the individuals, who are
+      often excellent at the building. It is a
+    </p>
+    <!-- TEMP 2026-06-29: transcription ends here; the pasted image cut off
+         mid-sentence. The rest of this section (and the second failure) is to
+         be pasted in. -->
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657. United Kingdom.</div>
+  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a> &middot; <a href="https://www.linkedin.com/company/intelligent-algorithms-ltd">LinkedIn</a></div>
+</footer>
+
+<script src="../assets/main.js?v=32" defer></script></body>
+</html>
