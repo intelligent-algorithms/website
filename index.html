@@ -238,6 +238,39 @@
     body.home-calm .site-foot a { color: var(--c-text); border-bottom-color: rgba(255,255,255,0.25); }
     body.home-calm .site-foot a:hover { color: var(--c-accent-2); border-bottom-color: var(--c-accent-2); }
 
+    /* Richer footer: brand + section links above the legal line */
+    body.home-calm .site-foot.foot-rich { display: block; padding: 4rem 1.5rem 2.5rem; }
+    .foot-rich .foot-inner {
+      max-width: var(--max-wide); margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem 3rem;
+    }
+    .foot-rich .foot-brand { flex: 1 1 240px; max-width: 340px; }
+    .foot-rich .foot-brand .brand-mark { width: 36px; height: 36px; }
+    .foot-rich .foot-name {
+      display: block; margin: 0.7rem 0 0; font-family: var(--serif);
+      font-size: 1.1rem; font-weight: 600; color: var(--c-text);
+    }
+    .foot-rich .foot-name em { font-style: italic; font-weight: 400; color: var(--c-accent); }
+    .foot-rich .foot-tag { margin: 0.6rem 0 0; max-width: 32ch; font-size: 0.92rem; color: var(--c-muted); }
+    .foot-rich .foot-nav { display: flex; flex-wrap: wrap; gap: 2.5rem 3rem; }
+    .foot-rich .foot-col { min-width: 130px; }
+    .foot-rich .foot-col h3 {
+      margin: 0 0 0.9rem; font-family: var(--sans); font-size: 0.72rem;
+      font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-accent);
+    }
+    .foot-rich .foot-col h3::before { display: none; }
+    .foot-rich .foot-col a {
+      display: block; margin: 0 0 0.6rem; font-size: 0.95rem;
+      color: var(--c-muted); border-bottom: none;
+    }
+    .foot-rich .foot-col a:hover { color: var(--c-text); border-bottom: none; }
+    .foot-rich .foot-bottom {
+      max-width: var(--max-wide); margin: 3rem auto 0; padding-top: 1.5rem;
+      border-top: 1px solid var(--c-line);
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1rem;
+      font-size: 0.82rem; color: var(--c-muted);
+    }
+
     @media (max-width: 600px) {
       body.home-calm .hero-home .hero-inner { padding: 4rem 1.25rem 3.5rem; }
       body.home-calm .help { padding: 4rem 1.25rem 4.5rem; }
@@ -342,9 +375,37 @@
   </section>
 </main>
 
-<footer class="site-foot">
-  <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657. United Kingdom.</div>
-  <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a> &middot; <a href="https://www.linkedin.com/company/intelligent-algorithms-ltd">LinkedIn</a></div>
+<footer class="site-foot foot-rich">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img class="brand-mark" src="assets/logo-fountain.svg" alt="" width="36" height="36">
+      <span class="foot-name">Intelligent Algorithms <em>Ltd</em></span>
+      <p class="foot-tag">Independent AI governance and responsible-AI advisory.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <div class="foot-col">
+        <h3>Company</h3>
+        <a href="about.html">About us</a>
+        <a href="clients.html">Our clients</a>
+        <a href="work.html">Case studies</a>
+      </div>
+      <div class="foot-col">
+        <h3>Work</h3>
+        <a href="domains.html">Domains</a>
+        <a href="insights.html">Insights</a>
+        <a href="publications.html">Publications</a>
+      </div>
+      <div class="foot-col">
+        <h3>Connect</h3>
+        <a href="mailto:hello@intelligent-algorithms.co.uk">Email us</a>
+        <a href="https://www.linkedin.com/company/intelligent-algorithms-ltd">LinkedIn</a>
+      </div>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657. United Kingdom.</div>
+    <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
+  </div>
 </footer>
 
 <script src="assets/main.js?v=32" defer></script></body>
