@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=34">
+  <link rel="stylesheet" href="assets/style.css?v=35">
   <link rel="icon" href="assets/logo.svg">
 </head>
 <body>
@@ -46,6 +46,35 @@
 <main>
   <section class="hero hero-page">
     <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
+    <svg class="hero-graph" viewBox="0 0 600 500" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <line x1="80" y1="60" x2="220" y2="40"/>
+      <line x1="220" y1="40" x2="360" y2="110"/>
+      <line x1="80" y1="60" x2="150" y2="180"/>
+      <line x1="220" y1="40" x2="150" y2="180"/>
+      <line x1="220" y1="40" x2="300" y2="210"/>
+      <line x1="360" y1="110" x2="300" y2="210"/>
+      <line x1="360" y1="110" x2="470" y2="170"/>
+      <line x1="150" y1="180" x2="300" y2="210"/>
+      <line x1="150" y1="180" x2="230" y2="300"/>
+      <line x1="300" y1="210" x2="230" y2="300"/>
+      <line x1="300" y1="210" x2="410" y2="310"/>
+      <line x1="470" y1="170" x2="410" y2="310"/>
+      <line x1="230" y1="300" x2="410" y2="310"/>
+      <line x1="230" y1="300" x2="120" y2="330"/>
+      <line x1="120" y1="330" x2="150" y2="180"/>
+      <line x1="230" y1="300" x2="360" y2="420"/>
+      <line x1="410" y1="310" x2="360" y2="420"/>
+      <circle cx="80" cy="60" r="3.5"/>
+      <circle cx="220" cy="40" r="4" class="node-accent"/>
+      <circle cx="360" cy="110" r="3.5"/>
+      <circle cx="150" cy="180" r="3.5"/>
+      <circle cx="300" cy="210" r="4.5" class="node-gold"/>
+      <circle cx="470" cy="170" r="3.5"/>
+      <circle cx="230" cy="300" r="4.5" class="node-accent"/>
+      <circle cx="410" cy="310" r="3.5"/>
+      <circle cx="120" cy="330" r="3.5"/>
+      <circle cx="360" cy="420" r="4" class="node-iris"/>
+    </svg>
     <div class="hero-inner">
       <p class="tagline">Turning rigorous research into intelligent systems.</p>
       <p class="eyebrow on-dark">Resources &middot; Articles</p>
