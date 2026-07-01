@@ -271,6 +271,31 @@
       font-size: 0.82rem; color: var(--c-muted);
     }
 
+    /* Contact CTA band above the footer */
+    body.home-calm .cta-band {
+      background: linear-gradient(120deg, #16243a 0%, #111a29 100%);
+      border-top: 1px solid var(--c-line);
+    }
+    .cta-band-inner {
+      max-width: var(--max-wide); margin: 0 auto; padding: 3.25rem 1.5rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 2rem;
+    }
+    .cta-band-title {
+      margin: 0; max-width: 26ch; font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.18; color: var(--c-text);
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--sans); font-weight: 600; font-size: 0.98rem;
+      padding: 0.8rem 1.7rem; border-radius: 999px;
+    }
+    /* TEMP 2026-06-30: 'Get in touch' disabled until the contact email is decided. */
+    .cta-btn.is-disabled {
+      background: rgba(255,255,255,0.06); color: var(--c-muted);
+      border: 1px solid var(--c-line-2); box-shadow: none;
+      cursor: not-allowed; pointer-events: none;
+    }
+
     @media (max-width: 600px) {
       body.home-calm .hero-home .hero-inner { padding: 4rem 1.25rem 3.5rem; }
       body.home-calm .help { padding: 4rem 1.25rem 4.5rem; }
@@ -375,6 +400,15 @@
   </section>
 </main>
 
+<section class="cta-band" aria-label="Get in touch">
+  <div class="cta-band-inner">
+    <p class="cta-band-title">Trustworthy AI starts with a conversation.</p>
+    <!-- TEMP 2026-06-30: button disabled until the contact email is decided.
+         To enable, change the span to: <a class="btn cta-btn" href="mailto:YOUR-EMAIL">Get in touch &rarr;</a> -->
+    <span class="btn cta-btn is-disabled" role="button" aria-disabled="true" title="Contact details coming soon">Get in touch &rarr;</span>
+  </div>
+</section>
+
 <footer class="site-foot foot-rich">
   <div class="foot-inner">
     <div class="foot-brand">
@@ -397,14 +431,12 @@
       </div>
       <div class="foot-col">
         <h3>Connect</h3>
-        <a href="mailto:hello@intelligent-algorithms.co.uk">Email us</a>
         <a href="https://www.linkedin.com/company/intelligent-algorithms-ltd">LinkedIn</a>
       </div>
     </nav>
   </div>
   <div class="foot-bottom">
     <div>Intelligent Algorithms Ltd. Registered in England and Wales. Company No. 11127657. United Kingdom.</div>
-    <div><a href="mailto:hello@intelligent-algorithms.co.uk">hello@intelligent-algorithms.co.uk</a></div>
   </div>
 </footer>
 
